@@ -1,5 +1,4 @@
 #作业 
-[![Build Status](https://www.travis-ci.org/lalawow/homework1.svg?branch=master)](https://www.travis-ci.org/lalawow/homework1)
 
 ### 步骤
 
