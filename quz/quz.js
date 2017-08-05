@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	var L;
+	for (L = A; L !== null; L = L.tail) {
+		if (L.tail === null) {
+			L.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -23,5 +30,12 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	var i=0;
+	var res=[];
+	for (Z = L; Z !== null; Z = Z.tail, i++) {
+		if(i >= start && len--) {
+			res.push(Z.head);
+		}
+	}
+	return List.list(res);
 }
