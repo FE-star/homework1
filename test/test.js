@@ -1,8 +1,10 @@
+/*
+
 var List=require("../js/list.js")
 var should = require('should')
 var dcate = require("../quz/quz.js").dcate
 var sub = require("../quz/quz.js").sub
-
+*/
 
 describe('unit test for quz.js', function () {
 

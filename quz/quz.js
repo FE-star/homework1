@@ -1,4 +1,4 @@
-var List=require("../js/list")
+//var List=require("../js/list")
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -8,7 +8,7 @@ var List=require("../js/list")
  * @param {List} B
  * @returns {List}
  */
-exports.dcate = function (A, B) {
+function dcate(A, B) {
 	/** Fill in here **/
 	var p = A
 	while (p.tail!==null) {
@@ -30,7 +30,7 @@ exports.dcate = function (A, B) {
  * @returns {List}
  */
 
-exports.sub = function (L, start, len) {
+function sub(L, start, len) {
 	/** Fill in here **/
 	var p = L
 	while (p.head!==start) {
