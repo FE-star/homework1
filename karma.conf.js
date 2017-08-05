@@ -16,8 +16,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/should/should.js',
-      'js/*.js',
-      'quz/*.js',
+     // 'js/*.js',
+     // 'quz/*.js',
       'test/*.js'
     ],
 

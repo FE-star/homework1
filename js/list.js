@@ -18,6 +18,7 @@ List.list = function (array) {
 	for (i = 0; i < len; i++) {
 		p.tail = new List(array[i]);
 		p = p.tail;
+		//console.log("head: "+sentinel.head,"tail: "+sentinel.tail)
 	}
 	return sentinel.tail;
 }
@@ -27,8 +28,11 @@ List.prototype.toString = function () {
 	var res = '', L;
 	res += '[';
 	for (L = this; L !== null; L = L.tail) {
+		//console.log(L.tail)
 		res = res + ' ' + L.head;
 	}
 	res += ' ]';
 	return res;
 };
+
+module.exports = List;
