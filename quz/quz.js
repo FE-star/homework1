@@ -33,9 +33,10 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
 	var p = L
-	while (p.head!==start) {
+	while (start>0) {
 		if (p.tail == null) throw new Error('No start item found!')
 		p=p.tail
+		start--
 	}
 	var res = []
 	for (;len>0;len--){
