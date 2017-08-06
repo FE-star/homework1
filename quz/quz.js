@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+  var tmp = A
+  while (tmp.tail) {
+    tmp = tmp.tail
+  }
+
+  tmp.tail = B
+  return A
 }
 
 /**
@@ -24,4 +31,24 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  var elements = [],
+      subArr = [],
+      ref = L,
+      Ldepth
+
+  while (ref) {
+    elements.push(ref.head)
+    ref = ref.tail
+  }
+
+  Ldepth = elements.length
+  if (start < 0 || len < 0 || Ldepth < start + len) {
+    return new Error('start or len out of range')
+  }
+
+  for (var i = 0; i < len; i++) {
+    subArr[i] = elements[start + i]
+  }
+
+  return List.list(subArr)
 }
