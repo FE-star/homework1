@@ -32,9 +32,10 @@ function sub(L, start, len) {
 	/** Fill in here **/
 	var res = [], i, j;
 	for (i = L, j=0; i !== null; i = i.tail, j++) {
-		if (j === start && res.length < len) {
-			res.push(i);
+		if (j >= start && res.length < len) {
+			res.push(i.head)
 		}
 	}
+    var res = List.list(res);
 	return res;
 }
