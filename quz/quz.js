@@ -33,20 +33,13 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
 	var p;
-	var counter = 0;
-	var res;
-	for(p=L;p!=null;p=p.tail){
-		counter++;
-		if(counter == start+1){
-			res = new List(p.head);
-			counter = 0;
-			break;	
+	var count = 0;
+	var resArray = [];
+	for(p=L ; p!=null ; p=p.tail){
+		count++;
+		if(count > start && count-start <= len){
+			resArray.push(p.head);
 		}
 	}
-	while(counter < len && p!=null){
-		res.tail = new List(p.head)
-		counter++;
-		p = p.tail;
-	}
-	return res;
+	return List.list(resArray);
 }
