@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sun Aug 06 2017 14:00:15 GMT+0800 (中国标准时间)
+// Generated on Sat Aug 05 2017 16:54:33 GMT+0800 (中国标准时间)
 
 module.exports = function(config) {
   config.set({
@@ -63,7 +63,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    // set true
     singleRun: true,
 
     // Concurrency level
