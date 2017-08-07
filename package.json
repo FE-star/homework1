@@ -4,7 +4,8 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+	  "test": "mocha",
+	  "cov": "istanbul cover ./node_modules/.bin/_mocha"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,18 @@
   "keywords": [
     "test"
   ],
+  "config": {
+    "blanket": {
+      "pattern": [
+        "js/*.js",
+        "quz/*.js"
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "tests"
+      ]
+    }
+  },
   "author": "Daniel Yang",
   "license": "MIT",
   "bugs": {
@@ -20,10 +33,14 @@
   },
   "homepage": "https://github.com/FE-star/homework1#readme",
   "devDependencies": {
+    "blanket": "^1.2.3",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
     "karma": "^1.7.0",
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "should": "^11.2.1"
   }
 }
