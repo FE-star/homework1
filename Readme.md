@@ -1,4 +1,6 @@
-#作业
+# Javascript 测试作业
+
+[![](https://travis-ci.org/tedlife/homework1.svg?branch=master)](https://travis-ci.org/tedlife/homework1)
 
 ### 步骤
 
