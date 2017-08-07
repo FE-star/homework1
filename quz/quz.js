@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    var conAB=new List(A.head,A.tail);
+    var tmp=conAB;
+    for(var i=0;tmp.tail!=null;i++){
+        tmp=tmp.tail;
+    }
+    tmp.tail=new List(B.head,B.tail);
+    return A
 }
 
 /**
@@ -24,4 +31,23 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var tmp=L;
+    var sub=null;
+    var count=0;
+    var subList=sub;
+    for (var i=0;tmp!=null;i++){
+        if(i>=start&&count<=len&&tmp.head){
+            if(count==0){
+                subList=new List(tmp.head);
+                sub=subList;
+                count++;
+            }else {
+                sub.tail=new List(tmp.head);
+                count++;
+                sub=sub.tail;
+            }
+        }
+        tmp=tmp.tail;
+    }
+    return subList
 }
