@@ -51,6 +51,7 @@ function sub(L, start, len) {
 	if (start < 0) {
 		throw new Error('the param of "start" should be a positive integer or "zero"');
 	}
+	
 	if (len <= 0) {
 		throw new Error('the param of "start" should be a positive integer');
 	}
