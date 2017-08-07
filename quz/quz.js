@@ -9,6 +9,22 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+
+    // var X=A;
+    // A=null;
+    // return X?B
+    //         ?X.toString().replace(' ]','')+B.toString().replace('[','')
+    //         :X.toString()
+    //         :B?B.toString()
+    //         :'[]'
+    var L;
+	for (L = A; L !== null; L = L.tail) {
+		if (L.tail === null) {
+			L.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -24,4 +40,12 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    var res='[',M;
+    for(M = L,i=0,j=0;M!=null;M=M.tail,i++,j++){
+        if(i>=start&&j<=start+len){
+            res=res+' '+M.head
+        }
+    }
+    res+=' ]';
+    return res
 }
