@@ -1,6 +1,6 @@
-#作业
+# 作业
 
-[![Build Status](https://www.travis-ci.org/twlk27/homework1.svg?branch=master)](https://www.travis-ci.org/twlk27/homework1)
+[![Build Status](https://www.travis-ci.org/twlk27/homework1.svg?branch=master)](https://www.travis-ci.org/twlk27/homework1) [![Coverage Status](https://coveralls.io/repos/github/twlk27/homework1/badge.svg?branch=master)](https://coveralls.io/github/twlk27/homework1?branch=master)
 
 ### 步骤
 

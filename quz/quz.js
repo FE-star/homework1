@@ -39,6 +39,5 @@ function sub(L, start, len) {
 		elem = elem.tail
 		n++
 	}
-	console.log(rst)
 	return List.list(rst)
 }
