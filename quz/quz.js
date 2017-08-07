@@ -8,7 +8,21 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    // var oA = A,
+    if (A instanceof List || B instanceof List) {
+        throw new Error('The params of dcate function is invalidated');
+    }
+
+    var tailNull = null;
+
+    function rec(obj) {
+        if (obj.tail == null) return obj;
+        return arguments.callee(obj.tail);
+    }
+    var tailNull = rec(A);
+    tailNull.tail = B;
+    return A;
 }
 
 /**
@@ -23,5 +37,14 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    var str = L.toString(),
+        tmp = str.replace(/[\[\s\]]/g, '').split(''),
+        arr = [];
+
+    for (let n = start + 1; n <= start + len; n++) {
+        arr.push(tmp[n]);
+    }
+
+    return L.__proto__.constructor.list(arr);
 }
