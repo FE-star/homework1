@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var tailNull = null;
+
+	function rec (obj) {
+		if (obj.tail == null) return obj;
+		return arguments.callee(obj.tail);
+	}
+	tailNull = rec(A);
+	tailNull.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +33,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var arr = [],
+		res = [],
+		arrLength = 0;
+
+	var arr = L.toString().match(/\d+/g);
+	arrLength = arr.length;
+	if (start >= arrLength)	{
+		return null;
+	}
+	if (start + len > arrLength) {
+		len = arrLength - start;
+	}
+	for (var n = start; n < start + len;  n++)	 {
+		res.push(arr[n]);
+	}
+
+	return L.__proto__.constructor.list(res);
+
 }
