@@ -10,8 +10,8 @@
 function dcate(A, B) {
     /** Fill in here **/
     // var oA = A,
-    if (A instanceof List || B instanceof List) {
-        throw new Error('The params of dcate function is invalidated');
+    if (!A instanceof List || !B instanceof List) {
+        throw new Error('The params of dcate is invalid');
     }
 
     var tailNull = null;
@@ -38,13 +38,27 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     /** Fill in here **/
-    var str = L.toString(),
-        tmp = str.replace(/[\[\s\]]/g, '').split(''),
-        arr = [];
-
-    for (let n = start + 1; n <= start + len; n++) {
-        arr.push(tmp[n]);
+    if (!L instanceof List) {
+        throw new Error('The params of sub  is invalid');
     }
 
-    return L.__proto__.constructor.list(arr);
+    var arr = L.toString().match(/\d+/g),
+        res = [],
+        arrLength = arr.length;
+
+    if (start >= arrLength) {
+        throw new Error('The params start of sub is error ');
+    }
+    if (start + len > arrLength) {
+        throw new Error('The params end of sub is error ');
+    }
+    if (!len) {
+        len = arrLength - start;
+    }
+    for (var n = start; n < start + len; n++) {
+        res.push(arr[n]);
+    }
+
+    return L.__proto__.constructor.list(res);
+
 }
