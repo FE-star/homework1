@@ -43,3 +43,6 @@ function sub(L, start, len) {
 	}
 	return List.list(resArray);
 }
+
+module.exports.dcate = dcate
+module.exports.sub = sub

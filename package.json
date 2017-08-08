@@ -4,7 +4,9 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "mocha",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,15 @@
   },
   "homepage": "https://github.com/FE-star/homework1#readme",
   "devDependencies": {
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
     "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "node-coveralls": "^2.12.0",
     "should": "^11.2.1"
   }
 }
