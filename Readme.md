@@ -1,3 +1,4 @@
+[![Coverage Status](https://travis-ci.org/allenYetu211/homework1.svg?branch=master)]
 #作业
 
 ### 步骤
