@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    // 循环列表找到最后一项
+    var temp = A
+    while (temp.tail != null) {
+        temp = temp.tail
+    }
+    temp.tail = B
+    return A
 }
 
 /**
@@ -23,5 +30,14 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    var arr = [], temp = L
+    while(temp != null) {
+        if (temp.head == start || temp.head == len) {
+            arr.push(temp.head)
+        }
+        temp = temp.tail
+    }
+
+    return List.list(arr)
 }
