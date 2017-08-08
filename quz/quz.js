@@ -19,13 +19,13 @@ function dcate(A, B) {
 	// }
 	// A = List.list(listA)
 	// return A
-	var P = A;
-	console.log(P.tail)
-	for(P; P!=null; P=P.tail){
-		console.log(P)
-		if(P.tail == null){
-			P.tail = B
-			console.log(P)
+	var p = A;
+	console.log(p.tail)
+	for(p; p!=null; p=p.tail){
+		console.log(p)
+		if(p.tail == null){
+			p.tail = B
+			console.log(p)
 			return A
 		}
 	}
@@ -44,12 +44,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	var L = L.toString();
-	L = L.slice(2, L.length-2)
-	console.log(L)
-	if(start>L.length){
-		return {}
-	} else {
-		return List.list(L.split(' ').splice(3, 2))
+	// var L = L.toString();
+	// L = L.slice(2, L.length-2)
+	// console.log(L)
+	// if(start>L.length){
+	// 	return {}
+	// } else {
+	// 	return List.list(L.split(' ').splice(3, 2))
+	// }
+
+	var res = [], p=L, i=0;
+	for(p; p!=null; p=p.tail, i++ ) {
+		console.log(p)
+		if(i>=start && i<(start+len)) {
+			res.push(p.head)
+		}
 	}
+	console.log(res)
+	return List.list(res)
 }
