@@ -1,3 +1,4 @@
+var List = require('../js/list')
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -9,6 +10,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let first = A,
+      next = A.tail,
+			temp
+	while (next) {
+    temp = next
+    next = next.tail
+	}
+  temp.tail = B
+	return first
 }
 
 /**
@@ -24,4 +34,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let index = 0
+	let step = L.tail
+  let nodesArray = []
+  while (index < start - 1) {
+    step = step.tail
+    index++
+  }
+  nodesArray.push(step.head)
+  for (let i = 0; i < len - 1; i++) {
+    step = step.tail
+    nodesArray.push(step.head)
+  }
+  return List.list(nodesArray)
 }
+
+exports.dcate = dcate
+exports.sub = sub
