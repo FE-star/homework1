@@ -1,3 +1,6 @@
+#README
+[![Coverage Status](https://coveralls.io/repos/github/xiaolong2013/homework1/badge.svg?branch=master)](https://coveralls.io/github/xiaolong2013/homework1?branch=master)
+
 #作业
 
 ### 步骤
