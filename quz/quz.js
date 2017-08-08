@@ -14,6 +14,7 @@ function dcate(A, B) {
 		temp = temp.tail
 	}
 	temp.tail = B;
+
 	return A;
 }
 
