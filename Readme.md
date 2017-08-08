@@ -1,4 +1,5 @@
 #作业
+[![](https://travis-ci.org/changyu496/homework1.svg?branch=master)](https://travis-ci.org/changyu496/homework1)
 
 ### 步骤
 
