@@ -9,15 +9,11 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	
-	// console.log(A)
-	// console.log(B)
 	// var listA = A.toString();
 	// var listB = B.toString();
 	// listA = listA.slice(2, listA.length-2).split(' ')
 	// listB = listB.slice(2, listB.length-2).split(' ')
-	// console.log(listA)
-	// console.log(listB)
+
 	// for(var i=0; i<listB.length; i++) {
 	// 	listA.push(listB[i])
 	// }
