@@ -9,6 +9,30 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	
+	// console.log(A)
+	// console.log(B)
+	// var listA = A.toString();
+	// var listB = B.toString();
+	// listA = listA.slice(2, listA.length-2).split(' ')
+	// listB = listB.slice(2, listB.length-2).split(' ')
+	// console.log(listA)
+	// console.log(listB)
+	// for(var i=0; i<listB.length; i++) {
+	// 	listA.push(listB[i])
+	// }
+	// A = List.list(listA)
+	// return A
+	var P = A;
+	console.log(P.tail)
+	for(P; P!=null; P=P.tail){
+		console.log(P)
+		if(P.tail == null){
+			P.tail = B
+			console.log(P)
+			return A
+		}
+	}
 }
 
 /**
@@ -24,4 +48,12 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var L = L.toString();
+	L = L.slice(2, L.length-2)
+	console.log(L)
+	if(start>L.length){
+		return {}
+	} else {
+		return List.list(L.split(' ').splice(3, 2))
+	}
 }
