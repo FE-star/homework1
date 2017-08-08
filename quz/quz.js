@@ -40,12 +40,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-    var res='[',M;
+    var M,N;
     for(M = L,i=0,j=0;M!=null;M=M.tail,i++,j++){
-        if(i>=start&&j<=start+len){
-            res=res+' '+M.head
+        if(i==start){
+            N=M
+        }
+        if(j==start+len){
+            N.tail=null;
+            break
         }
     }
-    res+=' ]';
-    return res
+    return N
+
 }
