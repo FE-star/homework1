@@ -1,4 +1,3 @@
-var List = require('../js/list')
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -48,6 +47,3 @@ function sub(L, start, len) {
   }
   return List.list(nodesArray)
 }
-
-exports.dcate = dcate
-exports.sub = sub
