@@ -1,4 +1,4 @@
-console.log(List);
+var List = require("../js/list.js")
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -51,3 +51,10 @@ function sub(L, start, len) {
     }
     return List.list(tempArr);
 }
+
+module.exports = {
+     dcate : dcate,
+     sub : sub
+}
+
+ 
