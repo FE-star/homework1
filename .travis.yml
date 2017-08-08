@@ -13,5 +13,5 @@ before_script:
 before_install:
   npm install karma-cli -g
 
-after_success:
+after_script:
   npm run cover  
