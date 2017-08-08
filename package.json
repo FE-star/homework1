@@ -29,8 +29,6 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "node-coveralls": "^2.12.0",
     "should": "^11.2.1"
   }
 }
