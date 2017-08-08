@@ -1,7 +1,7 @@
 
 # README
-[![Coverage Status](https://coveralls.io/repos/github/xiaolong2013/homework1/badge.svg?branch=master)](https://coveralls.io/github/xiaolong2013/homework1?branch=master)
 [![Status Image](https://travis-ci.org/xiaolong2013/homework1.svg?branch=master)](https://travis-ci.org/xiaolong2013/homework1.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/xiaolong2013/homework1/badge.svg?branch=master)](https://coveralls.io/github/xiaolong2013/homework1?branch=master) 
 
 #作业
 
