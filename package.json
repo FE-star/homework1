@@ -4,8 +4,8 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-	  "test": "mocha",
-	  "cov": "istanbul cover ./node_modules/.bin/_mocha"
+    "test": "node ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,8 @@
   "devDependencies": {
     "blanket": "^1.2.3",
     "coveralls": "^2.13.1",
+    "grunt": "^1.0.1",
+    "grunt-coveralls": "^1.0.1",
     "istanbul": "^0.4.5",
     "karma": "^1.7.0",
     "karma-firefox-launcher": "^1.0.1",
