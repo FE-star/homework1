@@ -9,7 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-}
+    var p
+    for(p = A;p!=null;p = p.tail){
+    	if(p.tail == null){
+    		p.tail = B
+    		break;
+    	}
+    }
+    return A
+ }
 
 /**
  * sub
@@ -24,4 +32,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var p;
+	var count = 0;
+	var resArray = [];
+	for(p=L ; p!=null ; p=p.tail){
+		count++;
+		if(count > start && count-start <= len){
+			resArray.push(p.head);
+		}
+	}
+	return List.list(resArray);
 }
+
+module.exports.dcate = dcate
+module.exports.sub = sub
