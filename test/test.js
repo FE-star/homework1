@@ -4,6 +4,7 @@ describe('unit test for quz.js', function () {
         B = List.list([3, 2, 5, 9]),
         C = List.list([19, 8, 7, 3, 2]);
 
+
     describe('#dcate()', function () {
         it('should get a list consisting of elements of A followed by the elements of B', function () {
         	A.toString().should.equal('[ 4 6 7 3 8 ]');

@@ -3,12 +3,22 @@
  * A list consisting of elements of A followed by the
  * elements of B. May modify items of A.
  * Don't use 'new'
- * @param {List} A
- * @param {List} B
+ * @param {List} A List{head: 4, tail: List{head: 6, tail: List{head: 7, tail: List{head: 3, tail: List{head: 8, tail: null}}}}}
+ * @param {List} B List{head: 3, tail: List{head: 2, tail: List{head: 5, tail: List{head: 9, tail: null}}}}
  * @returns {List}
  */
+
 function dcate(A, B) {
 	/** Fill in here **/
+	var items;
+	//loop through the list until get the null tail and point it to the B list reference
+	for (items = A; items !== null; items = items.tail) {
+		if(items.tail === null) {
+			items.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -24,4 +34,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var array = [], i;
+	//loop through the list and push the head value to the array
+	for(i = L; i !== null; i = i.tail) {
+		array.push(i.head);
+	}
+	//if the start point is lage than the length of the array, throw a error message; other wise return a list
+	if(start > (array.length - 1)) {
+		throw "The desired items don't exist";
+	} else {
+		return List.list(array.splice(start, len));
+	}
+	
 }
