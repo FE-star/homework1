@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "6"
 
-# addons:
-#   firefox: "latest"
+addons:
+  firefox: "latest"
 
 before_script:
   - "export DISPLAY=:99.0"
