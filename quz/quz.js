@@ -35,18 +35,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-    //先判断一下参数 
-    if(!L){
-       throw new Error("L should not null")
-    }
+     
     //如果不是数字的话
     if(isNaN(start) || isNaN(len)){
        throw new Error("start or len should  be number")   
     }
     //start len 大于 0
-    if(Number(start) < 0 || Number(len) < 0){
+    if(Number(start) < 0){
        throw new Error("start or len should  > 0")  
     } 
+    //len 应该大于等于 0
+    if(Number(len) <= 0){
+      throw new Error("start or len should  >= 0")   
+    }
     var tempArr = [];
     var index = 0;
     while(L.tail){
