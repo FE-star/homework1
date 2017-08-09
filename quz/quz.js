@@ -3,8 +3,8 @@
  * A list consisting of elements of A followed by the
  * elements of B. May modify items of A.
  * Don't use 'new'
- * @param {List} A List{head: 4, tail: List{head: 6, tail: List{head: 7, tail: List{head: 3, tail: List{head: 8, tail: null}}}}}
- * @param {List} B List{head: 3, tail: List{head: 2, tail: List{head: 5, tail: List{head: 9, tail: null}}}}
+ * @param {List} A
+ * @param {List} B
  * @returns {List}
  */
 
