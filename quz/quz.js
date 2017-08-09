@@ -13,11 +13,11 @@ function isEmpty(obj) {
  */
 function dcate(A, B) {
     if (isEmpty(A)) {
-        throw 'A不能为空';
+        throw new Error('参数1不能为空');
     }
 
     if (isEmpty(B)) {
-        throw 'B不能为空';
+        throw new Error('参数2不能为空');
     }
 
     // 查找A的最深层
@@ -45,7 +45,7 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     if (isEmpty(L)) {
-        throw '要截取的List不能为空';
+        throw new Error('要截取的List不能为空');
     }
 
     if (isEmpty(start)) {
