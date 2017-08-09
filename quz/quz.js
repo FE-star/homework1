@@ -35,7 +35,9 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-     
+    if(typeof L != 'object'){
+       throw new Error("L should  be object")
+    } 
     //如果不是数字的话
     if(isNaN(start) || isNaN(len)){
        throw new Error("start or len should  be number")   
