@@ -32,5 +32,3 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
-
-exports.List = List

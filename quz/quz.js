@@ -1,4 +1,3 @@
-var List = require('../js/list').List
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -10,14 +9,18 @@ var List = require('../js/list').List
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	let first = A,
-      next = A.tail,
-			temp
-	while (next) {
-    temp = next
-    next = next.tail
+  if (!(A instanceof List) || !(B instanceof List)) {
+    throw new TypeError('"A" 和 "B" 都应该是 List 类型实例')
+  }
+  if (!B) {
+    return A
+  }
+
+	let first = A
+	while (A.tail) {
+    A = A.tail
 	}
-  temp.tail = B
+  A.tail = B
 	return first
 }
 
@@ -34,20 +37,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  if(start < 0 || len < 0) {
+    return new Error('start 或者 len 设定值超出范围')
+  }
 	let index = 0
-	let step = L.tail
   let nodesArray = []
-  while (index < start - 1) {
-    step = step.tail
+  while (index < start) {
+    L = L.tail
     index++
   }
-  while (len && step) {
-    nodesArray.push(step.head)
-    step = step.tail
+  while (len && L) {
+    nodesArray.push(L.head)
+    L = L.tail
     len--
   }
   return List.list(nodesArray)
 }
-
-exports.sub = sub
-exports.dcate = dcate
