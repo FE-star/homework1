@@ -4,6 +4,7 @@ node_js:
 
 addons:
   firefox: "latest"
+  chrome: stable
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -12,3 +13,6 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+after_success:
+  npm run report

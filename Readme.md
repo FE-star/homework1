@@ -1,4 +1,6 @@
-#作业
+# 作业
+
+[![Build Status](https://travis-ci.org/mayufo/homework1.svg?branch=master)](https://travis-ci.org/mayufo/homework1)
 
 ### 步骤
 

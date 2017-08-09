@@ -8,8 +8,21 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    if(!(A instanceof List) || !(B instanceof List)) {
+        throw '对象A或对象B不是List类型，亲先定义'
+    }
+
+    var obj = A;
+    while (obj.tail !== null) {
+        obj = obj.tail;
+    }
+    obj.tail = B;
+
+    return A;
 }
+
+
 
 /**
  * sub
@@ -24,4 +37,31 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    if( !(L instanceof List)  || isNaN(parseInt(start, 10)) || isNaN(parseInt(len, 10)) ) {
+	    throw '参数有问题哦！亲 检查一下'
+    }
+    // 转为数组
+    var arr = getArray(L);
+
+    if(arr.length - 3 < len) {
+        throw 'len超过链表长度啦 亲'
+    }
+
+    return List.list(arr.slice(start, parseInt(start + len, 10)))
+
+}
+
+/**
+ * 需要转换的对象
+ * @param data 对象
+ * @returns {Array} 返回数组
+ */
+function getArray(data) {
+    var array = [];
+    while (data.tail !== null ) {
+        array.push(data.head);
+        data = data.tail;
+    }
+    array.push(data.head);
+    return array;
 }

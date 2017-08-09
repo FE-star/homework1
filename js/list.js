@@ -10,9 +10,7 @@ function List(head, tail) {
 
 // Returns a new List containing the array.
 List.list = function (array) {
-	var sentinel = new List(),
-		len = array.length,
-		p, i;
+	var sentinel = new List(), len = array.length, p, i;
 
 	p = sentinel;
 	for (i = 0; i < len; i++) {
