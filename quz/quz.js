@@ -35,7 +35,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-    //先把参数转换成数组
+    //先判断一下参数 
+    if(!L){
+       throw new Error("L should not null")
+    }
+    //如果不是数字的话
+    if(isNaN(start) || isNaN(len)){
+       throw new Error("start or len should  be number")   
+    }
+    //start len 大于 0
+    if(Number(start) < 0 || Number(len) < 0){
+       throw new Error("start or len should  > 0")  
+    } 
     var tempArr = [];
     var index = 0;
     while(L.tail){
@@ -46,7 +57,7 @@ function sub(L, start, len) {
          index++;
     }
     //处理最后一个数
-    if(tempArr.length <= len){
+    if(index >= start && tempArr.length <= len){
          tempArr.push(L.head);         
     }
     return List.list(tempArr);
