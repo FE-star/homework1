@@ -15,7 +15,6 @@ function dcate(A, B) {
   if (!B) {
     return A
   }
-
 	let first = A
 	while (A.tail) {
     A = A.tail
