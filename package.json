@@ -4,7 +4,8 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "should": "^11.2.1"
   }
 }

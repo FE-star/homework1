@@ -1,3 +1,4 @@
+var List = require('../js/list').List
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -40,10 +41,13 @@ function sub(L, start, len) {
     step = step.tail
     index++
   }
-  nodesArray.push(step.head)
-  for (let i = 0; i < len - 1; i++) {
-    step = step.tail
+  while (len && step) {
     nodesArray.push(step.head)
+    step = step.tail
+    len--
   }
   return List.list(nodesArray)
 }
+
+exports.sub = sub
+exports.dcate = dcate
