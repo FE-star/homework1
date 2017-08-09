@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+
+    var AA = A
+    while (AA.tail !== null) {
+        AA = AA.tail
+    }
+    AA.tail = B
+    return A
 }
 
 /**
@@ -23,5 +30,24 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+
+    start = +start
+    len = +len
+
+    if(isNaN(start) || isNaN(len)) {
+        throw new Error('the param of "start" or "len" must be a positive integer or "zero"');
+    }
+
+    if(start < 0 || len <= 0) {
+        throw new Error('the param of "start" or "len" must be a positive integer or "zero"');
+    }
+
+    var res = []
+    // {head: 19 ,tail: {head:8 ,tail: {head: 7, tail: {head: 3, tail: {heade: 2, tail: null}}}}}
+    for (; L !== null; L = L.tail) {
+        res.push(L.head);
+    }
+
+    return List.list(res.splice(start, len))
 }
