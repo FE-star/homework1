@@ -9,6 +9,26 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	if((A instanceof List) && (B instanceof List)) {
+
+		if(!isEmptyArray(A)) {
+
+			if(!isEmptyArray(B)) {
+				var temp = A
+				while (temp.tail !== null) {
+					temp = temp.tail
+				}
+				temp.tail = B
+			}
+			return A
+
+		} else {
+			if(!isEmptyArray(B)) {
+				return B
+			}
+		}
+	}
+	return null
 }
 
 /**
@@ -24,4 +44,39 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if (!(start < 0) && !(len < 0)) {
+
+		if((L instanceof List) && !isEmptyArray(L)) {
+
+			var temp = L,
+				subIdx = 0,
+				subLen = 0,
+				subArray = []
+
+			while (!isEmptyArray(temp)) {
+				if ((subIdx >= start) && (subLen < len)) {
+					subArray.push(temp.head)
+					subLen++
+				}
+				subIdx++
+				temp = temp.tail
+
+			}
+			return List.list(subArray)
+		}
+	}
+	return null
+}
+
+
+/**
+ * isEmptyArray
+ */
+function isEmptyArray(value) {
+	if (value === null) {
+		return true
+	}
+	if (Array.isArray(value)) {
+		return !value.length
+	}
 }
