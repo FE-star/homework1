@@ -38,10 +38,8 @@ function sub(L, start, len) {
 	while(temp){
 		if(i>=start){
 			count++;
-			if(i>=start){
-				retq.tail=new List(temp.head);
-				retq=retq.tail;
-			}
+			retq.tail=new List(temp.head);
+			retq=retq.tail;
 			if(count>=len){
 				break;
 			}
