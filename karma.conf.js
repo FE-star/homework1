@@ -23,7 +23,7 @@ module.exports = function(config) {
 
     plugins = [
         'karma-coverage'
-    ];
+    ],
     // list of files to exclude
     exclude: [
     ],
