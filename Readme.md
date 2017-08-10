@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ChenHaoNane/homework1.svg?branch=master)](https://travis-ci.org/ChenHaoNane/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/ChenHaoNane/homework1/badge.svg?branch=master)](https://coveralls.io/github/ChenHaoNane/homework1?branch=master)
 
 #作业
 
