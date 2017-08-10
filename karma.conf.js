@@ -21,7 +21,11 @@ module.exports = function(config) {
       'test/*.js'
     ],
 
-
+    plugins : [
+		  'karma-mocha',
+		  'karma-chrome-launcher',
+    ],
+    
     // list of files to exclude
     exclude: [
     ],
@@ -58,7 +62,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
