@@ -72,19 +72,9 @@ module.exports = function (config) {
     concurrency: Infinity,
 
     // optionally, configure the reporter
-    // coverageReporter: {
-    //   type : 'html',
-    //   dir : 'coverage/'
-    // }
     coverageReporter: {
-      reporters: [{
-          type: 'lcov',
-          dir: 'coverage/'
-        },
-        {
-          type: 'text-summary'
-        }
-      ],
+      type : 'html',
+      dir : 'coverage/'
     }
   })
 }
