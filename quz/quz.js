@@ -1,3 +1,4 @@
+const {List} = require('../js/list');
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -42,4 +43,8 @@ function sub(L, start, len) {
 		}
 	}
 	return newList.tail;
+}
+module.exports={
+	dcate,
+	sub
 }

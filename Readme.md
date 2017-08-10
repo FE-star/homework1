@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/graceapple/homework1/badge.svg?branch=master)](https://coveralls.io/r/<graceapple>/<homework1>?branch=master)
 #作业
 
 ### 步骤
