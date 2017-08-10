@@ -1,9 +1,16 @@
+dist: trusty
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+
+
 language: node_js
 node_js:
   - "6"
 
-addons:
-  firfox: "latest"
 
 before_script:
   - "export DISPLAY=:99.0"
