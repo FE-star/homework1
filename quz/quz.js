@@ -43,7 +43,7 @@ function sub(L, start, len) {
 
   Ldepth = elements.length
   if (start < 0 || len < 0 || Ldepth < start + len) {
-    return new Error('start or len out of range')
+    return []
   }
 
   for (var i = 0; i < len; i++) {
