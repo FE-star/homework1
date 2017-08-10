@@ -10,9 +10,6 @@ addons:
 
 before_script:
   - npm test
-  - npm run dev
-  - npm run build
-  - npm run checkdir
 
 before_install:
   - npm install
