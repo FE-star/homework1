@@ -7,6 +7,7 @@
  * @param {List} B
  * @returns {List}
  */
+var List = require('../js/list')
 function dcate(A, B) {
 	/** Fill in here **/
     var conAB=new List(A.head,A.tail);
@@ -50,4 +51,7 @@ function sub(L, start, len) {
         tmp=tmp.tail;
     }
     return subList
-}
+};
+
+module.exports.dcate = dcate;
+module.exports.sub = sub;
