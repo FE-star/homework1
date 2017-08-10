@@ -10,6 +10,9 @@ var List = require('../js/list.js').List;
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	if(typeof A !== "object" || A.constructor != List || typeof B !== "object" || B.constructor != List){
+		return List.list([]);
+	}
 	var tmp = A;
 	while(tmp.tail){
 		tmp = tmp.tail;
@@ -32,6 +35,15 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
 	//return List.list(L.toString().match(/(\d+)/g).splice(start,start + len))
+	if(typeof L !== "object" || L.constructor != List){
+		return List.list([]);
+	}
+	if(typeof start !== "number" || +start < 0){
+		start = 0;
+	}
+	if(typeof len !== "number" || len < 0 || len == 0){
+		return List.list([]);
+	}
 	var rel = [], tmp = L, i = 0, end = start + len;
 	while(tmp){
 		if(i++>=start && i<=end){
