@@ -1,4 +1,4 @@
-// Karma configuration
+  // Karma configuration
 // Generated on Sat Aug 05 2017 21:47:22 GMT+0800 (中国标准时间)
 
 module.exports = function(config) {
@@ -11,6 +11,7 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha'],
+    plugins:['karma-webpack','karma-mocha','karma-coveralls','karma-chrome-launcher'],
 
 
     // list of files / patterns to load in the browser
@@ -64,9 +65,14 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
-
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: 1,
+    // reporters: ['coverage'],
+    // coverageReporter: {
+    //   dir: './coverage',
+    //   reporters: [
+    //     { type: 'lcov', subdir: '.' },
+    //     { type: 'text-summary' }
+    //   ]
+    // } 
   })
 }

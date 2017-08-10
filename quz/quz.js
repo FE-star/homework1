@@ -53,3 +53,8 @@ function sub(L, start, len) {
 	return new L.constructor.list(result)
 }
 
+
+// module.exports = {
+// 	dcate,
+// 	sub
+// }
