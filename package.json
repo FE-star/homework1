@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
@@ -27,6 +28,7 @@
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
     "mocha-lcov-reporter": "^1.3.0",
-    "should": "^11.2.1"
+    "should": "^11.2.1",
+    "istanbul": "^0.4.5"
   }
 }
