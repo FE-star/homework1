@@ -20,10 +20,6 @@ module.exports = function(config) {
       'quz/*.js',
       'test/*.js'
     ],
-
-    plugins = [
-        'karma-coverage'
-    ],
     // list of files to exclude
     exclude: [
     ],
@@ -32,8 +28,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'quz/**/*.js':['coverage'],
-        'js/**/*.js':['coverage']
+        'quz/**/*.js':['coverage']
     },
 
 
@@ -65,7 +60,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox','Chrome'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
