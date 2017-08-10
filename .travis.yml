@@ -12,6 +12,3 @@ before_script:
 
 before_install:
   npm install karma-cli -g
-
-after_success:
-  - cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
