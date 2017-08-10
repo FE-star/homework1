@@ -6,7 +6,8 @@
   "scripts": {
     "test": "karma start",
     "cover": "./node_modules/.bin/istanbul cover _mocha",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "cov":"./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "should": "^11.2.1"
   },
   "dependencies": {
+    "istanbul": "^0.4.5",
     "karma-coverage": "^1.1.1"
   }
 }

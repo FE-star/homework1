@@ -31,11 +31,14 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     /** Fill in here **/
-    var arr = [], temp = L
+    var arr = [], temp = L, _index = 0, _start = 0
+
     while(temp != null) {
-        if (temp.head == start || temp.head == len) {
+        if (_start >=  start && _index <= len) {
             arr.push(temp.head)
+            _index++
         }
+        _start++
         temp = temp.tail
     }
 
