@@ -1,5 +1,4 @@
 describe('unit test for quz.js', function () {
-
     var A = List.list([4, 6, 7, 3, 8]),
         B = List.list([3, 2, 5, 9]),
         C = List.list([19, 8, 7, 3, 2]);
@@ -15,7 +14,7 @@ describe('unit test for quz.js', function () {
     describe('#sub()', function () {
         it('should get the sublist consisting of LEN items from list L', function () {
         	C.toString().should.equal('[ 19 8 7 3 2 ]');
-            sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
+            sub(C, 3, 6).toString().should.equal('[ 3 2 ]');
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
     });

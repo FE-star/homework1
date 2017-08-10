@@ -9,6 +9,18 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+  if (!(A instanceof List) || !(B instanceof List)) {
+    throw new TypeError('"A" 和 "B" 都应该是 List 类型实例')
+  }
+  if (!B) {
+    return A
+  }
+	let first = A
+	while (A.tail) {
+    A = A.tail
+	}
+  A.tail = B
+	return first
 }
 
 /**
@@ -24,4 +36,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  if(start < 0 || len < 0) {
+    return new Error('start 或者 len 设定值超出范围')
+  }
+	let index = 0
+  let nodesArray = []
+  while (index < start) {
+    L = L.tail
+    index++
+  }
+  while (len && L) {
+    nodesArray.push(L.head)
+    L = L.tail
+    len--
+  }
+  return List.list(nodesArray)
 }
