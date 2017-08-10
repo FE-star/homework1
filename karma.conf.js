@@ -70,8 +70,13 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
     coverageReporter: {
-      type: 'html',
-      dir: 'coverage/'
-    }
+      // specify a common output directory
+      dir: 'coverage/',
+      reporters: [
+        // reporters not supporting the `file` property
+        { type: 'html', subdir: 'report-html' },
+        { type: 'lcov', subdir: 'report-lcov' }
+      ]
+    },
   })
 }
