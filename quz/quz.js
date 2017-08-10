@@ -1,3 +1,5 @@
+var List = require('../js/list.js')
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -35,6 +37,9 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
+
+var List = require("../js/list.js");
+
 function sub(L, start, len) {
 	/** Fill in here **/
     if( !(L instanceof List)  || isNaN(parseInt(start, 10)) || isNaN(parseInt(len, 10)) ) {
@@ -65,3 +70,7 @@ function getArray(data) {
     array.push(data.head);
     return array;
 }
+
+
+module.exports.dcate = dcate
+module.exports.sub = sub
