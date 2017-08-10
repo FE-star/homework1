@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.org/chenfengjuan/homework1.svg?branch=master)](https://www.travis-ci.org/chenfengjuan/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/chenfengjuan/homework1/badge.svg?branch=master)](https://coveralls.io/github/chenfengjuan/homework1?branch=master)
 #作业
 
 ### 步骤
