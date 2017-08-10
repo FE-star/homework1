@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -23,8 +23,7 @@ module.exports = function(config) {
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
@@ -73,9 +72,19 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     // optionally, configure the reporter
+    // coverageReporter: {
+    //   type : 'html',
+    //   dir : 'coverage/'
+    // }
     coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
+      reporters: [{
+          type: 'lcov',
+          dir: 'coverage/'
+        },
+        {
+          type: 'text-summary'
+        }
+      ],
     }
   })
 }
