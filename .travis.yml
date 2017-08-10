@@ -3,8 +3,7 @@ node_js:
   - "6"
 
 addons:
-  chorme: stable
-
+  chrome: "stable"
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -14,3 +13,4 @@ before_install:
   npm install karma-cli -g
 after_success:
   npm run report
+

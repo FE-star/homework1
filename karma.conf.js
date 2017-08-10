@@ -20,8 +20,6 @@ module.exports = function(config) {
       'quz/*.js',
       'test/*.js'
     ],
-
-
     // list of files to exclude
     exclude: [],
 
@@ -40,7 +38,6 @@ module.exports = function(config) {
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress','coverage'],
-
 
     // web server port
     port: 9876,
