@@ -1,3 +1,4 @@
+var List = require('../js/list.js').List;
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -9,6 +10,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	if(typeof A !== "object" || A.constructor != List || typeof B !== "object" || B.constructor != List){
+		return List.list([]);
+	}
+	var tmp = A;
+	while(tmp.tail){
+		tmp = tmp.tail;
+	}
+	tmp.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +34,27 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	//return List.list(L.toString().match(/(\d+)/g).splice(start,start + len))
+	if(typeof L !== "object" || L.constructor != List){
+		return List.list([]);
+	}
+	if(typeof start !== "number" || +start < 0){
+		start = 0;
+	}
+	if(typeof len !== "number" || len < 0 || len == 0){
+		return List.list([]);
+	}
+	var rel = [], tmp = L, i = 0, end = start + len;
+	while(tmp){
+		if(i++>=start && i<=end){
+			rel.push(tmp.head)
+		}else if(i>end){
+			break;
+		}
+		tmp = tmp.tail;
+	}
+	return List.list(rel)
 }
+
+exports.dcate = dcate;
+exports.sub = sub;
