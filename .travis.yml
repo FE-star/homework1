@@ -12,10 +12,8 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 before_install:
-  npm install karma-cli -g
+  - npm install karma-cli -g
+  - npm install
 
-install
-   - npm install
-
-script:
-  - npm run coverage
+after_script:
+  - npm run cover
