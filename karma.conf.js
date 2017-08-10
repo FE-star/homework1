@@ -30,14 +30,28 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'test/**/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
+    coverageReporter:{
+        reporters: [{
+            type:'text-summary'
+        }, {
+            type: 'html',
+            dir: 'test/coverage'
+        }, {
+            // 这就是Codecov支持的文件类型
+            type: 'cobertura',
+            subdir: '.',
+            dir: 'test/coverage'
+        }]
+    },
 
     // web server port
     port: 9876,
