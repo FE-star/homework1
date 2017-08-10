@@ -8,6 +8,8 @@
  * @returns {List}
  */
 
+var List = require('../js/list');
+
 function dcate(A, B) {
 	/** Fill in here **/
 	var items;
@@ -47,3 +49,6 @@ function sub(L, start, len) {
 	}
 	
 }
+
+module.exports.dcate = dcate;
+module.exports.sub = sub;
