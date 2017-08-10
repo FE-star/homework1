@@ -30,6 +30,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	return List.list(L.toString().match(/(\d+)/g).splice(start,start + len))
+	//return List.list(L.toString().match(/(\d+)/g).splice(start,start + len))
+	var rel = [], tmp = L, i = 0, end = start + len;
+	while(tmp){
+		if(i++>=start && i<=end){
+			rel.push(tmp.head)
+		}else if(i>end){
+			break;
+		}
+		tmp = tmp.tail;
+	}
+	return List.list(rel)
 }
 
