@@ -21,7 +21,9 @@ module.exports = function(config) {
       'test/*.js'
     ],
 
-
+    plugins = [
+        'karma-coverage'
+    ];
     // list of files to exclude
     exclude: [
     ],
