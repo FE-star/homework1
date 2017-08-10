@@ -8,7 +8,17 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    var a = 0;
+    var AStr = "A";
+    for (var L = A; L !== null; L = L.tail) {
+        a++;
+    }
+    for (var i = 0; i < a; i++) {
+        AStr += "['tail']";
+	}
+	eval(AStr + '= B');
+    return A;
 }
 
 /**
@@ -24,4 +34,11 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var LList = L.toString().split(' ');
+	LList.shift();
+	LList.pop();
+	var value = LList.splice(start,len);
+	value.push(']');
+	value.unshift('[');
+	return value.join(' ')
 }

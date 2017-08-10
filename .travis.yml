@@ -4,7 +4,11 @@ node_js:
 
 addons:
   firefox: "latest"
-
+env:  
+  global:
+    - CODECOV_TOKEN: c5a6998f-8f7d-42f6-b7a2-5a005083bd77
+script:  
+  - codecov [./test/coverage/cobertura-coverage.xml]
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
