@@ -3,7 +3,7 @@ node_js:
   - "6"
 
 addons:
-  firefox: "latest"
+  chrome: "stable"
   
 before_script:
   - "export DISPLAY=:99.0"
@@ -12,4 +12,3 @@ before_script:
 
 before_install:
   npm install karma-cli -g
-  npm install karma-coverage 
