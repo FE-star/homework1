@@ -1,8 +1,7 @@
 function dd(A,arr){
     arr.push(A.head)
-    if(A.tail){
+    if(A.tail)
         dd(A.tail,arr)
-    }
     return arr
 }
 /**
