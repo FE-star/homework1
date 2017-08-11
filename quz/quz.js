@@ -49,4 +49,8 @@ function sub(L, start, len) {
 	}
 	return List.list(result);
 };
-
+var Quz={
+	"dcate":dcate,
+	"sub":sub
+};
+module.exports=Quz;
