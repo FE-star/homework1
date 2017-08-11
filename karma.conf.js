@@ -22,7 +22,8 @@ module.exports = function(config) {
     ],
 
     plugins : [
-		  'karma-mocha',
+      'karma-mocha',
+      'karma-coverage',
 		  'karma-chrome-launcher',
     ],
     
