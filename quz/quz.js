@@ -7,6 +7,8 @@
  * @param {List} B
  * @returns {List}
  */
+
+ var List = require("../js/list.js")
 function dcate(A, B) {
 	/** Fill in here **/
 	//检测A和B是否是自定义链表List类型的实例，任意一个不是的话即抛出错误
@@ -58,4 +60,8 @@ function sub(L, start, len) {
 		temp = temp.tail;
 	}
 	return List.list(array);
+}
+module.exports = {
+	dcate: dcate,
+	sub: sub
 }
