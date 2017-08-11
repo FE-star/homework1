@@ -7,7 +7,6 @@
  * @param {List} B
  * @returns {List}
  */
-var List=require('../js/List');
 function dcate(A, B) {
 	/** Fill in here **/
 	var arrayA=A.toString();
@@ -48,9 +47,4 @@ function sub(L, start, len) {
 		result.push(+arrayL[start++]);
 	}
 	return List.list(result);
-};
-var Quz={
-	"dcate":dcate,
-	"sub":sub
-};
-module.exports=Quz;
+}
