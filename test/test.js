@@ -4,6 +4,8 @@
 //     sub = temp.sub;
 // var should = require('should')
 
+// console.log(List.list.toString())
+
 describe('unit test for quz.js', function () {
 
     var A = List.list([4, 6, 7, 3, 8]),

@@ -54,7 +54,7 @@ function sub(L, start, len) {
 }
 
 
-// module.exports = {
+// export {
 // 	dcate,
 // 	sub
 // }

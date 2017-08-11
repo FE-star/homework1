@@ -33,4 +33,4 @@ List.prototype.toString = function () {
 	return res;
 };
 
-// module.exports = List
+// export default  List
