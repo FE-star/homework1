@@ -1,8 +1,13 @@
+// var List = require('../js/list');
+// var should = require('../node_modules/should/should');
+// var quz = require('../quz/quz');
+
 describe('unit test for quz.js', function () {
 
     var A = List.list([4, 6, 7, 3, 8]),
         B = List.list([3, 2, 5, 9]),
         C = List.list([19, 8, 7, 3, 2]);
+
 
     describe('#dcate()', function () {
         it('should get a list consisting of elements of A followed by the elements of B', function () {
@@ -19,5 +24,4 @@ describe('unit test for quz.js', function () {
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
     });
-
 });
