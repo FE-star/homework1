@@ -1,3 +1,4 @@
+var List = require("../js/list.js")
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -8,7 +9,6 @@
  * @returns {List}
  */
 
- var List = require("../js/list.js")
 function dcate(A, B) {
 	/** Fill in here **/
 	//检测A和B是否是自定义链表List类型的实例，任意一个不是的话即抛出错误

@@ -32,4 +32,4 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
-module.exports = List 
+module.exports = List
