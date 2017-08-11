@@ -7,8 +7,23 @@
  * @param {List} B
  * @returns {List}
  */
+var List=require('../js/List');
 function dcate(A, B) {
 	/** Fill in here **/
+	var arrayA=A.toString();
+	arrayA=arrayA.split(' ');
+	var arrayB=B.toString();
+	arrayB=arrayB.split(' ');
+	arrayA.shift();
+	arrayA.pop();
+	arrayB.shift();
+	arrayB.pop();
+	for(var i=0;i<arrayB.length;i++){
+		arrayA.push(arrayB[i]);
+	}
+	A.head=List.list(arrayA).head;
+	A.tail=List.list(arrayA).tail;
+	return A;
 }
 
 /**
@@ -24,4 +39,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-}
+	var arrayL=L.toString();
+	arrayL=arrayL.split(' ');
+	arrayL.shift();
+	arrayL.pop();
+	var result=[];
+	for(var i=0;i<len;i++){
+		result.push(+arrayL[start++]);
+	}
+	return List.list(result);
+};
+var Quz={
+	"dcate":dcate,
+	"sub":sub
+};
+module.exports=Quz;
