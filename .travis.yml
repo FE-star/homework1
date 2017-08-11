@@ -11,7 +11,7 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 before_install:
-  npm install karma-cli -g
+  npm install karma-cli coveralls -g
 
 after_success:
-  npm install coveralls -S && npm run coveralls
+  npm run cover_test
