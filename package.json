@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "cover": "./node_modules/.bin/istanbul cover _mocha",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/report-lcov/lcov.info | coveralls && rm -rf coverage"
   },
   "repository": {
     "type": "git",
