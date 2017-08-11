@@ -9,6 +9,7 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	return A
 }
 
 /**
