@@ -12,3 +12,6 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+after_success:
+  - "npm run report"
