@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="./js/list.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        function dd(A,arr){
+            arr.push(A.head)
+            if(A.tail){
+                dd(A.tail,arr)
+            }
+            return arr
+        }
+
+        var A = List.list([4, 6, 7, 3, 8]),
+            B = List.list([3, 2, 5, 9]),
+            C = List.list([19, 8, 7, 3, 2]);
+
+        var aList = dd(A,[])
+        var bList = dd(B,[])
+        A = List.list(aList.concat(bList))
+        console.log(A)
+
+        var cList = dd(C,[])
+        console.log(cList,cList.slice(3,5))
+
+        /*var cList = aList.concat(bList)
+        var rr = [...new Set(cList)]
+        console.log(A.toString().length,aList,bList,cList,rr);*/
+
+    </script>
+</body>
+</html>
