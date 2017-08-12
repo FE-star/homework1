@@ -73,7 +73,8 @@ module.exports = function(config) {
         },
         // 设置报告格式和输出目录
         coverageReporter: {
-            type: 'html',
+            // type: 'html',
+            type: 'lcov', //lcov and html
             dir: 'coverage/'
         }
     })
