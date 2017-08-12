@@ -16,7 +16,11 @@ List.list = function (array) {
 
 	p = sentinel;
 	for (i = 0; i < len; i++) {
-		p.tail = new List(array[i]);
+		if(i==len-1){
+			p.tail = new List(array[i]);
+			break;
+		}
+		p.tail = new List(array[i],new List());
 		p = p.tail;
 	}
 	return sentinel.tail;
@@ -31,4 +35,4 @@ List.prototype.toString = function () {
 	}
 	res += ' ]';
 	return res;
-};
+}
