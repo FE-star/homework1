@@ -34,7 +34,8 @@ module.exports = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        // 激活覆盖率报告器
+        reporters: ['progress', 'coverage'],
 
 
         // web server port
@@ -65,6 +66,15 @@ module.exports = function(config) {
 
         // Concurrency level
         // how many browser should be started simultaneous
-        concurrency: Infinity
+        concurrency: Infinity,
+        // 需要测试代码
+        preprocessors: {
+            './quz/*.js': ['coverage']
+        },
+        // 设置报告格式和输出目录
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
+        }
     })
 }
