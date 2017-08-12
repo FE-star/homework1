@@ -12,3 +12,7 @@ before_script:
 
 before_install:
   - npm install karma-cli -g
+  - npm install istanbul -g
+
+after_script:
+    - npm run coveralls
