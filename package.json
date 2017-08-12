@@ -4,7 +4,8 @@
     "description": "test",
     "main": "index.js",
     "scripts": {
-        "test": "karma start"
+        "test": "karma start",
+        "report": "find coverage -name lcov.info -print0 | xargs -0 cat | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
     },
     "repository": {
         "type": "git",
