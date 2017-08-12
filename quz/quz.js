@@ -1,3 +1,4 @@
+//var List=require("../js/list")
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -9,6 +10,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A
+	while (p.tail!==null) {
+		p=p.tail
+	}
+	p.tail=B
+	return A
 }
 
 /**
@@ -22,6 +29,22 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
+
 function sub(L, start, len) {
 	/** Fill in here **/
+	var p = L
+	while (start>0) {
+		if (p.tail == null) throw new Error('No start item found!')
+		p=p.tail
+		start--
+	}
+	var res = []
+	for (;len>0;len--){
+		res.push(p.head)
+		p=p.tail
+		if (p==null && len > 1) throw new Error('There are not enough items!')
+	}
+	var resList = List.list(res)
+	return resList
 }
+

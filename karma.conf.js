@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
+// Generated on Sat Aug 05 2017 20:01:57 GMT+0800 (中国标准时间)
 
 module.exports = function(config) {
   config.set({
@@ -16,9 +16,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/should/should.js',
-      'js/*.js',
-      'quz/*.js',
-      'test/*.js'
+      'js/**.js',
+      'quz/**.js',
+      'test/**.js'
     ],
 
 
@@ -30,14 +30,22 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    //reporters: ['progress'],
+    reporters: ['coverage', 'coveralls'],
 
+    
+    coverageReporter: {
+        type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
+        dir: 'coverage/'
+        },
+    
 
     // web server port
     port: 9876,
@@ -58,7 +66,8 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    //browsers: ['Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

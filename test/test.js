@@ -1,3 +1,11 @@
+/*
+
+var List=require("../js/list.js")
+var should = require('should')
+var dcate = require("../quz/quz.js").dcate
+var sub = require("../quz/quz.js").sub
+*/
+
 describe('unit test for quz.js', function () {
 
     var A = List.list([4, 6, 7, 3, 8]),
@@ -6,7 +14,7 @@ describe('unit test for quz.js', function () {
 
     describe('#dcate()', function () {
         it('should get a list consisting of elements of A followed by the elements of B', function () {
-        	A.toString().should.equal('[ 4 6 7 3 8 ]');
+        	A.toString().should.equal('[ 4 6 7 3 8 ]');            
             dcate(A, B).toString().should.equal('[ 4 6 7 3 8 3 2 5 9 ]');
             A.toString().should.not.equal('[ 4 6 7 3 8 ]');
         });
@@ -21,3 +29,4 @@ describe('unit test for quz.js', function () {
     });
 
 });
+
