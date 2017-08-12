@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    let list;
+    for (list = A; list !== null; list = list.tail) {
+        if (list.tail === null) {
+            list.tail = B;
+            break;
+        }
+    }
+    return A;
 }
 
 /**
@@ -24,4 +32,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    let arr = [], l,
+        i, t = 0;
+
+    for (i = L; i !== null; i = i.tail) {
+        if (t >= start && t <= (start + len)) {
+            arr.push(i.head);
+        }
+        ++t;
+    }
+    if ((start + len) > t) {
+        throw "the desired items don't exist"
+    }
+    l = List.list(arr);
+    return l;
 }
