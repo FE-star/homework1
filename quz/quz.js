@@ -9,14 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-    // let list;
-    // for (list = A; list !== null; list = list.tail) {
-    //     if (list.tail === null) {
-    //         list.tail = B;
-    //         break;
-    //     }
-    // }
-    // return A;
+    let list;
+    for (list = A; list !== null; list = list.tail) {
+        if (list.tail === null) {
+            list.tail = B;
+            break;
+        }
+    }
+    return A;
 }
 
 /**
