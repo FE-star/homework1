@@ -28,14 +28,17 @@ module.exports = function(config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        // 需要测试的代码
+        preprocessors: {
+            './quz/*.js': ['coverage']
+        },
 
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         // 激活覆盖率报告器
-        reporters: ['progress', 'coverage'],
+        reporters: ['mocha', 'coverage'],
 
 
         // web server port
@@ -62,20 +65,24 @@ module.exports = function(config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true,
+        singleRun: process.env.TRAVIS,
+        // singleRun: true,
 
         // Concurrency level
         // how many browser should be started simultaneous
         concurrency: Infinity,
-        // 需要测试代码
-        preprocessors: {
-            './quz/*.js': ['coverage']
-        },
+        
         // 设置报告格式和输出目录
         coverageReporter: {
-            // type: 'html',
-            type: 'lcov', //lcov and html
-            dir: 'coverage/'
+            reporter: [
+                {
+                    type: 'lcov',
+                    dir: 'coverage/'
+                },
+                {
+                    type: 'text-summary'
+                }
+            ]
         }
     })
 }
