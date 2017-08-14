@@ -12,11 +12,8 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 before_install:
-  npm install karma-cli -g
+  - npm install karma-cli -g
+  - npm install
 
-after_success:
-  npm run report
-
-env:
-  global:
-    secure: "ZWEbC2h2KnEwFpMPUeQI0XI1D02K9AS/J9pRAB7hHP2z0EYZcgQN2g8AvxGPwvu8BnYpqGqcPa4Jaq4giKV+zi55ZhnFWlRlyqU/AxmI0k+A5yAkT6Mw/5Xb7cBxYjylnkH40+OttP572nlDKxpyWSLzix87wBpypa51c5zafTCjHhmLdBTkF9E5DXnMVHCP8mDK6rif+umTIW9Pjaq+f9DTvQOugjn+byDdXU0BC3FN1vFVtwS/An9gKmHOYVndLnkUU5qzwt9PkytpOm9LTGrO7THCrgj2egvjhxZl8Hg7q/Uttv9pJH+57fUlCKybpCvmznihOZJ4v/FGmcAFZPtyshLJSBbq6wD4OPj4X5MriM9RzVE6iUYkN5XXsuQV8ZPvIAXgUmEKvrcPMtAHGXDno6K7bme4qgKiWWsjBVHYwQ6N/ub0UmXfcOYhhxZ1djBHhqPLwyIVACH/4ZlABETweP9Ec5OOHfcZWdVGQvzJXWqRmNy5WCRgrtWBqwjyZ734PJeWxkUrtRzha9BFzz67XaIg4l8nrForEH+sg8x+vV103AMm6Yz7905IfApc+mA26vluV1euhyHwKDKogd0ki3ukv1UkJ5UtqSnIZNpEVlDNNogfXZATXISoou7YNpzFVic7JTZ4PVDk1HHAUMRauG5Jqksv4slB0877GTU="
+after_script:
+  - npm run cover

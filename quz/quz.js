@@ -1,3 +1,5 @@
+var List = require('../js/list.js')
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -31,6 +33,8 @@ function isList(list) {
     return list instanceof List
 }
 
+
+
 /**
  * sub
  * The sublist consisting of LEN items from list L,
@@ -43,12 +47,10 @@ function isList(list) {
  * @returns {List}
  */
 
-
-
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
     if( !isList(L) ) {
-	    throw new Error ('参数有问题哦！亲 检查一下')
+        throw new Error ('参数有问题哦！亲 检查一下')
     }
 
     var eles = [],
@@ -67,3 +69,7 @@ function sub(L, start, len) {
     return List.list(eles.slice(start, parseInt(start + len, 10)))
 
 }
+
+
+module.exports.dcate = dcate
+module.exports.sub = sub
