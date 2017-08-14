@@ -9,20 +9,27 @@
  */
 function dcate(A, B) {
     /** Fill in here **/
-    if(!(A instanceof List) || !(B instanceof List)) {
-        throw '对象A或对象B不是List类型，亲先定义'
+    if(!isList(A) || !isList(B)) {
+        throw new Error ('对象A或对象B不是List类型，亲先定义')
     }
 
-    var obj = A;
-    while (obj.tail !== null) {
-        obj = obj.tail;
+    var current = A;
+    while (current.tail) {
+        current = current.tail;
     }
-    obj.tail = B;
+    current.tail = B;
 
     return A;
 }
 
-
+/**
+ * 检测list 方法
+ * @param list
+ * @returns {boolean}
+ */
+function isList(list) {
+    return list instanceof List
+}
 
 /**
  * sub
@@ -35,33 +42,28 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
+
+
+
 function sub(L, start, len) {
 	/** Fill in here **/
-    if( !(L instanceof List)  || isNaN(parseInt(start, 10)) || isNaN(parseInt(len, 10)) ) {
-	    throw '参数有问题哦！亲 检查一下'
-    }
-    // 转为数组
-    var arr = getArray(L);
-
-    if(arr.length - 3 < len) {
-        throw 'len超过链表长度啦 亲'
+    if( !isList(L) ) {
+	    throw new Error ('参数有问题哦！亲 检查一下')
     }
 
-    return List.list(arr.slice(start, parseInt(start + len, 10)))
+    var eles = [],
+        current = L;
 
-}
-
-/**
- * 需要转换的对象
- * @param data 对象
- * @returns {Array} 返回数组
- */
-function getArray(data) {
-    var array = [];
-    while (data.tail !== null ) {
-        array.push(data.head);
-        data = data.tail;
+    while(current) {
+        eles.push(current.head)
+        current = current.tail
     }
-    array.push(data.head);
-    return array;
+
+    if(start < 0 || len < 0 || eles.length < start + len) {
+        throw new Error('start or len must out of range')
+    }
+
+
+    return List.list(eles.slice(start, parseInt(start + len, 10)))
+
 }
