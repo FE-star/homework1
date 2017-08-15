@@ -67,6 +67,7 @@ module.exports = function(config) {
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: process.env.TRAVIS,
         // singleRun: true,
+        // singleRun: !!process.env.TRAVIS,
 
         // Concurrency level
         // how many browser should be started simultaneous
