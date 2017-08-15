@@ -1,29 +1,35 @@
 {
-  "name": "homework1",
-  "version": "0.0.1",
-  "description": "test",
-  "main": "index.js",
-  "scripts": {
-    "test": "karma start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FE-star/homework1.git"
-  },
-  "keywords": [
-    "test"
-  ],
-  "author": "Daniel Yang",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FE-star/homework1/issues"
-  },
-  "homepage": "https://github.com/FE-star/homework1#readme",
-  "devDependencies": {
-    "karma": "^1.7.0",
-    "karma-firefox-launcher": "^1.0.1",
-    "karma-mocha": "^1.3.0",
-    "mocha": "^3.5.0",
-    "should": "^11.2.1"
-  }
+    "name": "homework1",
+    "version": "0.0.1",
+    "description": "test",
+    "main": "index.js",
+    "scripts": {
+        "test": "karma start",
+        "report": "find coverage -name lcov.info -print0 | xargs -0 cat | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FE-star/homework1.git"
+    },
+    "keywords": [
+        "test"
+    ],
+    "author": "Daniel Yang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/FE-star/homework1/issues"
+    },
+    "homepage": "https://github.com/FE-star/homework1#readme",
+    "devDependencies": {
+        "coveralls": "^2.13.1",
+        "karma": "^1.7.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.1",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.3",
+        "mocha": "^3.5.0",
+        "mocha-lcov-reporter": "^1.3.0",
+        "should": "^11.2.1"
+    }
 }
