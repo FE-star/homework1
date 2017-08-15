@@ -14,7 +14,13 @@ function dd(A,arr){
  * @returns {List}
  */
 function dcate(A, B) {
-    return List.list(dd(A,[]).concat(dd(B,[])))
+    var elem = A, last
+    while(elem){
+        last = elem
+        elem = elem.tail
+    }
+    last.tail = B
+    return A
 }
 
 
