@@ -7,7 +7,6 @@ addons:
 
 before_install:
   - npm install -g karma-cli
-  - npm install -g karma
 
 before_script:
   - "export DISPLAY=:99.0"
