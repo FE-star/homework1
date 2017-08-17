@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.org/chencye/homework1.svg?branch=master)](https://www.travis-ci.org/chencye/homework1)
+
 #作业
 
 ### 步骤
