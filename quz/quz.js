@@ -9,6 +9,17 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var tmpList = null;
+	var recurrence = function(A) {
+		if (A.tail !== null) {
+			tmpList = A.tail;
+			arguments.callee(tmpList);
+		} else {
+			A.tail = B;
+		}
+	}
+	recurrence(A);
+	return A;
 }
 
 /**
@@ -24,4 +35,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var resultList = null;
+	for (var i = 0; i < start + len; L = L.tail, i++) {
+		if (L === null) {
+			throw new Error('超出长度');
+		}
+		if (i === start) {
+			resultList = new List(L.head, null);
+		} else if (i > start && i < start + len) {
+			resultList.tail = new List(L.head, null);
+		}
+	}
+	return resultList;
 }
