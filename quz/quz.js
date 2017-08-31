@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	
+	for (var L = A; L !== null; L = L.tail) {
+		if(L.tail == null){
+			L.tail = B;
+			break;
+		}
+	}
+
+	return A;
 }
 
 /**
@@ -24,4 +33,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var res = [];
+	for (var A = L; A !== null; A = A.tail) {
+		res.push(A.head);
+	}
+	var targetLen = start+len;
+	var len = targetLen > res.length?res.length:targetLen
+	var returnArr = [];
+	for(var i=start;i<len;i++){
+		returnArr.push(res[i]);
+	}
+	return List.list(returnArr);
 }
