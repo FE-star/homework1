@@ -1,27 +1,30 @@
 {
   "name": "homework1",
-  "version": "0.0.1",
-  "description": "test",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "* fork 代码\r * 修改代码跑通测试\r * 将代码提交回主干仓库，让代码通过CI测试",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "karma start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FE-star/homework1.git"
+    "url": "git+https://github.com/wallaceyuan/homework1.git"
   },
-  "keywords": [
-    "test"
-  ],
-  "author": "Daniel Yang",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FE-star/homework1/issues"
+    "url": "https://github.com/wallaceyuan/homework1/issues"
   },
-  "homepage": "https://github.com/FE-star/homework1#readme",
+  "homepage": "https://github.com/wallaceyuan/homework1#readme",
   "devDependencies": {
     "karma": "^1.7.0",
     "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
     "should": "^11.2.1"

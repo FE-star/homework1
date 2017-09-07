@@ -1,3 +1,9 @@
+function dd(A,arr){
+    arr.push(A.head)
+    if(A.tail)
+        dd(A.tail,arr)
+    return arr
+}
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -8,8 +14,15 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    var elem = A, last
+    while(elem){
+        last = elem
+        elem = elem.tail
+    }
+    last.tail = B
+    return A
 }
+
 
 /**
  * sub
@@ -23,5 +36,5 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    return List.list(dd(L,[]).slice(start,start+len))
 }
