@@ -10,16 +10,16 @@ var List = require("../js/list.js")
  */
 function dcate(A, B) {
 	/** Fill in here **/
-    //因为A B 此时都是list 
-	var temp = A;
-	//先用 temp 指向 A list 中最后的 tail
-	while(temp.tail){
-		 temp = temp.tail;
-	} 
-
-	//把 temp.tail 直接指向 B
+    
+    //让 A 的末端指针指向 B列表
+    let temp = A;
+    while(temp.tail){
+        temp = temp.tail
+    }
+    //然后指向 B
     temp.tail = B;
-    return A; 
+    //最后遍历的时候还是从A 开始
+    return A;
 }
 
 /**
@@ -34,36 +34,25 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
-    if(typeof L != 'object'){
-       throw new Error("L should  be object")
-    } 
-    //如果不是数字的话
-    if(isNaN(start) || isNaN(len)){
-       throw new Error("start or len should  be number")   
+	
+    //执行一个截取的操作
+    let arr = [];
+    let index = 0; 
+    let temp = L; 
+    
+    while(temp){
+
+        //确保 start 开始位置 + 长度 要 大于 index
+        //避免越界
+        if(index >= start && start + len >= index){
+            arr.push(temp.head)     
+        }
+
+        temp = temp.tail
+        index++; 
     }
-    //start len 大于 0
-    if(Number(start) < 0){
-       throw new Error("start or len should  > 0")  
-    } 
-    //len 应该大于等于 0
-    if(Number(len) <= 0){
-      throw new Error("start or len should  >= 0")   
-    }
-    var tempArr = [];
-    var index = 0;
-    while(L.tail){
-         if(index >= start && tempArr.length <= len){
-             tempArr.push(L.head);     
-         }
-         L = L.tail;
-         index++;
-    }
-    //处理最后一个数
-    if(index >= start && tempArr.length <= len){
-         tempArr.push(L.head);         
-    }
-    return List.list(tempArr);
+
+    return List.list(arr) 
 }
 
 module.exports = {

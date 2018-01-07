@@ -2,7 +2,7 @@
  * List
  * @author donaldyang
  */
-
+ 
 function List(head, tail) {
 	this.head = head || 0;
 	this.tail = tail || null;
