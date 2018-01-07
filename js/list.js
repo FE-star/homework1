@@ -2,7 +2,7 @@
  * List
  * @author donaldyang
  */
-
+ 
 function List(head, tail) {
 	this.head = head || 0;
 	this.tail = tail || null;
@@ -32,3 +32,6 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+
+module.exports = List

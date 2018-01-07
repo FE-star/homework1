@@ -1,3 +1,4 @@
+var List = require("../js/list.js")
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -9,6 +10,16 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    
+    //让 A 的末端指针指向 B列表
+    let temp = A;
+    while(temp.tail){
+        temp = temp.tail
+    }
+    //然后指向 B
+    temp.tail = B;
+    //最后遍历的时候还是从A 开始
+    return A;
 }
 
 /**
@@ -23,5 +34,30 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	
+    //执行一个截取的操作
+    let arr = [];
+    let index = 0; 
+    let temp = L; 
+    
+    while(temp){
+
+        //确保 start 开始位置 + 长度 要 大于 index
+        //避免越界
+        if(index >= start && start + len >= index){
+            arr.push(temp.head)     
+        }
+
+        temp = temp.tail
+        index++; 
+    }
+
+    return List.list(arr) 
 }
+
+module.exports = {
+     dcate : dcate,
+     sub : sub
+}
+
+ 
