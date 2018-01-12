@@ -1,5 +1,3 @@
-var List = require('../js/list.js')
-
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -65,10 +63,4 @@ function sub(L, start, len) {
 	return List.list(array);
 
 
-}
-
-
-module.exports = {
-  dcate,
-  sub
 }

@@ -3,7 +3,7 @@
  * @author donaldyang
  */
 
-function List(head, tail) {
+var List = function (head, tail) {
 	this.head = head || 0;
 	this.tail = tail || null;
 }
@@ -33,5 +33,3 @@ List.prototype.toString = function () {
 	return res;
 };
 
-
-module.exports = List
