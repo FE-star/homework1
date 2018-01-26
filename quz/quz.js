@@ -8,7 +8,13 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  let p = A;
+  while (p.tail !== null) {
+    p = p.tail;
+  }
+  p.tail = B; //
+  return A;
 }
 
 /**
@@ -23,5 +29,39 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  if (start < 0 || len < 0) { // 参数个数类型.未检测
+    throw new Error('illegal param');
+    return null;
+  }
+  if (len === 0) {
+    return null;
+  }
+
+  let p = L,
+    newP = null,
+    index = 0;
+    
+  while (p != null) {
+    if (index == start) {
+      newP = p;
+      break;
+    }
+    p = p.tail;
+    index++;
+  }
+  if (newP === null) {
+    throw new Error('start overflow');
+    return null;
+  }
+  p = newP;
+  while (--len) {
+    p = p.tail;
+    if (p == null) {
+      throw new Error('len overflow');
+      return null;
+    }
+  }
+  p.tail = null;
+  return newP;
 }
