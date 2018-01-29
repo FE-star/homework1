@@ -10,8 +10,13 @@
 // find a middle variable to keep B and then change them
 function dcate(A, B) {
 	/** Fill in here **/
-	console.log('test dcate here')
-	console.log(typeof A, typeof B)
+	for (L = A; L !== null; L = L.tail) {
+		if (L.tail === null) {
+			L.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -28,12 +33,13 @@ function dcate(A, B) {
 
 function sub(L, start, len) {
 	/** Fill in here **/
-	if(len == 0)
-		return null
-	else if(start == 0)
-		return L
-	else
-		var CL = L
-		var K = CL.slice(start, len)
-		return K
+	let resArr = [],
+		end = start + len;
+	for (A = L, i = 0; A !== null; A = A.tail, i++) {
+		if (i >= start)
+			resArr.push(A.head);
+		if (i > end || A.tail === null)
+			break;
+	}
+	return L.constructor.list(resArr);
 }
