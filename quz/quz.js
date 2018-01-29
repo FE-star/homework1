@@ -31,5 +31,6 @@ function sub(L, start, len) {
 	if (len === 0) return null
 	var startIndex = L.indexOf(start)
 	if (startIndex === 0) return L
-	return L.slice(startIndex, len)
+	var R = L.slice(startIndex, len)
+	return R
 }
