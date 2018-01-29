@@ -9,7 +9,7 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-  if( !(A instanceof List) || !(B instanceof List) ) throw new Error("arguments is instanceof List!");
+  if( !(A instanceof List) || !(B instanceof List) ) throw new Error("arguments isn't instanceof List!");
 
   var temp = A;
   while( temp.tail !== null ) {
