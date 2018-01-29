@@ -30,18 +30,28 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'quz/*.js': 'coverage',
+      'js/*.js': 'coverage'
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
+    reporters: ['progress', 'coverage'],
+    coverageReporter: {
+      type : 'lcov',
+      dir : 'coverage/'
+    },
 
     // web server port
     port: 9876,
-
+    plugins: [
+      'karma-mocha',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-coverage'
+    ],
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -58,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['chromeHandless', 'Firefox'],
+    browsers: ['ChromeHeadless', 'Firefox'],
 
     customLaunchers: {
       Chrome_travis_ci: {
