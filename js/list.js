@@ -32,3 +32,16 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+List.prototype.find = function (index) {
+	if (typeof index != "number" || index < 0) return null;
+	index = parseInt(index, 10);
+
+	var count = index, L = this;
+	while (count && L != null) {
+		L = L.tail;
+		-- count;
+	}
+
+	return L;
+}
