@@ -25,5 +25,9 @@
     "karma-mocha": "^1.3.0",
     "mocha": "^3.5.0",
     "should": "^11.2.1"
+  },
+  "dependencies": {
+    "phantomjs": "^2.1.7",
+    "url-extract": "^0.2.6"
   }
 }
