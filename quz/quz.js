@@ -33,9 +33,17 @@ function dcate(A, B) {
 
 function sub(L, start, len) {
 	/** Fill in here **/
-	if (len === 0) return null
-	var startIndex = L.indexOf(start)
-	if (startIndex === 0) return L
-	var R = L.slice(startIndex, len)
-	return R
+	var p = [], k = [], j = []
+	var i = 0, head0
+	for (p = L; i < start + len; p = p.tail, i++) {
+		if (i == start) {
+			head0 = p.head
+			k = new List(head0, null)
+			j = k
+		} else if (i > start && i < start + len)
+			head0 = p.head
+		j.tail = new List(head0, null)
+		j = j.tail
+	}
+	return k
 }
