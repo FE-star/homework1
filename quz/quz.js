@@ -11,8 +11,7 @@
 function dcate(A, B) {
 	/** Fill in here **/
 	var C = A
-	C = A + B
-	A = C
+	A = C.push(B)
 	return A
 }
 
