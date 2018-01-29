@@ -7,8 +7,15 @@
  * @param {List} B
  * @returns {List}
  */
+// find a middle variable to keep B and then change them
 function dcate(A, B) {
 	/** Fill in here **/
+	var C = A
+	while(C != null) {
+		C = A + B
+	}
+	A = C
+	return A
 }
 
 /**
@@ -24,4 +31,12 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if(len == 0)
+		return null
+	else if(start == 0)
+		return L
+	else
+		var CL = L
+		var K = CL.slice(start, len)
+		return K
 }
