@@ -1,5 +1,5 @@
 # 作业
-
+[![build status][travis-image]][travis-url]
 ### 步骤
 
 * fork 代码
