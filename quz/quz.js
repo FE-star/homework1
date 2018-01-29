@@ -10,9 +10,8 @@
 // find a middle variable to keep B and then change them
 function dcate(A, B) {
 	/** Fill in here **/
-	var C = A
-	A = C.push(B)
-	return A
+	console.log('test dcate here')
+	console.log(typeof A, typeof B)
 }
 
 /**
