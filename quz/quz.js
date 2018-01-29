@@ -10,7 +10,7 @@
 function dcate(A, B) {
 	/** Fill in here **/
 	var p = A;
-	while (p.tail) {
+	while (p.tail !== null) {
 		p = p.tail;
 	}
 	p.tail = B;
@@ -35,7 +35,7 @@ function sub(L, start, len) {
 		subList = [],
 		end = start + len;
 
-	while (p && i <= end) {
+	while (p !== null && i <= end) {
 		if (i >= start) {
 			subList.push(p.head);
 		}
@@ -46,5 +46,5 @@ function sub(L, start, len) {
 		throw new Error(start + " don't exist in " + L);
 	}
 
-	return List.list(subList);
+	return L.constructor.list(subList);
 }
