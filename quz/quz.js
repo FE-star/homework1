@@ -10,8 +10,8 @@
 // find a middle variable to keep B and then change them
 function dcate(A, B) {
 	/** Fill in here **/
-	A = A.concat(B)
-	return A;
+	// A = A.concat(B)
+	return A + B;
 }
 
 /**
