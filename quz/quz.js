@@ -41,5 +41,6 @@ function sub(L, start, len) {
     temp = temp.tail
     i++
   }
+  if (list.length === 0) throw new Error ("desired items don't exist")
   return List.list(list)
 }
