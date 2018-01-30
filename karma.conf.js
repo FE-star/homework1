@@ -12,9 +12,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      "https://cdn.bootcss.com/jquery/2.2.4/jquery.js",
-      "node_modules/should/should.js",
-      "test/**.js"
+      'node_modules/should/should.js',
+      'js/*.js',
+      'quz/*.js',
+      'test/*.js'
     ],
 
     // list of files / patterns to exclude
