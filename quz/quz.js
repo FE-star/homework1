@@ -8,7 +8,13 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  function link(pointer) {
+    if (pointer.tail != null) link(pointer.tail);
+    else pointer.tail=B;
+  }
+  link(A);
+  return A;
 }
 
 /**
@@ -23,5 +29,20 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  var counter = 0,
+    sublist = [];
+
+  function search(pointer) {
+    if (pointer) {
+      if (counter >= start && counter < (start + len)) {
+        sublist.push(pointer.head);
+      }
+      counter++;
+      if (counter < (start + len))
+        search(pointer.tail);
+    }
+  }
+  search(L);
+  return List.list(sublist);
 }
