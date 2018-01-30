@@ -39,6 +39,7 @@ function sub(L, start, len) {
     if (isNaN(start) || isNaN(len)) {
         throw new Error('传入的第二个或第三个参数不是Number类型')
     }
+
     var tempArr = []
     var T = L
     var end = start + len
@@ -57,6 +58,7 @@ function subList(L, start, stop) {
     if (isNaN(start) || isNaN(stop)) {
         throw new Error('传入的第二个或第三个参数不是Number类型')
     }
+
     var tempArr = []
     var T=L
     var end=start+stop-1
