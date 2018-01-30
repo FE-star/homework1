@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --colors ./test/test.js",
+    "test": "karma start",
     "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
