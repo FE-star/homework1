@@ -28,12 +28,20 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	let arr = L.find(start).toString().replace(/[\[\]]/g, "").trim().split(" ").slice(0, len);
-
 	let current = new List();
-	return arr.reduce(function(result, curr, idx, array) {
-		current = current.tail = new List(curr);
-		return result;
-	}, current).tail;
+	return L.find(start)
+					.toString()
+					.replace(/[\[\]]/g, "")
+					.trim()
+					.split(" ")
+					.slice(0, len)
+					.reduce(
+						(result, curr, idx, array) => {
+							current = current.tail = new List(curr);
+							return result;
+						}, 
+						current
+					)
+					.tail;
 	
 }
