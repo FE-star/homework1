@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
+    "cover": "node ./node_modules/.bin/istanbul cover ",
     "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
