@@ -14,7 +14,3 @@ before_script:
 
 before_install:
   npm install karma-cli -g
-
-script: "npm run test"
-
-after_script: "cat ./coverage/lcov.info | coveralls"
