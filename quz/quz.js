@@ -8,7 +8,20 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+
+    if(!(A instanceof List) || !A || !(B instanceof List) || !B){
+        throw new Error('参数错误')
+    }
+
+    var temp = A
+
+    while(temp.tail !== null){
+        temp = temp.tail;
+    }
+
+    temp.tail = B
+
+    return A
 }
 
 /**
@@ -23,5 +36,20 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	if(!L || !(L instanceof List)){
+        throw new Error('参数错误')
+    }
+
+    var temp = L,res = [],end = start + len;
+    var i = 0;//下标
+    while( temp !== null && i < end ) {
+     if( i >= start ) {
+       res.push(temp.head);
+     }
+     temp = temp.tail;
+     i++;
+   }
+
+    return List.list(res)
+
 }
