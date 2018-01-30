@@ -10,8 +10,15 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 
+cache:
+  directories:
+    - node_modules
+
 before_install:
   npm install karma-cli -g
+
+install:
+  npm install
 
 script:
   - npm test
