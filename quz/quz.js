@@ -32,7 +32,7 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-  // 拿到L之后将其改造为原数组
+  // 拿到L之后将其改造为原数组格式
   var A = L.toString();
   var arr = A.split(' ');
   arr.pop();
