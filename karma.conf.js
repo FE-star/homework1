@@ -32,11 +32,27 @@ module.exports = function(config) {
     preprocessors: {
     },
 
+    plugins: ['karma-mocha', 'karma-chrome-launcher', 'karma-firefox-launcher', 'karma-coverage', 'karma-spec-reporter'],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'spec', 'coverage'],
+
+    // 覆盖率报告要如何生成，这里我们期望生成和之前一样的报告，包括覆盖率页面、lcov.info、coverage.json、以及命令行里的提示
+    coverageReporter: {
+      dir: 'coverage',
+      reporters: [{
+        type: 'json',
+        subdir: '.',
+        file: 'coverage.json',
+      }, {
+        type: 'lcov',
+        subdir: '.'
+      }, {
+        type: 'text-summary'
+      }]
+    },
 
 
     // web server port
