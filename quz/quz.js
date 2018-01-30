@@ -31,7 +31,6 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-
 	var p = L.toString().split(" "),
 		L = p.length,
 		r = [];
@@ -41,7 +40,7 @@ function sub(L, start, len) {
 	for (var i = start; i < p.length && len; i++, len--) {
 		r.push(p[i])
 	}
-	
+
 	if (r.length === 0) {
 		return new List();
 	} else {
