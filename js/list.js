@@ -32,10 +32,3 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
-// 初始化
-var ue = require('url-extract')();
-// 截图
-ue.snapshot('http://www.nodejs.org', function (job) {
-	// 这时候截图已生成
-	console.log(job)
-});
