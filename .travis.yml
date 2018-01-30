@@ -1,15 +1,13 @@
+sudo: required
 language: node_js
 node_js:
-  - "6"
-
+  - "8"
 addons:
-  firefox: "latest"
-  chrome: "latest"
-
+  firefox: latest
+  chrome: latest
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 before_install:
   npm install karma-cli -g
   npm install
