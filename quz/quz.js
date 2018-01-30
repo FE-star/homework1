@@ -7,8 +7,17 @@
  * @param {List} B
  * @returns {List}
  */
+/**
+ * let L = A，L和Ａ指向同一个地址
+ */
 function dcate(A, B) {
-	/** Fill in here **/
+	for (let L = A; L !== null; L = L.tail) {
+		if (L.tail === null) {
+			L.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -23,5 +32,16 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	start = Number(start)
+	len = Number(len)
+	let end = start + len - 1
+	let P = []
+	for (let A = L, i = 0; A !== null; A = A.tail, i++) {
+		if (i < start) continue
+		if (i > end) break
+		if (i >= start && i <= end) {
+			P.push(A.head)
+		}
+	}
+	return List.list(P)
 }
