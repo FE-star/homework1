@@ -1,4 +1,3 @@
-[![Coverage Status](https://coveralls.io/repos/github/FE-Advanced/homework1/badge.svg)](https://coveralls.io/github/FE-Advanced/homework1)
 # 作业
 
 ### 步骤
