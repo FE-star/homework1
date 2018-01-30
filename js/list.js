@@ -21,7 +21,6 @@ List.list = function (array) {
 	}
 	return sentinel.tail;
 }
-
 // Returns a readable String for THIS.
 List.prototype.toString = function () {
 	var res = '', L;
