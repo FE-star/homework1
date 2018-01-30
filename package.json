@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "istanbul cover --report lcov karma start"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/Elliott-Hu/homework1.svg?branch=master)](https://travis-ci.org/Elliott-Hu/homework1)
-[![Coverage Status](https://coveralls.io/repos/github/Elliott-Hu/homework1/badge.svg?branch=master)](https://coveralls.io/github/Elliott-Hu/homework1?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/H5futurehreohanshuo/homework1/badge.svg?branch=master)](https://coveralls.io/github/H5futurehreohanshuo/homework1?branch=master)
 # 作业
 
 ### 步骤
