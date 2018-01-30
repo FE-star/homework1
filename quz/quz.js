@@ -1,5 +1,4 @@
-/**
- * dcate
+/*/**
  * A list consisting of elements of A followed by the
  * elements of B. May modify items of A.
  * Don't use 'new'
@@ -8,7 +7,15 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	if (!A || !B || !(A.constructor == List) || !(A.constructor == List)) {
+		throw new Error("arguments must List")
+	}
+	var tailA = A;
+	while (tailA.tail !== null) {
+		tailA = tailA.tail
+	}
+	tailA.tail = B;
+	return A
 }
 
 /**
@@ -24,4 +31,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if(!L || !(L.constructor == List) || typeof start !== "number" ||  typeof len !== "number"){
+		throw new Error("arguments is not ok")
+	}
+	var temp = L,
+		tempArr = [];
+	while (temp !== null) {
+		tempArr.push(temp.head)
+		temp = temp.tail
+	}
+	return List.list(tempArr.splice(start, len))
 }
+
