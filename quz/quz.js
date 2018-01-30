@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+  var L;
+  for (L = A; L !== null; L = L.tail) {
+    if (L.tail === null) {
+      L.tail = B;
+      break;
+    }
+  }
+  return A;
 }
 
 /**
@@ -24,4 +32,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  // 拿到L之后将其改造为原数组格式
+  var A = L.toString();
+  var arr = A.split(' ');
+  arr.pop();
+  arr.shift();
+  if (start > arr.length) {
+    throw Error('start不能大于原数组的长度');
+  } else if ((start + len) > arr.length) {
+    throw Error('start后面没有'+ len +'个长度的数据');
+  } else {
+    // 截取数组指定的片段
+    var res = arr.splice(start, len);
+    // 再转换为字符串输出
+    var R = List.list(res).toString();
+    return R;
+  }
 }

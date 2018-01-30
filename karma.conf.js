@@ -2,7 +2,7 @@
 // Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
 
 module.exports = function(config) {
-  config.set({
+  var configuration = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -32,11 +32,24 @@ module.exports = function(config) {
     preprocessors: {
     },
 
+    plugins: [
+      'karma-mocha',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-coverage',
+      'karma-coveralls'
+    ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage', 'coveralls'],
+
+    // 覆盖率报告要如何生成，这里我们期望生成和之前一样的报告，包括覆盖率页面、lcov.info、coverage.json、以及命令行里的提示
+    coverageReporter: {
+      type : 'lcov',
+      dir : 'coverage/'
+    },
 
 
     // web server port
@@ -58,7 +71,14 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['Firefox', 'Chrome'],
+
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
 
     // Continuous Integration mode
@@ -68,5 +88,11 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
+  };
+
+  if(process.env.TRAVIS){
+    configuration.browsers = ['Chrome_travis_ci'];
+  }
+
+  config.set(configuration);
 }

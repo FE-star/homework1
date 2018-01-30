@@ -1,9 +1,11 @@
 language: node_js
+sudo: true
 node_js:
   - "6"
 
 addons:
   firefox: "latest"
+  chrome: "stable"
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -12,3 +14,6 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
