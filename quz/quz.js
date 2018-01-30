@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var i = A;
+	while (i.tail) {
+		i = i.tail;
+	}
+	i.tail = B;
+	return A;
 }
 
 /**
