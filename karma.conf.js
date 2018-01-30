@@ -29,7 +29,9 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
+    preprocessors: {  
+        '**/js/*.js': 'coverage',
+        '**/quz/*.js': 'coverage'
     },
 
 
@@ -59,20 +61,16 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
-    customLaunchers: {
-        Chrome_travis_ci: {
-            base: "Chrome",
-            flags: ["--no-sandbox"]
-        }
-    },
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: process.env.TRAVIS,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+    coverageReporter: {
+        dir: 'coverage/',
+    }
   })
 }
