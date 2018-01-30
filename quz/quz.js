@@ -10,7 +10,7 @@
 // find a middle variable to keep B and then change them
 function dcate(A, B) {
 	/** Fill in here **/
-	for (L = A; L !== null; L = L.tail) {
+	for (var L = A; L !== null; L = L.tail) {
 		if (L.tail === null) {
 			L.tail = B;
 			break;
@@ -35,7 +35,7 @@ function sub(L, start, len) {
 	/** Fill in here **/
 	let resArr = [],
 		end = start + len;
-	for (A = L, i = 0; A !== null; A = A.tail, i++) {
+	for (var A = L, i = 0; A !== null; A = A.tail, i++) {
 		if (i >= start)
 			resArr.push(A.head);
 		if (i > end || A.tail === null)
