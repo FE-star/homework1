@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/*/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/FE-star/homework1#readme",
   "devDependencies": {
-    "coveralls": "^2.11.16",
     "karma": "^1.7.0",
     "karma-coverage": "^1.1.1",
     "karma-coveralls": "^1.1.2",
