@@ -1,28 +1,33 @@
 {
-  "name": "homework1",
-  "version": "0.0.1",
-  "description": "test",
+  "name": "homework1-another-coverage-",
+  "version": "1.0.0",
+  "description": "试着另外一种coverage",
   "main": "index.js",
-  "scripts": {
+  "directories": {
     "test": "karma start"
+  },
+  "scripts": {
+    "test": "karma start",
+    "coveralls": "find coverage -name lcov.info -print0 | xargs -0 cat | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FE-star/homework1.git"
+    "url": "git+https://github.com/mayufo/homework1-another-coverage-.git"
   },
-  "keywords": [
-    "test"
-  ],
-  "author": "Daniel Yang",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FE-star/homework1/issues"
+    "url": "https://github.com/mayufo/homework1-another-coverage-/issues"
   },
-  "homepage": "https://github.com/FE-star/homework1#readme",
+  "homepage": "https://github.com/mayufo/homework1-another-coverage-#readme",
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.1",
     "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.3",
     "mocha": "^3.5.0",
     "should": "^11.2.1"
   }
