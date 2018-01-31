@@ -1,5 +1,6 @@
 # 作业
-
+[![Build Status](https://travis-ci.org/Elliott-Hu/homework1.svg?branch=master)](https://travis-ci.org/Elliott-Hu/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/Elliott-Hu/homework1/badge.svg?branch=master)](https://coveralls.io/github/Elliott-Hu/homework1?branch=master)
 ### 步骤
 
 * fork 代码
