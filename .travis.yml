@@ -3,7 +3,6 @@ node_js:
   - "6.10.0"
 
 sudo: required
-dist: trusty
 addons:
   chrome: stable
 
@@ -14,5 +13,3 @@ before_script:
 
 before_install:
   npm install karma-cli -g
-
-os: osx
