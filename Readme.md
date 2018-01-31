@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/suozhao/homework1.svg?branch=master)](https://travis-ci.org/suozhao/homework1)
 # 作业
 
 ### 步骤
