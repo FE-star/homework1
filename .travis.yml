@@ -9,9 +9,8 @@ before_script:
 install:
   - npm install
 before_install:
-  npm install karma-cli -g
-
+  - npm install karma-cli -g
 script:
-  - npm test
+  - npm run test
 after_success:
   - npm run coveralls
