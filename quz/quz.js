@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var L;
+	for(L = A; L != null; L = L.tail) {
+		if (L.tail == null) {
+			L.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -24,4 +32,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var lString = L.toString();
+	var newL = lString.split(' ');
+	newL.pop();
+	newL.shift();
+	if(start > newL.length) {
+		throw Error('数组长度不够');
+	} else if ((start + len) > newL.length) {
+		throw Error(`数组从${start}位置截取不够${len}长度`);
+	}else {
+		var res = newL.splice(start, len);
+		var resString = List.list(res).toString();
+		return resString;
+	}
 }
