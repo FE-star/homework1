@@ -10,6 +10,7 @@
 
 function dcate(A, B) {
     if (A.constructor !== List || B.constructor !== List) {
+        /* istanbul ignore next */
         throw new Error('传入的参数不是List类型')
     }
     for (var temp = A; temp !== null; temp = temp.tail) {
@@ -34,9 +35,11 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     if (L.constructor !== List) {
+        /* istanbul ignore next */
         throw new Error('传入的第一个参数不是List类型')
     }
     if (isNaN(start) || isNaN(len)) {
+        /* istanbul ignore next */
         throw new Error('传入的第二个或第三个参数不是Number类型')
     }
 
@@ -53,9 +56,11 @@ function sub(L, start, len) {
 
 function subList(L, start, stop) {
     if (L.constructor !== List) {
+        /* istanbul ignore next */
         throw new Error('传入的第一个参数不是List类型')
     }
     if (isNaN(start) || isNaN(stop)) {
+        /* istanbul ignore next */
         throw new Error('传入的第二个或第三个参数不是Number类型')
     }
 
