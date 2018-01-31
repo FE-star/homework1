@@ -15,7 +15,7 @@ function toArray(arr) {
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	let arr = [],subA = toArray(A), subB =toArray(B)
+	let arr = [],subA = toArray(A.toString()), subB =toArray(B.toString())
 	arr = subA.map(function (item, index) {
 		return item
 	})
@@ -38,7 +38,7 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	let Arr = [], bol1 = false, subL = toArray(L)
+	let Arr = [], bol1 = false, subL = toArray(L.toString())
 	bol1 = (((subL.indexOf(start) > -1) && (subL.indexOf(len) > -1)) ? true : false)
 	if (bol1) {
 		Arr.push(start)
