@@ -1,5 +1,9 @@
 # 作业
 
+[![](https://travis-ci.org/imhxc/homework1.svg?branch=master)](https://travis-ci.org/imhxc/homework1)
+
+
+
 ### 步骤
 
 * fork 代码

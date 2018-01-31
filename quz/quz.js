@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var a = A;
+	while (a.tail) {
+		a = a.tail;
+	}
+	a.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if((L.constructor === List) && start && len ) {
+		var tempArr = []
+		var tem = L
+		var end = start + len
+		for (let i = 0; tem !== null; tem = tem.tail, i++) {
+			if (i > start - 1 && i < end) {
+				tempArr.push(tem.head)
+			}
+		}
+		return List.list(tempArr)
+	} else {
+		throw new Error('传入的参数有误');
+	}
+    
 }
