@@ -45,3 +45,32 @@ function sub(L, start, len) {
           .tail;
 	
 }
+
+function sub(L, start, len) {
+  let result = new List();
+  function recursion(A, B, surplus) {
+    if (!surplus) return null;
+    A.tail = new List(B.head);
+    recursion(A.tail, B.tail, surplus - 1);
+    return A.tail;
+  }
+
+  let current = L.find(start);
+  return recursion(result, current, len);
+}
+
+function sub(L, start, len) {
+  let surplus = len;
+  let pointer = L.find(start);
+  let result, current;
+  current = result = new List();
+
+  while (surplus) {
+    current.tail = new List(pointer.head);
+    current = current.tail;
+    pointer = pointer.tail;
+    -- surplus;
+  }
+
+  return result.tail;
+}
