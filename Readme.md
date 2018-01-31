@@ -1,6 +1,5 @@
 [![build status](https://secure.travis-ci.org/ryanyu104/homework1.png)](http://travis-ci.org/ryanyu104/homework1)
-[![Coverage Status](https://coveralls.io/repos/ryanyu104/homework1/badge.png?branch=master)](https://coveralls.io/r/ryanyu104/homework1?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/ryanyu104/homework1/badge.svg?branch=master)](https://coveralls.io/github/ryanyu104/homework1?branch=master)
 
 # 作业
 
