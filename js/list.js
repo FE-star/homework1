@@ -3,9 +3,9 @@
  * @author donaldyang
  */
 
-function List(head, tail) {
-	this.head = head || 0;
-	this.tail = tail || null;
+function List(head = 0, tail = null) {
+	this.head = head;
+	this.tail = tail;
 }
 
 // Returns a new List containing the array.
@@ -13,7 +13,6 @@ List.list = function (array) {
 	var sentinel = new List(),
 		len = array.length,
 		p, i;
-
 	p = sentinel;
 	for (i = 0; i < len; i++) {
 		p.tail = new List(array[i]);
