@@ -51,21 +51,21 @@ function sub(L, start, len) {
     return List.list(tempArr)
 }
 
-// function subList(L, start, stop) {
-//     if (L.constructor !== List) {
-//         throw new Error('传入的第一个参数不是List类型')
-//     }
-//     if (isNaN(start) || isNaN(stop)) {
-//         throw new Error('传入的第二个或第三个参数不是Number类型')
-//     }
+function subList(L, start, stop) {
+    if (L.constructor !== List) {
+        throw new Error('传入的第一个参数不是List类型')
+    }
+    if (isNaN(start) || isNaN(stop)) {
+        throw new Error('传入的第二个或第三个参数不是Number类型')
+    }
 
-//     var tempArr = []
-//     var T=L
-//     var end=start+stop-1
-//      for (var i=0; T!== null; T=T.tail,i++) {
-//         if(i<start || i>end){
-//           tempArr.push(T.head)
-//         }
-//     }
-//     return List.list(tempArr)
-// }
+    var tempArr = []
+    var T=L
+    var end=start+stop-1
+     for (var i=0; T!== null; T=T.tail,i++) {
+        if(i<start || i>end){
+          tempArr.push(T.head)
+        }
+    }
+    return List.list(tempArr)
+}

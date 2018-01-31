@@ -19,4 +19,12 @@ describe('unit test for quz.js', function () {
         });
     });
 
+    describe('#subList()',function(){
+     it('should get the remain sublist consisting of LEN items from list L',function(){
+        C.toString().should.equal('[ 19 8 7 3 2 ]');
+        subList(C, 3, 2).toString().should.equal('[ 19 8 7 ]');
+        C.toString().should.equal('[ 19 8 7 3 2 ]');
+     })
+    })
+
 });
