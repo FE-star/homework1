@@ -1,9 +1,3 @@
-function toArray(arr) {
-	let mainArr = [],subArr = arr.split('').slice(1,-1)
-	for(let a = 1; a < subArr.length; a += 2) {
-		mainArr.push(subArr[a])
-	}
-}
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -15,14 +9,16 @@ function toArray(arr) {
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	let arr = [],subA = toArray(A.toString()), subB =toArray(B.toString())
-	arr = subA.map(function (item, index) {
-		return item
-	})
-	for (let i = 0; i < subB.length; i++) {
-		arr.history(subB[i])
+	let AB
+	for (AB = A; A.tail !== null; A = A.tail) {
+		AB = A.tail
+	} 
+	if (A.tail === null) {
+		for (AB.tail =B; B.tail !== null; B = B.tail) {
+			AB = B.tail
+		}
 	}
-	return arr
+	return AB
 }
 
 /**
@@ -38,13 +34,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	let Arr = [], bol1 = false, subL = toArray(L.toString())
-	bol1 = (((subL.indexOf(start) > -1) && (subL.indexOf(len) > -1)) ? true : false)
-	if (bol1) {
-		Arr.push(start)
-		Arr.push(len)
-		return Arr
-	} else {
-		return new Error()
+	let DL
+	for (L; L.tail !== null; L = L.tail) {
+		if (L.head === start) {
+			Dl = new List(start)
+		}
+		if (L.head === len) {
+			if (!Dl.head) {
+				Dl = new List(len)
+			} else{
+				Dl.tail = new List(len)
+			}
+		}
 	}
+	
 }
