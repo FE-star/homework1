@@ -12,6 +12,6 @@ before_install:
   npm install -g mocha
   npm install -g istanbul
 script:
-  - npm run test
-after_success:
-  - npm run coveralls
+  npm run test
+after_script:
+  npm run coveralls
