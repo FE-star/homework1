@@ -30,18 +30,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-  var index = 0,
-      length = 0,
-      res = []
-
-  while (L !== null) {
-    if (index >= start && length <= len) {
-      res.push(L.head)
-      length++
-    }
-    index++
-    L = L.tail
-  }
+  // var index = 0,
+  //     length = 0,
+  //     res = []
+  //
+  // while (L !== null) {
+  //   if (index >= start && length <= len) {
+  //     res.push(L.head)
+  //     length++
+  //   }
+  //   index++
+  //   L = L.tail
+  // }
 
   return List.list(res)
 }
