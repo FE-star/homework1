@@ -13,7 +13,6 @@ List.list = function (array) {
 	var sentinel = new List(),
 		len = array.length,
 		p, i;
-
 	p = sentinel;
 	for (i = 0; i < len; i++) {
 		p.tail = new List(array[i]);

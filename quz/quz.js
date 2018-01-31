@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	// 找到最后一个list.tail 的地址就OK了
+	var p = A;
+	for (; !!p.tail; ) {
+		p = p.tail
+	}
+	p.tail = B
+	return A;
 }
 
 /**
@@ -24,4 +31,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var p = L.toString().split(" "),
+		L = p.length,
+		r = [];
+
+	p = p.slice(1, L - 1);
+
+	for (var i = start; i < p.length && len; i++, len--) {
+		r.push(p[i])
+	}
+
+	if (r.length === 0) {
+		return new List();
+	} else {
+		return List.list(r);
+	}
 }
