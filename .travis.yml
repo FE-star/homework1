@@ -12,4 +12,4 @@ before_install:
   npm install karma-cli -g
   npm install
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  # - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
