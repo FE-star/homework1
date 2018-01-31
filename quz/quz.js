@@ -7,8 +7,19 @@
  * @param {List} B
  * @returns {List}
  */
+
 function dcate(A, B) {
-	/** Fill in here **/
+    if (A.constructor !== List || B.constructor !== List) {
+        /* istanbul ignore next */
+        throw new Error('传入的参数不是List类型')
+    }
+    for (var temp = A; temp !== null; temp = temp.tail) {
+        if (temp.tail === null) {
+            temp.tail = B;
+            break;
+        }
+    }
+    return A
 }
 
 /**
@@ -23,5 +34,43 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    if (L.constructor !== List) {
+        /* istanbul ignore next */
+        throw new Error('传入的第一个参数不是List类型')
+    }
+    if (isNaN(start) || isNaN(len)) {
+        /* istanbul ignore next */
+        throw new Error('传入的第二个或第三个参数不是Number类型')
+    }
+
+    var tempArr = []
+    var T = L
+    var end = start + len
+    for (var i = 0; T !== null; T = T.tail, i++) {
+        if (i > start - 1 && i < end) {
+            tempArr.push(T.head)
+        }
+    }
+    return List.list(tempArr)
+}
+
+function subList(L, start, stop) {
+    if (L.constructor !== List) {
+        /* istanbul ignore next */
+        throw new Error('传入的第一个参数不是List类型')
+    }
+    if (isNaN(start) || isNaN(stop)) {
+        /* istanbul ignore next */
+        throw new Error('传入的第二个或第三个参数不是Number类型')
+    }
+
+    var tempArr = []
+    var T=L
+    var end=start+stop-1
+     for (var i=0; T!== null; T=T.tail,i++) {
+        if(i<start || i>end){
+          tempArr.push(T.head)
+        }
+    }
+    return List.list(tempArr)
 }
