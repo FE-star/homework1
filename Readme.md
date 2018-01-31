@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/PennyOrAmy/homework1.svg?branch=master)](https://travis-ci.org/PennyOrAmy/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/PennyOrAmy/homework1/badge.svg?branch=master)](https://coveralls.io/github/PennyOrAmy/homework1?branch=master)
 # 作业
 
 ### 步骤
