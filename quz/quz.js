@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var i = A;
+	while (i.tail) {
+		i = i.tail;
+	}
+	i.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,21 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var arr = [];
+	var p = L;
+	var end = start + len;
+	var i = 0;
+	while (p && i < start) {
+		i += 1;
+		p = p.tail;
+	}
+	while (p && i < end) {
+		arr.push(p.head);
+		p = p.tail;
+		i += 1;
+	}
+	if (arr.length < 1) {
+		throw new Error('no' + len + 'items exist from' + start);
+	}
+	return L.constructor.list(arr);
 }
