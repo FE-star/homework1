@@ -1,7 +1,6 @@
-[![build status](https://secure.travis-ci.org/miniflycn/url-extract.png)](http://travis-ci.org/miniflycn/url-extract)
-[![Coverage Status](https://coveralls.io/repos/miniflycn/url-extract/badge.png?branch=master)](https://coveralls.io/r/miniflycn/url-extract?branch=master)
-# url-extract
-[![NPM](https://nodei.co/npm/url-extract.png)](https://npmjs.org/package/url-extract)
+[![build status](https://secure.travis-ci.org/ryanyu104/homework1.png)](http://travis-ci.org/ryanyu104/homework1)
+[![Coverage Status](https://coveralls.io/repos/ryanyu104/homework1/badge.png?branch=master)](https://coveralls.io/r/ryanyu104/homework1?branch=master)
+
 
 # 作业
 
