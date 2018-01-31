@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A;
+	for (p; p!== null;){
+		p = p.tail;
+    if(p.tail === null){
+      p.tail = B;
+      p = null;
+    }
+	}
+	return A;
 }
 
 /**
@@ -24,4 +33,23 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var p = L, tempP, returnP;
+	var i = 0,lastIndex = start+len;
+	var newList = new List();
+	while (p !== null){
+		p = p.tail;
+    i++;
+		if(i < start){//如果i的值小于start
+      continue;
+		}else if(i === start){//如果i的值等于start
+      returnP = new List(p.head);
+      tempP = returnP;
+		}else if(i > start && i < lastIndex){//如果start < i < lastIndex
+			tempP.tail = new List(p.head);
+			tempP = tempP.tail;
+		}else if(i >=lastIndex){//如果i的值大于lastIndex
+      break;
+		}
+	}
+  return returnP;
 }
