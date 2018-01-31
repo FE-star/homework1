@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var temp = A.tail;
+	while(temp.tail) {
+		temp = temp.tail;
+	}
+	temp.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,11 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var str = L.toString();
+	// 删掉 [] 组成新数组
+	var arr = str.substring(1, str.length - 1).trim().split(' ');
+	if(start + len > arr.len) {
+		throw Error('items don\'t exist');
+	}
+	return List.list(arr.splice(start, start + len));
 }
