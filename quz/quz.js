@@ -9,7 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	//遍历A，找到A的最后一个tail
+	let p = A;
+	while(p.tail){
+		p = p.tail;
+	}
+	p.tail = B;
+	return A;
 }
+
 
 /**
  * sub
@@ -24,4 +32,25 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var	sentinel = new List(),
+		i = 0;
+		p = L,
+		q = sentinel;
+	
+	while(i<start){
+		if(p.tail !== null){
+			p = p.tail;
+			i++;
+		}
+	}
+		
+	while(len>0 && p !== null){
+		q.tail = p;
+		q = q.tail;
+
+		p = p.tail;
+		len--;
+	}
+	return sentinel.tail;
 }
+
