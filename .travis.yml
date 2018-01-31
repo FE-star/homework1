@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "8"
 addons:
-  chrome: "beta"
+  chrome: stable
 
 before_script:
   - "export DISPLAY=:99.0"
