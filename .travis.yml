@@ -8,8 +8,9 @@ before_script:
   - sleep 3 # give xvfb some time to start
 install:
   - npm install
-before_install:
-  - npm install karma-cli -g
+before_install: 
+  npm install -g mocha
+  npm install -g istanbul
 script:
   - npm run test
 after_success:
