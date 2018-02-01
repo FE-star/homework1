@@ -2,7 +2,7 @@
 // Generated on Tue Jan 30 2018 18:16:27 GMT+0800 (中国标准时间)
 
 module.exports = function(config) {
-  config.set({
+  const cfg = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -69,7 +69,7 @@ module.exports = function(config) {
 
     // you can define custom flags
     customLaunchers: {
-      ChromeHeadlessNoSandbox: {
+      Chrome_travis_ci: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
       },
@@ -81,10 +81,14 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: process.env.TRAVIS,
 
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
+  }
+  if (process.env.TRAVIS) {
+    cfg.browsers = ["Chrome_travis_ci", 'FirefoxHeadless'];
+  }
+  config.set(cfg)
 }
