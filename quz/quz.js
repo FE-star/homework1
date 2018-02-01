@@ -33,16 +33,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if(!start) return L;
+	var node = L;
 	var idx = 0;
 	var length = 0;
-	var node = L;
-	var new_node = null;
+	var newList = null;
 	while(node) {
 		if(idx >= start && length < len) {
-			var list = new List();
-			list.head = node.head
-			if(!new_node) new_node = list;
-			else new_node.tail = list;	
+			var l = new List();
+			l.head = node.head;
+			if(!newList) newList = l;
+			else newList.tail = l;
 			length++;
 		}
 		node = node.tail;
