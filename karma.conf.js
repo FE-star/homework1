@@ -45,9 +45,7 @@ module.exports = function(config) {
     plugins: [
       'karma-mocha',
       'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-coverage',
-      'karma-coveralls'
+      'karma-firefox-launcher'
     ],
 
     // enable / disable colors in the output (reporters and logs)
@@ -67,7 +65,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['firefox', 'FirefoxHeadless', 'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
+    browsers: ['Firefox', 'FirefoxHeadless', 'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
 
     // you can define custom flags
     customLaunchers: {
