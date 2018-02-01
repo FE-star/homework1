@@ -12,4 +12,5 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 before_install:
-  npm install karma-cli -g
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - npm install karma-cli -g
