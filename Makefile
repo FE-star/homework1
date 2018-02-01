@@ -1,2 +1,2 @@
 test-coveralls:
-	@mocha --require blanket --reporter mocha-lcov-reporter | COVERALLS_REPO_TOKEN="1YMpW0X8cMInhR9glhlTEM8lovs1bY9RV" ../node_modules/coveralls/bin/coveralls.js
+	@mocha --require blanket --reporter mocha-lcov-reporter | COVERALLS_REPO_TOKEN="G3C6tZMK3Sc21SwZmKOY7SyMvivp9WUwV" ./node_modules/coveralls/bin/coveralls.js
