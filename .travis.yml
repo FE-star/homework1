@@ -4,7 +4,8 @@ node_js:
 
 sudo: required
 addons:
-  chrome: stable
+  - chrome: stable
+  - firefox: "49.0"
 
 before_script:
   - "export DISPLAY=:99.0"
