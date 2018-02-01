@@ -3,10 +3,10 @@ node_js:
   - "8"
 
 sudo: required
+
 addons:
   chrome: stable
-addons:
-  firefox: "49.0"
+  firefox: 49.0
 
 before_script:
   - "export DISPLAY=:99.0"
