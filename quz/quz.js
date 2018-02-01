@@ -9,6 +9,8 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	A = A.concat(B);
+	return A;
 }
 
 /**
@@ -24,4 +26,6 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var returnList = L.slice(start, len);
+	return L.slice(start, len);
 }
