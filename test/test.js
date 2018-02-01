@@ -13,13 +13,8 @@ describe('unit test for quz.js', function () {
 
     describe('#sub()', function () {
         it('should get the sublist consisting of LEN items from list L', function () {
-<<<<<<< HEAD
             C.toString().should.equal('[ 19 8 7 3 2 ]');
             sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
-=======
-        	C.toString().should.equal('[ 19 8 7 3 2 ]');
-            sub(C,3,2).toString().should.equal('[ 3 2 ]');
->>>>>>> origin/master
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
     });

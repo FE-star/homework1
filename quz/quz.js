@@ -49,5 +49,5 @@ function sub(L, start, len) {
 		node = node.tail;
 		idx++;
 	}
-	return new_node;
+	return newList;
 }

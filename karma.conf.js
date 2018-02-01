@@ -1,9 +1,5 @@
 // Karma configuration
-<<<<<<< HEAD
 // Generated on Tue Jan 30 2018 18:16:27 GMT+0800 (中国标准时间)
-=======
-// Generated on Wed Jan 31 2018 00:31:42 GMT+0800 (中国标准时间)
->>>>>>> origin/master
 
 module.exports = function(config) {
   config.set({
