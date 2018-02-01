@@ -32,3 +32,34 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+List.prototype.concat = function (array) {
+
+	var currentListElement = this;
+	while (currentListElement.tail != null) {
+		currentListElement = currentListElement.tail;
+	}
+	currentListElement.tail = array;
+
+	return this;
+}
+
+List.prototype.slice = function (start, length) {
+	var startElement = this;
+	var returnElement;
+	for (var i = 0; i < start; i++) {
+		startElement = startElement.tail;
+	}
+	returnElement = new List(startElement.head);
+	var tempElement = startElement.tail;
+	var p = returnElement;
+	for (var j = 1; j < length; j++) {
+		var temp = new List(tempElement.head);
+		tempElement = tempElement.tail;
+
+		p.tail = temp;
+		p = p.tail;
+
+	}
+	return returnElement;
+}
