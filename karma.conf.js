@@ -46,8 +46,8 @@ module.exports = function(config) {
     plugins: [
       'karma-mocha',
       'karma-chrome-launcher',
-      'karma-firefox-launcher'
-      'karma-coverage',
+      'karma-firefox-launcher',
+      'karma-coverage'
     ],
 
     // enable / disable colors in the output (reporters and logs)
