@@ -70,7 +70,7 @@ module.exports = function(config) {
     singleRun: true,
 
 
-    plugins: ['karma-*']
+    plugins: ['karma-*'],
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
