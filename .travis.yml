@@ -15,4 +15,4 @@ before_script:
 
 before_install:
   - npm install karma-cli -g
-  - npm install grunt-karma-coveralls --save-dev
+  - make test-coveralls
