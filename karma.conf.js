@@ -42,6 +42,11 @@ module.exports = function(config) {
     // web server port
     port: 9876,
 
+    plugins: [
+      'karma-mocha',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+    ]
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
