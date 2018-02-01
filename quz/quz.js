@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let N = A;
+	for(let L = A; L !== null; L = L.tail){
+		N = L;
+	}
+	N.tail = B;
+	return A
 }
 
 /**
@@ -23,5 +29,20 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let N = reArr(L);
+	let R = N.splice(start,len);
+	function reArr(ob){
+		let A = [];
+		for(let S = ob; S !== null; S = S.tail){
+			A.push(S.head)
+		}
+		return A;
+	}
+	return List.list(R);
 }
+
+
+
+
+
+

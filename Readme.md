@@ -1,5 +1,6 @@
 # 作业
-
+[![Build Status](https://www.travis-ci.org/IsZoe/homework1.svg?branch=master)](https://www.travis-ci.org/IsZoe/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/IsZoe/homework1/badge.svg?branch=master)](https://coveralls.io/github/IsZoe/homework1?branch=master)
 ### 步骤
 
 * fork 代码
