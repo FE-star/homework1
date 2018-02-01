@@ -1,3 +1,4 @@
+[![Build Status](https://www.travis-ci.org/TinyScript/homework1.svg?branch=master)](https://www.travis-ci.org/TinyScript/homework1)
 # 作业
 
 ### 步骤
