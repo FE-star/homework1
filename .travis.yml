@@ -6,7 +6,7 @@ sudo: required
 
 addons:
   chrome: stable
-  firefox: 49.0
+  firefox: latest
 
 before_script:
   - "export DISPLAY=:99.0"
