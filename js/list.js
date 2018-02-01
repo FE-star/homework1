@@ -9,6 +9,7 @@ function List(head, tail) {
 }
 
 // Returns a new List containing the array.
+// 返回包含数组的新链表
 List.list = function (array) {
 	var sentinel = new List(),
 		len = array.length,
@@ -23,6 +24,7 @@ List.list = function (array) {
 }
 
 // Returns a readable String for THIS.
+// 将链表返回为一个可读的字符串
 List.prototype.toString = function () {
 	var res = '', L;
 	res += '[';
