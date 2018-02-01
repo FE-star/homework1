@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wknhsj/homework1.svg?branch=master)](https://travis-ci.org/wknhsj/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/wknhsj/homework1/badge.svg?branch=master)](https://coveralls.io/github/wknhsj/homework1?branch=master)
 # 作业
 
 ### 步骤

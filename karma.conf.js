@@ -30,14 +30,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'quz/*.js': ['coverage'],
+      'test/*.js': ['coverage'],
+      'js/*.js': ['coverage']
+    },
+    coverageReporter: {
+      type : 'lcov',
+      dir : 'coverage/'
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
+    reporters: ['progress','coverage','coveralls'],
 
     // web server port
     port: 9876,
@@ -58,7 +64,13 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['chrome_without_security'],
+    customLaunchers: {
+      chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
 
     // Continuous Integration mode
