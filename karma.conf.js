@@ -64,16 +64,13 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    browserNoActivityTimeout: 30000,
-
-
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Firefox', 'Chrome'],
 
     // you can define custom flags
     customLaunchers: {
-      Chrome_travis_ci: {
+      ChromeHeadless: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox']
       },
@@ -95,7 +92,7 @@ module.exports = function(config) {
     concurrency: Infinity
   }
   if (process.env.TRAVIS) {
-    cfg.browsers = ["Chrome_travis_ci", 'FirefoxHeadless'];
+    cfg.browsers = ["ChromeHeadless", 'FirefoxHeadless'];
   }
   config.set(cfg)
 }
