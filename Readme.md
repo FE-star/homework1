@@ -1,5 +1,5 @@
 [![Build Status](https://www.travis-ci.org/TinyScript/homework1.svg?branch=master)](https://www.travis-ci.org/TinyScript/homework1)
-[![Coverage Status](https://coveralls.io/repos/github/TinyScript/homework1/badge.svg?branch=master)](https://coveralls.io/github/TinyScript/homework1?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/TinyScript/homework1/badge.svg)](https://coveralls.io/github/TinyScript/homework1)
 # 作业
 
 ### 步骤
