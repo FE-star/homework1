@@ -32,5 +32,3 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
-
-var A = List.list([4, 6, 7, 3, 8])
