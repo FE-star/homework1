@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var node = A;
+	while(node) {
+		if(!node.tail) {
+			node.tail = B;
+			break;
+		}
+		node = node.tail;
+	}
+	return A;
 }
 
 /**
@@ -24,4 +33,21 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if(!start) return L;
+	var node = L;
+	var idx = 0;
+	var length = 0;
+	var newList = null;
+	while(node) {
+		if(idx >= start && length < len) {
+			var l = new List();
+			l.head = node.head;
+			if(!newList) newList = l;
+			else newList.tail = l;
+			length++;
+		}
+		node = node.tail;
+		idx++;
+	}
+	return newList;
 }
