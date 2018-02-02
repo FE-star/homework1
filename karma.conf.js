@@ -71,7 +71,7 @@ module.exports = function(config) {
     // you can define custom flags
     customLaunchers: {
       ChromeHeadless: {
-        base: 'ChromeHeadless',
+        base: 'Chrome',
         flags: ['--no-sandbox']
       },
       FirefoxHeadless: { 
