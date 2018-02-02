@@ -7,10 +7,35 @@
  * @param {List} B
  * @returns {List}
  */
+/**
+ * 循环
+ */
 function dcate(A, B) {
 	/** Fill in here **/
+	for (var key = A; key !== null; key = key.tail) {
+		if (key.tail === null) {
+			key.tail = B
+			return A
+		}
+	}
 }
-
+/**
+ * 递归
+ */
+// function dcate(A, B) {
+// 	/** Fill in here **/
+// 	function findTail(obj) {
+// 		if (obj.tail === null) {
+// 			obj.tail = B
+// 			return A
+// 		}
+// 		if (obj !== null) {
+// 			obj = obj.tail
+// 			return findTail(obj)
+// 		}
+// 	}
+// 	return findTail(A)
+// }
 /**
  * sub
  * The sublist consisting of LEN items from list L,
