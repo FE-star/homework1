@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "prettier",
+      ],
+      "plugins": ["prettier"],
+      "root": true,
+      "env": {
+        "node": true,
+        "es6": true,
+        "browser": true,
+        "jquery": true
+      },
+      "rules": {
+        "prettier/prettier": "error",
+        "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+      }
+}
