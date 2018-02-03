@@ -8,7 +8,12 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	var end = A.tail;
+	while(end.tail) {
+		end = end.tail
+	}
+	end.tail = B;
+	return A
 }
 
 /**
@@ -23,5 +28,17 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	var count = 0;
+	var index = L;
+	var list = new List();
+	var p=list;
+	while(index) {
+		if(count >= start && count < start + len) {
+			p.tail = new List(index.head)
+			p = p.tail
+		}
+		index  = index.tail;
+		count++;
+	}
+	return list.tail
 }
