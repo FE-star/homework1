@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let L = A;
+	while(L.tail){
+		L = L.tail;
+	}
+	L.tail=B;
+	return A;
 }
 
 /**
@@ -24,4 +30,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var res = [],
+		A = L,
+		i = 0,
+		end = start + len;
+	if(start<0||len<1||end>L.toString().split(' ').length-2) throw new Error('not a valid input')
+	while(A&&i<end){
+		if (i>=start) {
+			res.push(A.head);
+		}
+		A = A.tail;
+		i++;
+	}
+	if(res.length===0) throw new Error('desired items do not exist')
+	return List.list(res);
 }
