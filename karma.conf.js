@@ -28,8 +28,13 @@ module.exports = function(config) {
     },
 
     coverageReporter: {
-      type: 'lcov',
-      dir: './coverage/'
+      dir: path.join(__dirname, 'coverage'),
+      reporters: [{
+        type: "html"
+      },{
+        type: "lcov",
+        subdir: "lcov"
+      }]
     },
 
     reporters: ['progress', 'coverage'],
