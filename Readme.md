@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/xiaojingzhao091/homework1/badge.svg?branch=master)](https://coveralls.io/github/xiaojingzhao091/homework1?branch=master)
+
 # 作业
 
 ### 步骤
