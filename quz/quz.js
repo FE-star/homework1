@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	for (var key = A; key !== null; key = key.tail) {
+		if (key.tail === null) {
+			key.tail = B
+			return A
+		}
+	}
 }
 
 /**
@@ -24,4 +30,13 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let beginFlag = 0;
+	let end = start + len;
+	let newArr = [];
+	for (var key = L; key !== null; key = key.tail, beginFlag++) {
+		if (beginFlag >= start && beginFlag < end) {
+			newArr.push(key.head);
+		}
+	}
+	 return List.list(newArr);
 }
