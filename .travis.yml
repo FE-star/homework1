@@ -12,3 +12,6 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+  npm install mocha -g
+  npm install karma-firefox-launcher
+  npm install
