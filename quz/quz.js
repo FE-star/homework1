@@ -30,10 +30,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	let arr = L.find(start).toString().replace(/[\[\]]/g, "").trim().split(" ").slice(0, len);
-	let current = new List();
-	return arr.reduce(function(result, curr, idx, array) {
-		current = current.tail = new List(curr);
-		return result;
-	}, current).tail;
+	var res = [],
+		A = L,
+		i = 0,
+		end = start + len;
+	if(start<0||len<1||end>L.toString().split(' ').length-2) throw new Error('not a valid input')
+	while(A&&i<end){
+		if (i>=start) {
+			res.push(A.head);
+		}
+		A = A.tail;
+		i++;
+	}
+	if(res.length===0) throw new Error('desired items do not exist')
+	return List.list(res);
 }
