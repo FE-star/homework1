@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let L = A;
+	while(L.tail){
+		L = L.tail;
+	}
+	L.tail=B;
+	return A;
 }
 
 /**
@@ -24,4 +30,10 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let arr = L.find(start).toString().replace(/[\[\]]/g, "").trim().split(" ").slice(0, len);
+	let current = new List();
+	return arr.reduce(function(result, curr, idx, array) {
+		current = current.tail = new List(curr);
+		return result;
+	}, current).tail;
 }
