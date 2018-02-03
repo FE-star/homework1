@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A;
+	while(p!==null && p.tail!==null){
+		p = p.tail;
+	}
+	p.tail = B;
+
+	return A;
 }
 
 /**
@@ -24,4 +31,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var index  = 0;
+	var p = L;
+	var vList = [];
+
+	while(p!==null && index<start + len){
+
+		if(index==start || vList.length>0){
+			vList.push(p.head);
+		}
+		index ++;
+		p = p.tail;
+	}
+	if(vList.length==0){
+		throw new Error("don't exist");
+	}
+	return List.list(vList);
 }
