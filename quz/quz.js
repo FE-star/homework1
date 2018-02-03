@@ -58,6 +58,6 @@ function sub(L, start, len) {
 			newArr.push(key.head)
 		}
 	}
-	
-	return new List(newArr)
+
+	return List.list(newArr)
 }
