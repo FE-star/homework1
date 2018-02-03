@@ -49,4 +49,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let beginFlag = 0;
+	let end = start + len
+	let newArr = [];
+
+	for (var key = L; key !== null; key = key.tail, beginFlag++) {
+		if (beginFlag >= start && beginFlag < end) {
+			newArr.push(key.head)
+		}
+	}
+	
+	return new List(newArr)
 }
