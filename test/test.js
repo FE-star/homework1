@@ -1,3 +1,9 @@
+// const List = require("../js/list.js");
+// const quz = require("../quz/quz.js");
+// const should = require("should");
+// const dcate = quz.dcate;
+// const sub = quz.sub;
+
 describe('unit test for quz.js', function () {
 
     var A = List.list([4, 6, 7, 3, 8]),

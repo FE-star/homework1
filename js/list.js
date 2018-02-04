@@ -19,6 +19,7 @@ List.list = function (array) {
 		p.tail = new List(array[i]);
 		p = p.tail;
 	}
+	//console.log(sentinel,sentinel.tail)
 	return sentinel.tail;
 }
 
@@ -32,3 +33,5 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+//module.exports = List;

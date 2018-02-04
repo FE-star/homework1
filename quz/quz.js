@@ -1,3 +1,5 @@
+//const List = require("../js/list.js");
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -8,7 +10,13 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  let C = A;
+  while(C.tail) {
+    C = C.tail;
+  }
+  C.tail = B;
+  return A;
 }
 
 /**
@@ -23,5 +31,16 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  var arr = L.toString().split(' ');
+  arr = arr.filter((e)=> {
+    return ~~e;
+  }).map((e) => {
+  	return ~~e;
+  }).slice(start, start + len);
+  return List.list(arr);
 }
+
+//module.exports.dcate = dcate;
+//module.exports.sub = sub;
+

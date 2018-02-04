@@ -30,13 +30,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'quz/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    // coverage reporter generates the coverage
+    reporters: ['progress', 'coverage', 'coveralls'],
+
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'lcov',
+      dir : 'coverage/'
+    },
 
 
     // web server port
@@ -58,7 +66,12 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
 
     // Continuous Integration mode
@@ -69,4 +82,9 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity
   })
+  
+  if(process.env.TRAVIS) {
+    config.browsers = ['Chrome_travis_ci'];
+  }
+
 }
