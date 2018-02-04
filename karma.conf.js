@@ -30,14 +30,19 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser. 浏览器的预处理器
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'quz/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage','coveralls'],
 
+    coverageReportr: {
+        type: 'lcov',
+        dir: 'coverage'
+    },
 
     // web server port
     port: 9876,
@@ -53,22 +58,17 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
+    //只要其中一个文件发生改变,
     autoWatch: true,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome_travis_ci'],
+    browsers: ['Chrome'],
 
-    customLaunchers: {
-        Chrome_travis_ci:{
-            base: 'Chrome',
-            flags:["--no-sandbox"]
-        }
-    },
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: process.env.TRAVIS,
 
     // Concurrency level
     // how many browser should be started simultaneous
