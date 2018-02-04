@@ -8,7 +8,20 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+
+    // 边界条件
+    if (typeof A !== "object" || A.constructor !== List || typeof B !== "object" || B.constructor !== List) {
+        return List.list([]);
+    }
+    let tmp = A;
+    // 循环遍历直至链表的最后一项
+    while (tmp.tail) {
+        tmp = tmp.tail;
+    }
+    // 将 A 链表的最后一项与 B 相连接
+    tmp.tail = B;
+    return A;
 }
 
 /**
@@ -23,5 +36,31 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    // 边界条件
+    if (typeof L !== "object" || L.constructor !== List) {
+        return List.list([]);
+    }
+    if (typeof start !== "number" || +start < 0) {
+        start = 0;
+    }
+    if (typeof len !== "number" || len < 0 || len == 0) {
+        return List.list([]);
+    }
+    let rel = [],
+        tmp = L,
+        i = 0,
+        end = start + len;
+    // 获得 start 开始往后 len 范围的 head 值并 push 进 rel 数组
+    while (tmp) {
+        if (i++ >= start && i <= end) {
+            rel.push(tmp.head)
+        } else if (i > end) {
+            // 如果 i 大于 end 值了，While 循环还没结束的话，就直接跳出 while 循环
+            break;
+        }
+        // 循环遍历链表到达 start 处，end 前如果已到达链表最后则结束 while 循环
+        tmp = tmp.tail;
+    }
+    return List.list(rel);
 }
