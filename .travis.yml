@@ -1,8 +1,9 @@
 language: node_js
 node_js:
-  - "6"
+  - stable
 
 addons:
+  chrome: stable
   firefox: "latest"
 
 before_script:
