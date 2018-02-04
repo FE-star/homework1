@@ -22,12 +22,12 @@ module.exports = function(config) {
     ],
 
 
-    // list of files to exclude
+    // list of files to exclude //排除
     exclude: [
     ],
 
 
-    // preprocess matching files before serving them to the browser
+    // preprocess matching files before serving them to the browser. 浏览器的预处理器
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
     },
@@ -68,7 +68,7 @@ module.exports = function(config) {
     },
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
