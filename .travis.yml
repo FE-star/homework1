@@ -1,9 +1,10 @@
 language: node_js
 node_js:
-  - "6"
+  - "stable"
 
 addons:
-  firefox: "latest"
+  firefox: latest
+  chrome: stable
 
 before_script:
   - "export DISPLAY=:99.0"
