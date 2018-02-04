@@ -40,3 +40,9 @@ module.exports = function(config){
 	})
 }
 ```
+
+
+
+
+链表数据结构介绍
+参考此文档 https://github.com/dxfstart521/blog/issues/2
