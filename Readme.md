@@ -12,3 +12,31 @@
 ## 测试覆盖
 
 第一步，安装 [karma-coverage](https://github.com/karma-runner/karma-coverage) 和 [karma-coveralls](https://github.com/caitp/karma-coveralls)，karma-coverage 依赖包含[Istanbul](https://github.com/gotwarlost/istanbul)，但是不用重复安装 Istanbul。karma-coveralls 用于将 karma-coverage 生成的测试覆盖率报告上传到 [coveralls.io](https://coveralls.io/)
+
+
+```
+npm install karma-coverage karma-coveralls --save-dev
+```
+
+
+在karma.config.js配置文件添加如下配置
+```
+module.exports = function(config){
+	config.set({
+		// source files, that you wanna generate coverage for
+	    // do not include tests or libraries
+	    // (these files will be instrumented by Istanbul)
+	    preprocessors: {
+	        'quz/*.js': ['coverage']
+	    },
+	    // coverage reporter generates the coverage
+	    reporters: ['progress', 'coverage', 'coveralls'],
+
+	    // optionally, configure the reporter
+	    coverageReporter: {
+	      type : 'lcov',
+	      dir : 'coverage/'
+	    },
+	})
+}
+```
