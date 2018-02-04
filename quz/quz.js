@@ -10,16 +10,13 @@
 function dcate(A, B) {
     /** Fill in here **/
 
-    // 边界条件
     if (typeof A !== "object" || A.constructor !== List || typeof B !== "object" || B.constructor !== List) {
         return List.list([]);
     }
     let tmp = A;
-    // 循环遍历直至链表的最后一项
     while (tmp.tail) {
         tmp = tmp.tail;
     }
-    // 将 A 链表的最后一项与 B 相连接
     tmp.tail = B;
     return A;
 }
