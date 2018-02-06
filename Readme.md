@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/suozhao/homework1.svg?branch=master)](https://travis-ci.org/suozhao/homework1)
+[![Coverage Status](https://coveralls.io/repos/github/suozhao/homework1/badge.svg?branch=master)](https://coveralls.io/github/suozhao/homework1?branch=master)
 # 作业
 
 ### 步骤
