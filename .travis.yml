@@ -14,3 +14,7 @@ before_install:
   npm install karma-cli -g
 
 script: karma start
+
+branchs:
+  only:
+    - homework1
