@@ -27,6 +27,7 @@ List.prototype.toString = function () {
 	var res = '', L;
 	res += '[';
 	for (L = this; L !== null; L = L.tail) {
+		console.log('this:', this);
 		res = res + ' ' + L.head;
 	}
 	res += ' ]';
