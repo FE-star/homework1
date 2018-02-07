@@ -31,15 +31,46 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
-function sub(List, start, len) {
-	/** Fill in here **/
+function sub(L, start, len) {
+  /** Fill in here **/
+  /**
+   * 方法二
+   */
+  // 一、转换成数组
+  const array = L.toString().split(' ')
+  array.pop()
+  array.shift()
+
+  console.log('array:', array)
+
+  // 二、截取和相应的报错
+  if (start > array.length - 2) {
+    throw Error('开始的位置不大于数组的长度！')
+    return
+  }
+
+  var newArray = []
+  newArray.push(array[start])
+
+  // 正常情况下
+  for (var i = 1; i < len; i++) {
+    newArray.push(array[start + i])
+  }
+
+  console.log('newArray:', newArray)
+
+  // 三、数组转成List
+  var NewList = List.list(newArray)
+
+  return NewList
 
 	/**
 	 * 方法一
 	 * 修改了原数组，pass
 	 * 没有提示错误，pass
 	 */
-	// var L = JSON.parse(JSON.stringify(List));
+  // var L = JSON.parse(JSON.stringify(List));
+  /*
 	var L = List;
   var NewHead;
   var i = 0;
@@ -68,4 +99,5 @@ function sub(List, start, len) {
   console.log("New:", New);
   console.log("List:", List);
   return New;
+  */
 }
