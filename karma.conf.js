@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Wed Jan 31 2018 22:39:44 GMT+0800 (中国标准时间)
+// Generated on Mon Jan 29 2018 16:48:36 GMT+0800 (DST)
 
 module.exports = function(config) {
   config.set({
@@ -11,17 +11,23 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha'],
+    
+    plugins: [
+      'karma-mocha',
+      'karma-chrome-launcher',
+    ],
 
 
     // list of files / patterns to load in the browser
-      files: [
-          'node_modules/should/should.js',
-          'js/*.js',
-          'quz/*.js',
-          'test/*.js'
-      ],
+    files: [
+      'node_modules/should/should.js',
+      'js/*.js',
+      'quz/*.js',
+      'test/*.js'
+    ],
 
-    // list of files to exclude
+
+    // list of files / patterns to exclude
     exclude: [
     ],
 
@@ -57,12 +63,19 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
 
+    // you can define custom flags
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
