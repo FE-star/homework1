@@ -8,7 +8,13 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    	var temp = A.tail;
+    	while(temp.tail) {
+        		temp = temp.tail;
+        	}
+    	temp.tail = B;
+    	return A;
+    /** Fill in here **/
 }
 
 /**
@@ -23,5 +29,17 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
+		var temp=L.toString().split('');
+		var res=[];
+		var start=parseInt(start)+1;
+		var end=parseInt(len)+start+1;
+		for(var i=0;i<temp.length;i++){
+			if(temp[i] !==" " && temp[i] !=="[" && temp[i] !=="]"){
+				res.push(temp[i]);
+			}
+		}
+		return List.list(res.slice(start,end));
+
 	/** Fill in here **/
+
 }
