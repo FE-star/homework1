@@ -8,7 +8,25 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	if (!A || !B || A.constructor !== List || B.constructor !== List) {
+		return new List();
+	}
+	//	临时变量
+	var tmp = A;
+	/**
+	 * tmp = A = {
+	 * 		head : xx
+	 * 		tail : {
+	 * 		}
+	 * }
+	 * 如果存在尾巴，重新赋值tmp。直至最后一条
+	 */
+	while (tmp.tail) {
+		tmp = tmp.tail;
+	}
+	//	连上B
+	tmp.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +41,25 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	if (L.constructor !== List || !start || !len) {
+		return new List();
+	}
+	var tmp = L;
+	var arr = [];
+	var i = 0;
+	//	长度
+	var end = len + start;
+	while(tmp.tail){
+		i++;
+		tmp = tmp.tail;
+		//	处于区间，取值
+		if(i >= Number(start) && i<= end){
+			arr.push(tmp.head)
+		}
+		//	跳出
+		if(i > end){
+        	break;
+		}
+	}
+	return List.list(arr);
 }
