@@ -6,4 +6,5 @@ addons:
   firefox: "latest"
   
 before_install:
+  npm install karma-firefox-launcher --save-dev
   npm install karma-cli -g
