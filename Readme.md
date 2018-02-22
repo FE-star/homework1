@@ -1,5 +1,6 @@
-# 作业
 
+# 作业
+[![Build Status](https://www.travis-ci.org/onaug6th/homework1.svg?branch=master)](https://www.travis-ci.org/onaug6th/homework1)
 ### 步骤
 
 * fork 代码
