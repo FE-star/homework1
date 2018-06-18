@@ -12,3 +12,8 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
