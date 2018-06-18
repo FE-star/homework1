@@ -8,7 +8,12 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    // runs after all tests in this block
+    var a = A.toString().split(' ').slice(1, -1);
+    var b = B.toString().split(' ').slice(1, -1);
+    A.tail = null;
+    return List.list(a.concat(b));
 }
 
 /**
@@ -23,5 +28,6 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    return List.list(L.toString().split(' ').slice(1, -1).slice(start, start + len));
 }
