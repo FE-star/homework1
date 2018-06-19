@@ -1,4 +1,3 @@
-// var List = require('../js/list.js')
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -11,7 +10,9 @@
 function dcate(A, B) {
 	/** Fill in here **/
 
-
+	// v0.0.5
+	A.tail !== null ? dcate(A.tail, B) : A.tail = B
+	return A
 
 
 
@@ -101,12 +102,39 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	var res = new List(), _L;
-	res += '[';
-	for (_L = L; typeof _L !== 'undefined'; _L = _L.tail) {
-
-		res = res + ' ' + L.head;
+	var res = new List(), _L, i;
+	var _res = res
+	if(typeof len === 'undefined' || len > 0) {
+		let end
+		if(len > 0) {
+			end = start + len-1
+		} else {
+			end = start + NaN
+		}
+		for (_L = L, i = 0 ;; i++, _L = _L.tail) {
+			if(i >= start) {
+				if(Number.isNaN(end)) {
+					_res.head = _L.head
+					_res.tail = _L.tail
+					break;
+				}
+				if(i > end) {
+					break
+				} else if(i === end) {
+					_res.head = _L.head
+					_res.tail = null
+					break;
+				} else if(i < end){
+					_res.head = _L.head
+					_res.tail = new List()
+					_res = _res.tail
+				}
+			}
+		}
+	} else if(len < 0) {
+		throw new Error('expect third param is bigger than 0, but found ', len)
+	} else if (len === 0 ) {
+		return res
 	}
-	res += ' ]';
 	return res;
 }
