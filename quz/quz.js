@@ -9,14 +9,11 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	A.getLastTailOwner().tail = B;
-	A.lastTailOwner = B.lastTailOwner;
+	for (var L = A; L !== null; L = L.tail) {
+		OtailIsNull = L;
+	};
+	OtailIsNull.tail = B;
 	return A;
-	// for (var L = A; L !== null; L = L.tail) {
-	// 	OtailIsNull = L;
-	// };
-	// OtailIsNull.tail = B;
-	// return A;
 }
 
 /**

@@ -1,4 +1,4 @@
-/**
+	/**
  * List
  * @author donaldyang
  */
@@ -19,17 +19,7 @@ List.list = function (array) {
 		p.tail = new List(array[i]);
 		p = p.tail;
 	}
-	
-	// sentinel.tail 是要返回的实例，把 lastTailOwner 赋给该实例，让 getLastTailOwner 能获得
-	sentinel.tail.lastTailOwner = p;
-
 	return sentinel.tail;
-}
-
-// Returns the List owns the last tail owner
-List.prototype.getLastTailOwner = function () {
-	// 实例方法，而非“类”方法，才能拿到实例对象 this
-	return this.lastTailOwner;
 }
 
 // Returns a readable String for THIS.
