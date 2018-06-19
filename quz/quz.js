@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	A.getLastTailOwner().tail = B;
+	return A;
+	// for (var L = A; L !== null; L = L.tail) {
+	// 	OtailIsNull = L;
+	// };
+	// OtailIsNull.tail = B;
+	// return A;
 }
 
 /**
@@ -24,4 +31,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var R = [];
+	for (var i = 0;; i++) {
+		if (L !== null) {
+			if (i >= start && i < start + len) {
+				R.push(L.head);
+			}
+			L = L.tail;
+		} else {
+			break;
+		}
+	};
+	return List.list(R);
 }
