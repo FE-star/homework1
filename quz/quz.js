@@ -12,8 +12,8 @@ function dcate(A, B) {
 	// 1. 通过test.js和list.js可以看出，这里的操作目标是需要将A和B变成一个List。
 	// 2. 循环遍历A找到最内层tail为null的值(这里存储在L中), 把B作为L的tail的值。然后返回A即可。
 	var L = A;
-	for (; L !== null; L = L.tail)
-		L.tail = B;
+	for (; L.tail !== null; L = L.tail) {}
+	L.tail = B;
 	return A;
 }
 
