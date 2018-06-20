@@ -9,6 +9,10 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let l = A;
+	for (; l.tail !== null; l = l.tail) ;
+	l.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +28,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var end = start+len;
+	var tmpArr = L, tmp = {}, res;
+	for (var i = 0; i < end; i++ ){
+		if (i === start) {
+			tmp = new List(tmpArr.head);
+			res = tmp;
+		} else if (i > start) {
+			tmp.tail = new List(tmpArr.head);
+			tmp = tmp.tail;
+		}
+
+		tmpArr = tmpArr.tail
+	}
+	return res
 }
