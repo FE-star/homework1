@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
+
 module.exports = function(config) {
   config.set({
 
@@ -12,14 +13,14 @@ module.exports = function(config) {
     frameworks: ['mocha'],
 
 
-      // list of files / patterns to load in the browser
-      files: [
-        'node_modules/should/should.js',
-        'js/*.js',
-        'quz/*.js',
-        'test/*.js'
-      ],
-    
+    // list of files / patterns to load in the browser
+    files: [
+      'node_modules/should/should.js',
+      'js/*.js',
+      'quz/*.js',
+      'test/*.js'
+    ],
+
 
     // list of files to exclude
     exclude: [
@@ -57,7 +58,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
