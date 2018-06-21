@@ -9,6 +9,8 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	A.tail.tail.tail.tail.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +26,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let arr = [],
+		newArr = [],
+		l, index;
+
+	for (l = L; l !== null; l = l.tail) {
+		arr.push(l.head);
+	}
+	
+	index = arr.indexOf(start);
+	
+	if (index + len <= arr.length && index !== -1)
+		newArr = arr.splice(index, len);
+	
+	return List.list(newArr);
 }
