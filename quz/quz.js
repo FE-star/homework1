@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var L = B;
+	A.push(L.head);
+	while (L.tail) {
+		A.push(L.tail.head);
+		L = L.tail;
+	}
+	return A;
 }
 
 /**
@@ -24,4 +31,14 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if (start < 0 || start > L.count() - 1 || len <= 0) return null;
+	var R = L.get(start);
+	var res = new List(R.head);
+	R = R.tail;
+	len--;
+	while (R && len--) {
+		res.push(R.head);
+		R = R.tail;
+	}
+	return res;
 }

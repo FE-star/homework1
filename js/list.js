@@ -32,3 +32,35 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+List.prototype.count = function () {
+	var flag = 0,
+		L = this;
+	while (L) {
+		flag++;
+		L = L.tail;
+	}
+	return flag;
+}
+
+List.prototype.get = function (index) {
+	if (index < 0 || index > this.count()) return null;
+	if (index === 0) return this;
+	var flag = 0
+	L = this;
+	while (L.tail) {
+		L = L.tail;
+		flag++;
+		if (index === flag) return L;
+	}
+}
+
+List.prototype.push = function (tail) {
+	var len = this.count,
+		L = this;
+	while (L.tail) {
+		L = L.tail;
+	}
+	L.tail = new List(tail);
+	return this;
+}
