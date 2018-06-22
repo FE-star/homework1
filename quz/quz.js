@@ -9,6 +9,16 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    function recursion(A, B) {
+        if (A.tail !== null) {
+            recursion(A.tail, B)
+        } else {
+            A.tail = B
+        }
+        return A 
+    }
+
+    return recursion(A, B)
 }
 
 /**
@@ -24,4 +34,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var i = 0, temp, result;
+    while(L = L.tail){
+    	i++;
+    	if(i=== start){
+    		temp = L
+    	}
+    }
+    function recursion(L, len) {
+        if (L.tail !== null && len > 0) {
+        	len--;
+            recursion(L.tail);
+        } else {
+            L.tail = null;
+        }
+        return L;
+    }
+
+    return recursion(temp, len)
 }
