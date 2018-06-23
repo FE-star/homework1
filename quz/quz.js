@@ -28,7 +28,6 @@ function dcate(A, B) {
    }
     Tail.tail=B;
     return A;
-
 }
 
 /**
