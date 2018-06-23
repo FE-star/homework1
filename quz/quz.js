@@ -9,21 +9,11 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	let a;
-	
-	function find(A) {
-		for (let key in A) {
-			if (A.tail === null) return A;
-			else return find(A.tail);
-		}
-	
+	var current=A.tail;
+	while (current.tail){
+		current = current.tail;
 	}
-
-	a = find(A);
-
-	if (typeof a === 'object')
-		a.tail = B;
-
+	current.tail=B;
 	return A;
 }
 
