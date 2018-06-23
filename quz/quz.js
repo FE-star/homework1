@@ -9,6 +9,16 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	// List{head: 4, tail: List{head: 6, tail: List{head: ..., tail: ...}}}
+	let pointer = A.tail;
+
+	while (pointer.tail) {
+		pointer = pointer.tail;
+	}
+
+	pointer.tail = B;
+
+	return A;
 }
 
 /**
@@ -24,4 +34,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	// [ 19 8 7 3 2 ]
+	let pointer = L;
+
+	while (--start >= 0) {
+		pointer = pointer.tail;
+	}
+
+	const result = [];
+
+	while (len-- > 0) {
+		result.push(pointer.head);
+		pointer = pointer.tail;
+	}
+
+	return List.list(result);
 }
