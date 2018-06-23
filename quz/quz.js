@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let res = A;
+	while (res.tail) {
+		res = res.tail
+	}
+	res.tail = B
+	return A
 }
 
 /**
@@ -24,4 +30,14 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let result = []
+ 	let idx = 0
+ 	let target
+ 	for (target = L; target !== null; idx++) {
+ 		if (idx >= start && idx < (start + len)) {
+ 			result.push(target.head)
+ 		}
+ 		target = target.tail
+ 	}
+ 	return List.list(result)
 }
