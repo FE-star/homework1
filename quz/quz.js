@@ -8,6 +8,11 @@
  * @returns {List}
  */
 function dcate(A, B) {
+	var l = A;
+	for(;l.tail!==null;l = l.tail);
+	l.tail = B;
+	// console.log(l,A);
+	return A 
 	/** Fill in here **/
 }
 
@@ -24,4 +29,25 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var tempL = L,subL;
+	for(var i=0;tempL!== null;i++){
+		console.log(i,start);
+		if(i == start){
+			subL= tempL;
+			break;
+		}
+		tempL = tempL.tail;
+	}
+	console.log(subL);
+	var l = subL,j=0;
+	for(;l.tail!==null;l=l.tail){
+		if(j == len){
+			l.tail = null;
+			break;
+		}
+		j++	
+	}
+
+	console.log(subL,l);
+	return subL;
 }
