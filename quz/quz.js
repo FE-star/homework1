@@ -1,3 +1,6 @@
+
+
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -9,6 +12,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let a = A;
+	for(;a.tail !==  null;a = a.tail){
+	}
+
+	a.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +33,9 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let a = L;
+	for(let i = 0;i < start  ; i++){
+		a=a.tail
+	}
+	return a;
 }
