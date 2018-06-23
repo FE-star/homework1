@@ -9,6 +9,22 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let a;
+	
+	function find(A) {
+		for (let key in A) {
+			if (A.tail === null) return A;
+			else return find(A.tail);
+		}
+	
+	}
+
+	a = find(A);
+
+	if (typeof a === 'object')
+		a.tail = B;
+
+	return A;
 }
 
 /**
@@ -24,4 +40,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let arr = [],
+	newArr = [],
+	l, index;
+
+for (l = L; l !== null; l = l.tail) {
+	arr.push(l.head);
+}
+
+index = arr.indexOf(start);
+
+if (index + len <= arr.length && index !== -1)
+	newArr = arr.splice(index, len);
+
+return List.list(newArr);
 }
