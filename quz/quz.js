@@ -30,14 +30,14 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	let result = []
+	let res = []
  	let idx = 0
  	let target
  	for (target = L; target !== null; idx++) {
  		if (idx >= start && idx < (start + len)) {
- 			result.push(target.head)
+ 			res.push(target.head)
  		}
  		target = target.tail
  	}
- 	return List.list(result)
+ 	return List.list(res)
 }
