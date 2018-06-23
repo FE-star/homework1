@@ -8,7 +8,16 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  (function connect(A, B) {
+    if (A && !A.tail) {
+      A.tail = B;
+      return;
+    } else {
+      connect(A.tail, B);
+    }
+  })(A, B);
+  return A;
 }
 
 /**
@@ -23,5 +32,17 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  let result=[];
+  (function convert(L) {
+    if (L && L.hasOwnProperty("head")) {
+      result.push(L.head);
+      if (typeof L.tail !== "object") {
+        return result;
+      } else {
+        convert(L.tail);
+      }
+    }
+  })(L);
+  return List.list(result.splice(start, start + len));
 }
