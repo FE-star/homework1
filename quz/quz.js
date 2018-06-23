@@ -19,7 +19,7 @@ function dcate(A, B) {
 /**
  * sub
  * The sublist consisting of LEN items from list L,
- * beginning with item #STAnewListT (where the first item is #0).
+ * beginning with item #START (where the first item is #0).
  * Does not modify the original list elements.
  * it is an error if the desired items don't exist.
  * @param {List} L
