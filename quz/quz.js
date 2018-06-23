@@ -8,13 +8,18 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    let L = A;
+    while (L !== null) {
+        L = A.tail;
+    }
+    L.tail = B;
+    return L;
 }
 
 /**
  * sub
  * The sublist consisting of LEN items from list L,
- * beginning with item #START (where the first item is #0).
+ * beginning with item #STAnewListT (where the first item is #0).
  * Does not modify the original list elements.
  * it is an error if the desired items don't exist.
  * @param {List} L
@@ -23,5 +28,17 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    let newList = [];
+    let maxLen = start + len;
+    for (let i = 0; i < maxLen; i++) {
+    	if (L !== null) {
+    		if (i >= start && i < maxLen) {
+    			newList.push(L.head);
+    		}
+    		L = L.tail;
+    	} else {
+    		break;
+    	}
+    };
+    return List.list(newList);
 }
