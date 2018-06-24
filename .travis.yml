@@ -8,7 +8,7 @@ cache:
     - node_modules
 
 addons:
-  firefox: "latest"
+  firefox: "stable"
 
 
 before_script:
