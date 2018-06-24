@@ -19,6 +19,7 @@ List.list = function (array) {
 		p.tail = new List(array[i]);
 		p = p.tail;
 	}
+
 	return sentinel.tail;
 }
 
