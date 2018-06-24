@@ -18,5 +18,4 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
 
-install:
-  npm install karma-cli -g
+install: npm install && npm install -g karma-cli
