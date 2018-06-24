@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A ;
+	while(p.tail){
+		if( p.tail) {
+			p = p.tail
+		}
+	}
+	p.tail = B
+	return A
 }
 
 /**
@@ -24,4 +32,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var arr = [] ,p = L ;
+	while(p.tail &&  start--){
+		if( p.tail) {
+			p = p.tail
+		}
+    }
+    debugger
+    while(len > 0){
+        -- len;
+        arr.push(p.head)
+        if( p.tail) {
+			p = p.tail
+		}
+    }
+    return L.constructor.list(arr)
 }
