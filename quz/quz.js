@@ -20,6 +20,7 @@ function dcate(A, B) {
 			]
 		}
 	*/
+	
 	var tail = A;
 	while(tail.tail) {
 		tail = tail.tail;
