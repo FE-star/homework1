@@ -8,7 +8,24 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	// List 的结构
+	/* 
+		{
+			head: '',
+			tail: [
+				{
+					head: '',
+					tail: []
+				}
+			]
+		}
+	*/
+	var tail = A;
+	while(tail.tail) {
+		tail = tail.tail;
+	}
+	tail.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +40,27 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	// List 的结构
+	/* 
+		{
+			head: '',
+			tail: [
+				{
+					head: '',
+					tail: []
+				}
+			]
+		}
+	*/	
+	var i = 0, list;
+	var newList = new List();
+	for (list = L; list !== null; list = list.tail) {
+		if (i === start) {
+			newList = list;
+		} else if (i > start && i <= (start + len)) {
+			newList.tail = list;
+		}
+		i++;
+	}
+	return newList;
 }

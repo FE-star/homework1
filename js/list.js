@@ -32,3 +32,14 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+List.prototype.len = function () {
+	var L;
+	var i = 0;
+	for (L = this; L !== null; L = L.tail) {
+		i++;
+	}
+	return i;
+};
+
+// module.exports = List;
