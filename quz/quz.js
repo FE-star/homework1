@@ -34,7 +34,7 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
 	let a = L;
-	for(let i = 0;i < start  ; i++){
+	for(let i = 0;i < start; i++){
 		a=a.tail
 	}
 	return a;
