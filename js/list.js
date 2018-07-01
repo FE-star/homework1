@@ -43,14 +43,16 @@ List.list = function (array) {
 		//   tail : p
 		// }
 	}
-	return sentinel.tail;
+	// return sentinel.tail;
+
+	return sentinel;
 }
 
-// Returns a readable String for THIS.
+// Returns a readable String for this LIST.
 List.prototype.toString = function () {
 	var res = '', L;
 	res += '[';
-	for (L = this; L !== null; L = L.tail) {
+	for (L = this.tail; L !== null; L = L.tail) {
 		res = res + ' ' + L.head;
 	}
 	res += ' ]';
