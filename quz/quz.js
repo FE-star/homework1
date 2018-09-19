@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	if (! (A instanceof List) || !(B instanceof List)) {
+		throw new TypeError('传入的类型不是List')
+	}
+	let tail = A;
+	while(tail.tail) {
+		tail = tail.tail
+	}
+	tail.tail = B
+	return A;
 }
 
 /**
@@ -24,4 +33,21 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if (!(L instanceof List)) {
+		throw new TypeError('传入的类型不是List')
+	}
+	let first = L;
+	for (let i = 0; i < start; i++ ) {
+		first = first.tail
+		if (!first) {
+			throw new TypeError('List 的长度必须大于 start')
+		}
+	}
+	const s = new List(first.head)
+	first = first.tail
+	for(let i = 0; i < len; i++) {
+		let { head } = first;
+		s.tail = new List(head)
+	}
+	return s
 }
