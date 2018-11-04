@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let L = A;
+	while (L) {
+		if (L.tail === null) {
+			L.tail = B
+			break;
+		}
+		L = L.tail;
+	}
+	return A;
 }
 
 /**
