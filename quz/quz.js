@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let climber = A;
+	while (climber.tail !== null) {
+		climber = climber.tail;
+	}
+	climber.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let climber = L, count = 0,list = [];
+	while (count !== start && climber.tail !== null) {
+		climber = climber.tail;
+		count ++;
+	};
+	if (climber.tail === null) throw('sublist doesn\'t exist');
+	while (len --) {
+		debugger;
+		list.push(climber.head);
+		if (climber.tail === null && len > 0) throw('sublist doesn\'t exist');
+		climber = climber.tail;
+	}
+	return List.list(list);
 }
