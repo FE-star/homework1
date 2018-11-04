@@ -12,6 +12,3 @@ before_script:
 
 before_install:
   npm install karma-cli -g
-
-script:
-- npm test
