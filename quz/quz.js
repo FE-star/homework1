@@ -9,8 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	var p=A.tail
-	while(p.tail!==null){
+	var p=A
+	if(p.head===0){
+		p=B
+		return B
+	}
+	while(p.tail){
 		p=p.tail
 	}
 	p.tail=B
@@ -30,4 +34,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var counter=1,
+		p=L.tail,
+		newList=new List()
+	while(counter<start){
+		p=p.tail
+		counter++
+	}
+	counter=0
+	while(counter<len){
+		newList=dcate(newList,List.list([p.head]))
+		p=p.tail
+		counter++
+	}
+	return newList
 }
