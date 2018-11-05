@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var pointer = A;
+	while (pointer.tail !== null) {
+		pointer = pointer.tail
+	}
+	pointer.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var pointer = L, i = 0;
+	var arr = [];
+
+	if (start === 0) {
+		arr.push(pointer.head);
+	}
+
+	while (pointer.tail !== null) {
+		pointer = pointer.tail;
+		i++;
+		if (i >= start && arr.length < len) {
+			arr.push(pointer.head);
+		}
+	}
+	if (arr.length === 0) {
+		return new Error("items don't exist");
+	}
+	return List.list(arr);
 }
