@@ -7,9 +7,21 @@
  * @param {List} B
  * @returns {List}
  */
+// const List = require('../js/list');
+// console.log(List)
+var A = List.list([4, 6, 7, 3, 8]),
+    B = List.list([3, 2, 5, 9]);
+
 function dcate(A, B) {
 	/** Fill in here **/
+	let currTail = A.tail
+	while (currTail.tail != null) {
+		currTail = currTail.tail
+	}
+	currTail.tail = B
+	return A
 }
+
 
 /**
  * sub
@@ -24,4 +36,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+
+	let result = null;
+	let arr = L.toString();
+	
+	arr = arr.replace(/(\[\s|\s\])/g, '').split(' ');
+	result = arr.slice(start, start + len)
+	return List.list(result)
+
 }
+
+
+
+
+
