@@ -1,9 +1,11 @@
+os: osx
 language: node_js
+sudo: required
 node_js:
-  - "6"
+  - "8"
 
 addons:
-  firefox: "latest"
+  firefox: stable
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -12,3 +14,7 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+script:
+  - karma start --single-run
+
