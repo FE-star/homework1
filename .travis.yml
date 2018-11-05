@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
 addons:
-  firefox: "latest"
+  chrome: stable
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -12,3 +12,6 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+  npm install karma-chrome-launcher --save-dev
+
+script: karma start --single-run

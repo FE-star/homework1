@@ -2,13 +2,20 @@
  * dcate
  * A list consisting of elements of A followed by the
  * elements of B. May modify items of A.
- * Don't use 'new'
+ * Don't use 'new' 
  * @param {List} A
  * @param {List} B
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+	let sentinel = A
+	for (; A.tail !== null; A = A.tail);
+	for (L = B; L.tail !== null; L = L.tail) {
+		A.tail = L
+		A = A.tail;
+	}
+	return  sentinel
 }
 
 /**
@@ -23,5 +30,17 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+	let sentinel = L, p
+	for (; start--;) {
+		sentinel = sentinel.tail
+	}
+	p = sentinel
+	for (; sentinel = sentinel.tail; ) {
+		if (len--) {
+			sentinel.tail = null
+			break
+		} 
+	}
+	return p
 }
