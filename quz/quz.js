@@ -34,11 +34,13 @@ function sub(L, start, len) {
 	let res = new List()
 	let q = res
 	while (p.tail !== null && start > 0) {
+		if (p.tail == null) throw "the next tail doesn't exist"
 		p = p.tail
 		start--
 	}
 	while (len > 0 && p !== null) {
 		q.tail = new List(p.head)
+		if (p === null) throw("the next tail doesn't exist")
 		p = p.tail
 		q = q.tail
 		len--
