@@ -10,7 +10,7 @@
 function dcate(A, B) {
 	let tail = A.tail;
 	while(tail.tail){
-		tail = A.tail;
+		tail = tail.tail;
 	}
 	tail.tail = B;
 	return A;
