@@ -26,6 +26,7 @@ function dcate(A, B) {
     return List.list(arr).toString();
 }
 
+
 /**
  * sub
  * The sublist consisting of LEN items from list L,
