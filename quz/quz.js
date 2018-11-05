@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	// 考察的是list集合的数组结构，解题思路是先找到A集合的尾部，依次把B集合追加到A集合后面。（当然，也可以直接修改list集合）
+	let sentinel = A
+	for (; A.tail !== null; A = A.tail);
+	for (L = B; L.tail !== null; L = L.tail) {
+		A.tail = L
+		A = A.tail;
+	}
+	return  sentinel
 }
 
 /**
@@ -24,4 +32,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let sentinel = L, p
+	for (; start--;) {
+		sentinel = sentinel.tail
+	}
+	p = sentinel
+	for (; sentinel = sentinel.tail; ) {
+		if (len--) {
+			sentinel.tail = null
+			break
+		} 
+	}
+	return p
 }
