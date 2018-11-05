@@ -8,7 +8,12 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	let tail = A.tail;
+	while(tail.tail){
+		tail = tail.tail;
+	}
+	tail.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +28,33 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
+	if(start < 0){
+		throw new error('start值不正确');
+	}
+	if(len < 0 ){
+		throw new error('len值不正确');
+	}
 	/** Fill in here **/
+	let C = L;
+	let arr = [];
+	let i = 0;
+	let j = 0;
+	while(i != start){
+		i++;
+		C = C.tail;
+	}
+	while(j != len){
+		j++;
+		arr.push(C.head);
+		if(C.tail == null){
+			if(len == j){
+				break;
+			}else{
+				throw new error('所取值超出范围');
+			}
+			
+		}
+		C = C.tail;
+	}
+	return List.list(arr);
 }
