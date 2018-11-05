@@ -8,7 +8,12 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    var tailA = A;
+    while (tailA.tail !== null) {
+        tailA = tailA.tail;
+    }
+    tailA.tail = B;
+    return A;
 }
 
 /**
@@ -23,5 +28,25 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    var p = L;
+	if (start < 0 || len <= 0) {
+        throw new Error();
+    }
+    while (start > 0 && p.tail !== null) {
+        p = p.tail;
+        start--;
+    }
+    if (start > 0) {
+        throw new Error();
+    }
+
+    var sentinel = new List();
+    var q = sentinel;
+    var i = 0;
+    for (;i < len && p !== null;i++, p = p.tail) {
+        q.tail = new List(p.head);
+        q = q.tail;
+    }
+
+    return sentinel.tail;
 }
