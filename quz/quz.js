@@ -9,6 +9,21 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var flag = true;
+	var arr = [];
+	while(flag) {
+		if (!A.tail) {
+			A.tail = B;
+            for (A; A !== null; A = A.tail) {
+                arr.push(A.head);
+            }
+			flag = false;
+		} else {
+            arr.push(A.head);
+            A = A.tail;
+		}
+    }
+    return List.list(arr).toString();
 }
 
 /**
@@ -24,4 +39,10 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var arr = [];
+	for (L; L !== null; L = L.tail) {
+		arr.push(L.head);
+	}
+	var index = arr.indexOf(start);
+	return List.list(arr.slice(index, index + len)).toString();
 }
