@@ -7,6 +7,11 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
+    browserNoActivityTimeout : 60000, //default 10000
+    browserDisconnectTimeout : 10000, // default 2000
+    browserDisconnectTolerance : 1, // default 0
+    captureTimeout: 60000,
+
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -58,7 +63,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
