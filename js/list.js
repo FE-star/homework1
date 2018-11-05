@@ -8,6 +8,10 @@ function List(head, tail) {
 	this.tail = tail || null;
 }
 
+/**
+ * @parmas: array 
+ * @Description: 构造单链
+ */
 // Returns a new List containing the array.
 List.list = function (array) {
 	var sentinel = new List(),
