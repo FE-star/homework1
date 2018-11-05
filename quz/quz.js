@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let p = A
+	while (p.tail !== null) {
+		p = p.tail
+	}
+	p.tail = B
+	return A
 }
 
 /**
@@ -24,4 +30,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let p = L
+	let res = new List()
+	let q = res
+	while (p.tail !== null && start > 0) {
+		if (p.tail == null) throw "the next tail doesn't exist"
+		p = p.tail
+		start--
+	}
+	while (len > 0 && p !== null) {
+		q.tail = new List(p.head)
+		if (p === null) throw("the next tail doesn't exist")
+		p = p.tail
+		q = q.tail
+		len--
+	}
+	return res.tail
 }
