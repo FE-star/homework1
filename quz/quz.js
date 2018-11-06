@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let flag = A.tail
+	while (flag !== null && flag.tail !== null) {
+		flag = flag.tail
+	}
+	flag.tail = B
+	return A
 }
 
 /**
@@ -24,4 +30,31 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if (!L || !start) {
+		throw `desired items don't exist.`
+	}
+	let result = null
+	let flag = L
+	let i = 0
+	let arr = []
+
+	while (flag !== null) {
+		if (i === start) {
+			// 获取起始点
+			result = new List(flag.head, flag.tail)
+			break;
+		} else if (i < start) {
+			flag = flag.tail
+		}
+		i++
+	}
+	// 根据len的值来生成数组
+	for (let i=0;i<len;i++) {
+		if (!result) {
+			throw `desired items don't exist.`
+		}
+		arr.push(result.head)
+		result = result.tail
+	}
+	return List.list(arr)
 }
