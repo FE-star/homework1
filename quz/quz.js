@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var sentinel = A;
+	var p;
+	if(!A) sentinel = new List()
+	while(sentinel.tail) {
+		sentinel = sentinel.tail
+	}
+	sentinel.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +32,21 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if(!L || isNaN(start) || isNaN(len)) throw('miss args')
+	var len = 0;
+	var p = L;
+	while(start - len > 0) {
+		len++;
+		p = p.tail;
+	}
+	var sentinel = new List(p.head)
+	var head = sentinel;
+	while(len) {
+		if((len-- > 0) && p) {
+			sentinel.tail = p.tail;
+			p = p.tail
+			sentinel = sentinel.tail
+		}
+	}
+	return head;
 }
