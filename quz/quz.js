@@ -8,7 +8,16 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    var L = A
+    while (true) {
+        L = L.tail
+        if (!L.tail) {
+            L.tail = B
+            break
+        }
+    }
+    return A
 }
 
 /**
@@ -23,5 +32,5 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
 }
