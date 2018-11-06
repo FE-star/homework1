@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  var sentinel = A
+  // A遍历到末尾之后tail指向B即可
+  while (A.tail) {
+    A = A.tail
+  }
+  A.tail = B
+  return sentinel
 }
 
 /**
@@ -23,5 +30,19 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  var arr = [], C = L
+  var i = 0
+
+  while (C && i < start) {
+    i++
+    C = C.tail
+  }
+
+  while (C && i < start + len) {
+    i++
+    arr.push(C.head)
+    C = C.tail
+  }
+  return List.list(arr)
 }
