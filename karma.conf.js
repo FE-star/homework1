@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
+// Generated on Tue Nov 06 2018 12:18:46 GMT+0800 (中国标准时间)
 
 module.exports = function(config) {
   config.set({
@@ -18,7 +18,7 @@ module.exports = function(config) {
       'node_modules/should/should.js',
       'js/*.js',
       'quz/*.js',
-      'test/*.js'
+      'test/*.js',
     ],
 
 
@@ -53,12 +53,12 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
