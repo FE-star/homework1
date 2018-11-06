@@ -9,7 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	console.log(typeof A);
+	let temp = A.tail;
+	while(temp) {
+	    if(!temp.tail) {
+	        temp.tail = B;
+	        break;
+        }
+        temp = temp.tail;
+    };
+	return A;
 }
 
 /**
@@ -25,4 +33,5 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+
 }
