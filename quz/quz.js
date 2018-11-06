@@ -40,9 +40,12 @@ function sub(L, start, len) {
   for (let i = 0; i < start + len - 1; i++) {
     if (i === start) {
       L = temp;
+      console.log("L:", L);
     }
     temp = temp.tail;
+    console.log(i+"temp:", temp);
   }
   temp.tail = null;
+  console.log("temp:", temp);
   return L;
 }
