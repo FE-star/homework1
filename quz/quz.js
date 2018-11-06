@@ -15,10 +15,12 @@ var A = List.list([4, 6, 7, 3, 8]),
 function dcate(A, B) {
 	/** Fill in here **/
 	let currTail = A.tail
+
 	while (currTail.tail != null) {
 		currTail = currTail.tail
 	}
 	currTail.tail = B
+
 	return A
 }
 
@@ -34,14 +36,26 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
+
 function sub(L, start, len) {
 	/** Fill in here **/
 
-	let result = null;
-	let arr = L.toString();
-	
-	arr = arr.replace(/(\[\s|\s\])/g, '').split(' ');
-	result = arr.slice(start, start + len)
+	let result;
+	let heads = [];
+	let currTail = L;
+	let headsLen = 0
+
+	while (currTail) {
+		heads.push(currTail.head)
+		currTail = currTail.tail
+	}
+
+	result = heads.slice(start, start + len)
+
+	if (result.length !== len) {
+		throw new Error(`不存在长度为${len}的子链表`)
+	}
+
 	return List.list(result)
 
 }
