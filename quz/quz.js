@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+  var isLastTail = A;
+  while (isLastTail.tail) {
+    isLastTail = isLastTail.tail;
+  }
+  isLastTail.tail = B;
+  return A;
 }
 
 /**
@@ -24,4 +30,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  var subArr= [],
+      lTail = L;
+  while (lTail) {
+    if (lTail.head === start || subArr.length > 0 && subArr.length < len) {
+      subArr.push(lTail.head);
+    }
+    lTail = lTail.tail;
+  }
+  if (subArr.length < len) {
+    throw new Error(`item don't exist`);
+  }
+  return List.list(subArr);
 }
