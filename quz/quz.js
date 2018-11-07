@@ -30,9 +30,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	start++;
-	var arr = L.toString().split(" ");
-	var temp = arr.slice(start, start+len);
-	var A = List.list(temp);
-	return A.toString();
+	var temp = L;
+	var _end;
+	for (var i = 0; i < start; i++) {
+	  if (temp.tail === null) {
+		throw new Error('error start value.');
+	  }
+	  temp = temp.tail;
+	}
+	_end = temp;
+	while (len > 1) {
+	  if (_end.tail === null) {
+		return temp;
+	  }
+	  _end = _end.tail;
+	  len--;
+	}
+	_end.tail = null;
+	return temp;
 }
