@@ -28,7 +28,7 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	L = Object.assign({}, L);
-	let sublist = null;
+	let sublist;
 	for (let i = 0, p = L; i <= start + len; i++) {
 		if (i === start) {
 			sublist = p;
