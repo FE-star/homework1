@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	for (let i = A; i; i = i.tail ) {
+		if (i.tail === null) {
+			i.tail = B;
+			break;
+		}
+	}
+	return A;
 }
 
 /**
@@ -24,4 +31,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let myList = new List();
+	let res = myList;
+	let num = 1;
+	for (let i = L; i; i = i.tail) {
+		if (i.head === start || num > 1) {
+			res.head = i.head;
+			num++;
+			if (num > len) {
+				break;
+			}
+			res.tail = new List();
+			res = res.tail;	
+			num++;
+		}
+	}
+	return myList;
 }
