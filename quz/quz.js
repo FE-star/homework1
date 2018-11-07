@@ -18,6 +18,11 @@ function dcate(A, B) {
         }
     }
     return A
+
+    // let L;
+    // for (L = A; L.tail !== null; L = L.tail) { }
+    // L.tail = B;
+    // return A;
 }
 
 /**
