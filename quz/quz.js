@@ -7,20 +7,17 @@
  * @param {List} B
  * @returns {List}
  */
+
+
 function dcate(A, B) {
-  /** Fill in here **/
-  let pointer = A;
-  while (pointer) {
-    if (pointer.tail === null) {
-      // 当遍历到最后一个pointer.tail为null,则将整个B赋值给pointer.tail
-      pointer.tail = B;
-      // 结束遍历
-      break;
-    }
-    // pointer指向a.tail,继续往深一层查找，此时pointer指向a.tail.tail
-    pointer = pointer.tail;
-  }
-  return A;
+	let aArr = A.toString().split(' ').slice(1, -1);
+	let bArr = B.toString().split(' ').slice(1, -1);
+	const temp = List.list(aArr.concat(bArr));
+
+	A.head = temp.head;
+	A.tail = temp.tail;
+
+	return A;
 }
 
 /**
@@ -35,17 +32,6 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-  /** Fill in here **/
-  let temp = L;
-  for (let i = 0; i < start + len - 1; i++) {
-    if (i === start) {
-      L = temp;
-      console.log("L:", L);
-    }
-    temp = temp.tail;
-    console.log(i+"temp:", temp);
-  }
-  temp.tail = null;
-  console.log("temp:", temp);
-  return L;
+	let arr = L.toString().split(' ').slice(start+1, start+1+len);
+	return List.list(arr);
 }
