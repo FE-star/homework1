@@ -18,6 +18,11 @@ describe('unit test for quz.js', function () {
             sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
+
+        it('the start value should be a wrong number', function () {
+            should.throws(sub(C, 5, 2),Error);
+        });
+
     });
 
 });
