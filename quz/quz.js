@@ -37,9 +37,10 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     /** Fill in here **/
-    var res = new List();
-    regroup(L, start);
-    regroup(L, len);
+    var res = new List(), i;
+    for (i = 1; i < arguments.length; i++) {
+        regroup(L, arguments[i]);
+    }
     return res;
 
     /** recursion **/
