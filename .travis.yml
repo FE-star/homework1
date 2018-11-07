@@ -2,7 +2,7 @@ language: node_js
 node_js: '8.9.4'
 before_script: npm install karma-cli -g
 addons:
-  chrome: stable
+  firefox: 'latest'
 dist: trusty
 sudo: false
 
