@@ -31,7 +31,7 @@ function sub(L, start, len) {
 	let sublist = null;
 	for (let i = 0, p = L; i <= start + len; i++) {
 		if (i === start) {
-			sublist = p
+			sublist = p;
 		}
 		if (i === start + len - 1) {
 			p.tail = null;
