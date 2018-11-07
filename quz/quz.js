@@ -29,15 +29,11 @@ function dcate(A, B) {
 function sub(L, start, len) {
   /** Fill in here **/
   const temp = deepCopy(L);
-  console.log(temp);
   let subObj = null;
   for (let i = temp, ind = 0; i !== null; i = i.tail, ind++) {
     ind === start && (subObj = i);
     ind === start + len - 1 && (i.tail = null);
   }
-
-  console.log(subObj);
-
   return subObj;
 }
 
