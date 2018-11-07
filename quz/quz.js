@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	
+	let N = A.tail
+	while(N.tail !== null){
+		N = N.tail
+	}
+	N.tail = B
+	// last.tail = B
+	return A
 }
 
 /**
@@ -24,4 +32,8 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let group = L.toString()
+	group = group.slice(2,group.length-2).split(" ").slice(start,start + len)
+	
+	return List.list(group)
 }
