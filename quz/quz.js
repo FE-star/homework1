@@ -33,4 +33,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     /** Fill in here **/
+    var p = new List(),
+        i = 0,
+        arr = []
+    p.tail = L
+    do {
+        p = p.tail
+        if (i < start) continue
+        if (i === start + len) break
+        arr.push(p.head)
+
+    } while (++i && p)
+
+    return new List.list(arr)
 }
