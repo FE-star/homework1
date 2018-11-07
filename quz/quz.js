@@ -8,7 +8,11 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  let L;
+  for (L = A; L.tail !== null; L = L.tail) {}
+  L.tail = B;
+  return A;
 }
 
 /**
@@ -23,5 +27,28 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  const temp = deepCopy(L);
+  console.log(temp);
+  let subObj = null;
+  for (let i = temp, ind = 0; i !== null; i = i.tail, ind++) {
+    ind === start && (subObj = i);
+    ind === start + len - 1 && (i.tail = null);
+  }
+
+  console.log(subObj);
+
+  return subObj;
+}
+
+function deepCopy(list) {
+  const temp = new List();
+  for (let key in list) {
+    if (list[key] && typeof list[key] === 'List') {
+      deepCopy(list[key]);
+    } else {
+      temp[key] = list[key];
+    }
+  }
+  return temp;
 }
