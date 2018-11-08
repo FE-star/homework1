@@ -8,6 +8,16 @@
  * @returns {List}
  */
 function dcate(A, B) {
+	let x = A.tail
+	while (x) {
+		if (x.tail) {
+			x = x.tail
+		} else {
+			x.tail = B
+			break;
+		}
+	}
+	return A
 	/** Fill in here **/
 }
 
@@ -23,5 +33,21 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
+	let x = L
+	while (x.head != start) {
+		x = x.tail
+	}
+	console.log('x', x);
+	let arr = []
+	for(var i = 0; i < len; i++) {
+		if (x.head) {
+			arr.push(x.head)
+			x = x.tail
+		} else {
+			arr.push(x)
+			break;
+		}
+	}
+	return List.list(arr)
 	/** Fill in here **/
 }
