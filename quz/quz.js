@@ -8,7 +8,13 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	var T;
+
+	if(!A) return B;
+
+	for(T = A; T.tail !== null; T = T.tail){}
+	T.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +29,23 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	var T, i, temA, temStr, 
+	subL = null;
+	if(!L) return null;
+	
+	temStr = L.toString();
+	temA = temStr.substring(temStr.indexOf(' ') + 1, temStr.lastIndexOf(' ')).split(' ');
+	T = List.list(temA);
+	
+	if(start < 0) start += temA.length;
+
+	for(i = 0; i < start + len; i++){
+		if(i === start) subL = T;
+		if(i === start + len - 1)  T.tail = null;
+
+		if(T.tail === null) break;
+		
+		T = T.tail;
+	}
+	return subL;
 }
