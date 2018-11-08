@@ -13,9 +13,9 @@ before_script:
 before_install:
   npm install karma-cli -g
 
-"scripts":{
-  "test":"karma start --single-run"
-}
+scripts:
+  karma start --single-run
+
 
 chache:
   npm
