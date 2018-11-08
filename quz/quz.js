@@ -8,7 +8,16 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	/** Fill in here **/ 
+	var L;
+	L=A;
+	for (L = A;L!==null; L = L.tail) {
+		if(L.tail==null){
+			L.tail=B
+			break;
+		}
+	}
+	return A
 }
 
 /**
@@ -24,4 +33,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var list=[];
+	for(var i=0;true;i++){
+		if(i>=start&&i<start+len){
+			if(L.head){
+				list.push(L.head);
+			}else{
+				throw Error('items don \'t exist')
+			}
+		}
+		if(L.tail===null){
+			break
+		}else{
+			L=L.tail
+		}
+	}
+	return List.list(list)
 }
