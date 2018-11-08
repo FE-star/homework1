@@ -1,14 +1,14 @@
 describe('unit test for quz.js', function () {
 
-    var A = List.list([4, 6, 7, 3, 8]),
+    var A = List.list([1]),
         B = List.list([3, 2, 5, 9]),
         C = List.list([19, 8, 7, 3, 2]);
 
     describe('#dcate()', function () {
         it('should get a list consisting of elements of A followed by the elements of B', function () {
-        	A.toString().should.equal('[ 4 6 7 3 8 ]');
-            dcate(A, B).toString().should.equal('[ 4 6 7 3 8 3 2 5 9 ]');
-            A.toString().should.not.equal('[ 4 6 7 3 8 ]');
+        	A.toString().should.equal('[ 1 ]');
+            dcate(A, B).toString().should.equal('[ 1 3 2 5 9 ]');
+            A.toString().should.not.equal('[ 1 ]');
         });
     });
 

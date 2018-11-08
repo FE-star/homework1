@@ -7,8 +7,17 @@
  * @param {List} B
  * @returns {List}
  */
+
+
 function dcate(A, B) {
-	/** Fill in here **/
+	let aArr = A.toString().split(' ').slice(1, -1);
+	let bArr = B.toString().split(' ').slice(1, -1);
+	const temp = List.list(aArr.concat(bArr));
+
+	A.head = temp.head;
+	A.tail = temp.tail;
+
+	return A;
 }
 
 /**
@@ -23,5 +32,6 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let arr = L.toString().split(' ').slice(start+1, start+1+len);
+	return List.list(arr);
 }

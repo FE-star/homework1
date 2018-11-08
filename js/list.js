@@ -10,16 +10,16 @@ function List(head, tail) {
 
 // Returns a new List containing the array.
 List.list = function (array) {
-	var sentinel = new List(),
+	var a = new List(),
 		len = array.length,
-		p, i;
+		b, i;
 
-	p = sentinel;
+	b = a;
 	for (i = 0; i < len; i++) {
-		p.tail = new List(array[i]);
-		p = p.tail;
+		b.tail = new List(array[i]);
+		b = b.tail;
 	}
-	return sentinel.tail;
+	return a.tail;
 }
 
 // Returns a readable String for THIS.
