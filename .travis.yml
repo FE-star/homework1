@@ -16,6 +16,6 @@ before_install:
 scripts:
   karma start --single-run
 
-
 chache:
   npm
+
