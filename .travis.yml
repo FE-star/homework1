@@ -16,3 +16,5 @@ before_install:
 script:
   karma start --single-run
 
+cache: 
+  npm
