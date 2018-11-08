@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A;
+	while (p.tail !== null) {
+		p = p.tail
+	}
+	p.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let temp = L, list = [];
+	for (let i = 0; i < start+len; i++) {
+		if ( i >= start) {
+			if (temp === null) throw('The sublist doesn\'t exist')
+			list.push(temp.head)
+		}
+		temp = temp.tail;
+	}
+	
+	return List.list(list);
+	
 }
