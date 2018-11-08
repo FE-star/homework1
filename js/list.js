@@ -26,6 +26,7 @@ List.list = function (array) {
 List.prototype.toString = function () {
 	var res = '', L;
 	res += '[';
+	// console.log(this)
 	for (L = this; L !== null; L = L.tail) {
 		res = res + ' ' + L.head;
 	}
