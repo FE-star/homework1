@@ -9,6 +9,18 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	const aArr = A.split(' ');
+	const bArr = B.split(' ');
+	updateArr(aArr);
+	updateArr(bArr);
+	let str = '';
+	aArr.forEach(num => {
+		str += `${num} `;
+	});
+	bArr.forEach(num => {
+		str += `${num} `;
+	});
+	return `[ ${str}]`;
 }
 
 /**
@@ -24,4 +36,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	const arr = L.split(' ')
+	updateArr(arr);
+	let str = '';
+	arr.forEach((num, index) => {
+		if (index > start - 1 && index < (start + len)) {
+			str += `${num} `;
+		}
+	});
+	return `[ ${str}]`;
+}
+/**
+ * @param {*} arr
+ */
+function updateArr (arr) {
+	if (!arr.length) return
+	arr.pop();
+	arr.splice(0, 1);
+	return arr;
 }
