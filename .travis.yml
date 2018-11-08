@@ -12,3 +12,10 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+scripts:
+  karma start --single-run
+
+chache:
+  npm
+

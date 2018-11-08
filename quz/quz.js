@@ -8,7 +8,20 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    if (A.head) {
+        regoup(A, B);
+    }
+    return A;
+
+    /** recursion **/
+    function regoup(A, B) {
+        if (A.tail) {
+            regoup(A.tail, B);
+        } else {
+            A.tail = B;
+        }
+    }
 }
 
 /**
@@ -23,5 +36,28 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    var res = new List(), i;
+    for (i = 1; i < arguments.length; i++) {
+        regroup(L, arguments[i]);
+    }
+    return res;
+
+    /** recursion **/
+    function regroup(L, num) {
+        if (L && L.head === num) {
+            add(num);
+        } else if (L && L.tail) {
+            regroup(L.tail, num);
+        }
+    }
+
+    /** add to res **/
+    function add(num) {
+        if (res.head) {
+            res.tail = new List(num);
+        } else {
+            res.head = num;
+        }
+    }
 }
