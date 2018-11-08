@@ -34,7 +34,6 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
 	var list=[];
-	
 	for(var i=0;true;i++){
 		if(i>=start&&i<start+len){
 			if(L.head){
