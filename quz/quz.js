@@ -8,7 +8,20 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    if(A.constructor!=List||B.constructor!=List){
+        throw new Error("isn't List");
+    }
+
+	let temp = A;
+	let last;
+	// 取出最后一个值
+    while(temp){
+        last = temp;
+        temp = temp.tail;
+    }
+    last.tail = B;
+
+	return A;
 }
 
 /**
@@ -24,4 +37,26 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    if(L.constructor!=List){
+        throw new Error("isn't List");
+    }
+    start = parseInt(start);
+    len = parseInt(len);
+    if( typeof start != 'number'||typeof len != 'number'){
+        throw new Error("isn't number");
+    }
+    let result;
+    let index = 0;
+    let temp = L;
+    while (temp){
+        if(start<=index&&index<=start+len){
+            if(!result){
+                result = new List(temp.head);
+            }
+            result.tail = temp;
+        }
+        temp = temp.tail;
+        index++;
+	}
+	return result;
 }
