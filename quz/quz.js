@@ -7,8 +7,15 @@
  * @param {List} B
  * @returns {List}
  */
+
 function dcate(A, B) {
 	/** Fill in here **/
+	let p = A.tail
+	while(p.tail) {
+		p = p.tail
+	}
+	p.tail = B
+	return A
 }
 
 /**
@@ -24,4 +31,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let count = 0,p = L;
+	while (start > count++) {
+		p = p.tail;
+	}
+	let q = p.tail
+	len--
+	while(--len) {
+		q = q.tail
+	}
+	q.tail = null
+	return p
 }
