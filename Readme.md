@@ -1,5 +1,5 @@
 # 作业
-
+![](https://travis-ci.org/baihexx/homework1.svg?branch=master)
 ### 步骤
 
 * fork 代码
