@@ -9,8 +9,8 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	const aArr = A.split(' ');
-	const bArr = B.split(' ');
+	const aArr = A.toString().split(' ');
+	const bArr = B.toString().split(' ');
 	updateArr(aArr);
 	updateArr(bArr);
 	let str = '';
@@ -36,7 +36,7 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	const arr = L.split(' ')
+	const arr = L.toString().split(' ')
 	updateArr(arr);
 	let str = '';
 	arr.forEach((num, index) => {
