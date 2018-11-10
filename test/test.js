@@ -17,6 +17,9 @@ describe('unit test for quz.js', function () {
         	C.toString().should.equal('[ 19 8 7 3 2 ]');
             sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
             C.toString().should.equal('[ 19 8 7 3 2 ]');
+            // 让我冲个100%覆盖啦
+            sub(C, 0, 2).toString().should.equal('[ 19 8 ]');
+            should.throws(sub(C, 5, 2), Error, "starting index doesn't exist");
         });
     });
 

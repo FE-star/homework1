@@ -45,7 +45,7 @@ function sub(L, start, len) {
 		}
 	}
 	if (arr.length === 0) {
-		return new Error("items don't exist");
+		return new Error("starting index doesn't exist");
 	}
 	return List.list(arr);
 }
