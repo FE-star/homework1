@@ -28,11 +28,14 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
-function sub(L, start, len) {
+function sub(L, start = 0, len = 0) {
 	/** Fill in here **/
 	var pointer = L, i = 0;
 	var arr = [];
 
+	if (len === 0) {
+		return new Error("required length cannot be 0");
+	}
 	if (start === 0) {
 		arr.push(pointer.head);
 	}

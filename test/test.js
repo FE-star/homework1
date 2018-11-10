@@ -20,6 +20,7 @@ describe('unit test for quz.js', function () {
             // 让我冲个100%覆盖啦
             sub(C, 0, 2).toString().should.equal('[ 19 8 ]');
             should.throws(sub(C, 5, 2), Error, "starting index doesn't exist");
+            should.throws(sub(C, 2, 0), Error, "required length cannot be 0");
         });
     });
 
