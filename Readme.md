@@ -1,5 +1,5 @@
 # 作业
-
+[![Build Status](https://www.travis-ci.org/fefuns/homework1.svg?branch=master)](https://www.travis-ci.org/fefuns/homework1.svg?branch=master)
 ### 步骤
 
 * fork 代码
