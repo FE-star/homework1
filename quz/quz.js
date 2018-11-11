@@ -33,12 +33,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	if(start < 0 || len > start || len > L.length) return;
-	let originArrStr = L.toString();
-	let originArr = originArrStr.split(' ');
-	originArr.splice(0, 1);
-	originArr.splice(originArr.length -1, 1);
-	let p = originArr.splice(start, len);
-	
-	return List.list(p);
+	let climber = L, count = 0,list = [];
+	while (count !== start && climber.tail !== null) {
+		climber = climber.tail;
+		count ++;
+	};
+	if (climber.tail === null) throw('sublist doesn\'t exist');
+	while (len --) {
+		if (climber.tail === null && len > 0) throw('sublist doesn\'t exist');
+		list.push(climber.head);
+		climber = climber.tail;
+	}
+	return List.list(list);
 }
