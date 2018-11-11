@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    for (var i = A; i; i = i.tail) {
+        if (i.tail === null) {
+            i.tail = B;
+            break;
+        }
+    }
+    return A;
 }
 
 /**
@@ -23,5 +30,23 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    var newC = new List();
+    var result = newC;
+    let num = 0;
+    /** Fill in here **/
+    for (let i = L; i; i = i.tail) {
+        //console.log(i, num, (start - 1), len);
+        if (i.head === start || num > 1) {
+            result.head = i.head;
+            num++;
+            if (num > len) {
+                break;
+            }
+            result.tail = new List();
+            result = result.tail;
+            num++;
+        }
+    }
+    return newC;
+
 }
