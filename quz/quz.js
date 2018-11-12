@@ -9,18 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	const aArr = A.toString().split(' ');
-	const bArr = B.toString().split(' ');
-	updateArr(aArr);
-	updateArr(bArr);
-	let str = '';
-	aArr.forEach(num => {
-		str += `${num} `;
-	});
-	bArr.forEach(num => {
-		str += `${num} `;
-	});
-	return `[ ${str}]`;
+	let temp = A.tail; // 获取A链表的尾部
+	while (temp) {
+		if (!temp.tail) { // A链表的最后一个节点是null
+			temp.tail = B; // 将指针指向B链表
+			break;
+		}
+		temp = temp.tail;
+	}
+ 	return A;
 }
 
 /**
@@ -36,22 +33,13 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-	const arr = L.toString().split(' ')
-	updateArr(arr);
-	let str = '';
-	arr.forEach((num, index) => {
-		if (index > start - 1 && index < (start + len)) {
-			str += `${num} `;
-		}
-	});
-	return `[ ${str}]`;
+	let temp = L;
+	const length = start + len - 1;
+	for (var i = 0; i < length; i++) {
+		if (i === start) L = temp;
+		temp = temp.tail;
+	}
+	temp.tail = null;
+ 	return L;
 }
-/**
- * @param {*} arr
- */
-function updateArr (arr) {
-	if (!arr.length) return
-	arr.pop();
-	arr.splice(0, 1);
-	return arr;
-}
+
