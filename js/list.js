@@ -22,6 +22,16 @@ List.list = function (array) {
 	return sentinel.tail;
 }
 
+List.prototype.reverse = function () {
+	var pointer = null, L = this;
+	while (L.tail !== null) {
+		pointer = new List(L.head, pointer);
+		L = L.tail;
+	}
+	pointer = new List(L.head, pointer);
+	return pointer;
+}
+
 // Returns a readable String for THIS.
 List.prototype.toString = function () {
 	var res = '', L;

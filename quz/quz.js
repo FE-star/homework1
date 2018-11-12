@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var pointer = A;
+	while (pointer.tail !== null) {
+		pointer = pointer.tail
+	}
+	pointer.tail = B;
+	return A;
 }
 
 /**
@@ -22,6 +28,27 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
-function sub(L, start, len) {
+function sub(L, start = 0, len = 0) {
 	/** Fill in here **/
+	var pointer = L, i = 0;
+	var arr = [];
+
+	if (len === 0) {
+		return new Error("required length cannot be 0");
+	}
+	if (start === 0) {
+		arr.push(pointer.head);
+	}
+
+	while (pointer.tail !== null) {
+		pointer = pointer.tail;
+		i++;
+		if (i >= start && arr.length < len) {
+			arr.push(pointer.head);
+		}
+	}
+	if (arr.length === 0) {
+		return new Error("starting index doesn't exist");
+	}
+	return List.list(arr);
 }
