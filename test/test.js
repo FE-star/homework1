@@ -3,7 +3,7 @@ describe('unit test for quz.js', function () {
     var A = List.list([4, 6, 7, 3, 8]),
         B = List.list([3, 2, 5, 9]),
         C = List.list([19, 8, 7, 3, 2]);
-
+        D = C.reverse();
     describe('#dcate()', function () {
         it('should get a list consisting of elements of A followed by the elements of B', function () {
             A.toString().should.equal('[ 4 6 7 3 8 ]');
@@ -23,5 +23,9 @@ describe('unit test for quz.js', function () {
             should.throws(sub(C, 2, 0), Error, "required length cannot be 0");
         });
     });
-
+    describe('reverse', function () {
+        it ('should reverse the old list and return a new', function () {
+            D.toString().should.equal('[ 2 3 7 8 19 ]');
+        });
+    });
 });
