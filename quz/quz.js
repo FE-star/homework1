@@ -13,6 +13,7 @@ function dcate(A, B) {
 	while (p.tail) {
 		p = p.tail;
 	}
+	
 	let b = B;
 	while (b.tail) {
 		p.tail = b;
