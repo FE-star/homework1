@@ -9,14 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
-	let tail = A.tail, lastTail = A.tail
+	let nextTail = A.tail
 
-	while (tail) {
-		tail = tail.tail
-		if (tail) lastTail = tail
+	while (nextTail) {
+		if (!nextTail.tail) break
+		nextTail = nextTail.tail
 	}
 
-	lastTail.tail = B
+	nextTail.tail = B
 	return A
 }
 
