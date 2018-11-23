@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let tail = A.tail, lastTail = A.tail
+
+	while (tail) {
+		tail = tail.tail
+		if (tail) lastTail = tail
+	}
+
+	lastTail.tail = B
+	return A
 }
 
 /**
@@ -24,4 +33,11 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	const result = {}
+	let count = start, left = L
+	while (count) {
+		left = left.tail
+		count -= 1
+	}
+	return left
 }
