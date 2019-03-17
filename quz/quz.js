@@ -7,8 +7,18 @@
  * @param {List} B
  * @returns {List}
  */
+
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  let temp = A
+  while (true) {
+    if (!temp.tail) {
+      temp.tail = B
+      break
+    }
+    temp = temp.tail
+  }
+  return A
 }
 
 /**
@@ -23,5 +33,29 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+
+  // var arr = [], temp = L
+  // while (true) {
+  //   arr.push(temp.head)
+  //   if (!temp.tail) {
+  //     break
+  //   }
+  //   temp = temp.tail
+  // }
+  // if (arr.length < (start + len)) throw Error('sublist doesn\'t exist')
+  // arr = arr.splice(start, len)
+  // return List.list(arr)
+
+  var tar = L, D = new List(), p = D
+  while (start--) {
+    tar = tar.tail
+  }
+  while (len--) {
+    if (tar === null) throw Error('sublist doesn\'t exist')
+    p.tail = new List(tar.head)
+    p = p.tail;
+    tar = tar.tail
+  }
+  return D.tail
 }
