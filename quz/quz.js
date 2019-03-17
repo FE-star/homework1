@@ -10,7 +10,6 @@ const List = require('../js/list')
  * @returns {List}
  */
 function dcate (A, B) {
-  /** Fill in here **/
   let p = A
   let first = A
   while (p.tail) {
@@ -32,7 +31,6 @@ function dcate (A, B) {
  * @returns {List}
  */
 function sub (L, start, len) {
-  /** Fill in here **/
   let sentinel = new List()
   let p = sentinel
   let index = 0
