@@ -16,9 +16,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/should/should.js',
-      'js/*.js',
-      'quz/*.js',
-      'test/*.js'
+      {pattern:  'js/*.js',  included:  true},
+      {pattern:  'quz/*.js',  included:  false},
+      {pattern:  'test/*.js',  included:  false},
     ],
 
 
@@ -58,8 +58,13 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
-
+    browsers: ['Chrome'],
+    customLaunchers: {
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security']
+      }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
