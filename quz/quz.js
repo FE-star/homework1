@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	// get the last item of A
+	let lastItemOfA = A
+	while(lastItemOfA.tail) {
+		lastItemOfA = lastItemOfA.tail
+	}
+	// join B to A
+	lastItemOfA.tail = B
+	return A
 }
 
 /**
@@ -23,5 +30,19 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let tempItem = L
+	let resList = new List()
+	// find the start position
+	while(start > 0) {
+		tempItem = tempItem.tail
+		start --
+	}
+
+	resList.tail = tempItem
+	// to the end position
+	while(len > 0) {
+		tempItem = tempItem.tail
+		len --
+	}
+	return resList.tail
 }
