@@ -1,3 +1,5 @@
+const List = require('../js/list')
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -7,8 +9,14 @@
  * @param {List} B
  * @returns {List}
  */
-function dcate(A, B) {
-	/** Fill in here **/
+function dcate (A, B) {
+  let p = A
+  let first = A
+  while (p.tail) {
+    p = p.tail
+  }
+  p.tail = B
+  return first
 }
 
 /**
@@ -22,6 +30,26 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
-function sub(L, start, len) {
-	/** Fill in here **/
+function sub (L, start, len) {
+  let sentinel = new List()
+  let p = sentinel
+  let index = 0
+  if (len === 0) return '[ ]'
+  while (L && index < start + len) {
+    if (start <= index) {
+      p.tail = new List(L.head)
+      p = p.tail
+    }
+    if (index === start + len - 1) break
+    L = L.tail
+    index++
+  }
+
+  if (p.tail) p.tail = null
+  return sentinel.tail
+}
+
+module.exports = {
+  dcate,
+  sub
 }
