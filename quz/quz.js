@@ -9,8 +9,25 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var res = '[', L
+	for (L = A; L !== null; L = L.tail) {
+		res = res + ' ' + L.head;
+	}
+	for (L = B; L !== null; L = L.tail) {
+		res = res + ' ' + L.head;
+	}
+	res += ' ]';
+	A.toString = function() {
+		var res = '', L;
+		res += '[';
+		for (L = this; L !== null; L = L.tail) {
+			res = res  + L.head + ' ';
+		}
+		res += ']';
+		return res;
+	}
+	return res
 }
-
 /**
  * sub
  * The sublist consisting of LEN items from list L,
@@ -24,4 +41,11 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	res = []
+	for (L ; L !== null; L = L.tail) {
+		res.push(L.head);
+	}
+	return '[ '+res.splice(start,len).toString().replace(/,/g, ' ')+' ]'
 }
+
+module.exports = {dcate,sub}

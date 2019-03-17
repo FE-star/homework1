@@ -1,3 +1,6 @@
+var List = require('../js/list')
+var {dcate,sub} = require('../quz/quz')
+require('should')
 describe('unit test for quz.js', function () {
 
     var A = List.list([4, 6, 7, 3, 8]),
