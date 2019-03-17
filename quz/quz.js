@@ -36,7 +36,7 @@ function sub(L, start, len) {
 	return List.list(this.goTail(this.goTail(L,start).obj,len,[]).arr)
 }
 function goTail(obj, num, arr) {
-	while(num--) {
+	while(num--&&obj) {
 		arr ? arr.push(obj.head) : 0
 		obj = obj.tail
 	}
