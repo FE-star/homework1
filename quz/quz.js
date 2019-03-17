@@ -34,7 +34,7 @@ function sub (L, start, len) {
   let sentinel = new List()
   let p = sentinel
   let index = 0
-  if (len === 0) return new List()
+  if (len === 0) return '[ ]'
   while (L && index < start + len) {
     if (start <= index) {
       p.tail = new List(L.head)
