@@ -33,13 +33,12 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	let i=j=0, arr=[], temp=L
-	while(++i < start) {
-		temp = temp.tail
+	return List.list(this.goTail(this.goTail(L,start).obj,len,[]).arr)
+}
+function goTail(obj, num, arr) {
+	while(num--) {
+		arr ? arr.push(obj.head) : 0
+		obj = obj.tail
 	}
-	while(j++ < len) {
-		temp = temp.tail
-		arr.push(temp.head)
-	}
-	return List.list(arr)
+	return {obj, arr}
 }
