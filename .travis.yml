@@ -1,14 +1,43 @@
+# language: node_js
+# node_js:
+#   - "10"
+
+# addons:
+#   firefox: "latest"
+
+# before_script:
+#   - "export DISPLAY=:99.0"
+#   - "sh -e /etc/init.d/xvfb start"
+#   - sleep 3 # give xvfb some time to start
+
+# before_install:
+#   npm install karma-cli -g
 language: node_js
 node_js:
-  - "6"
-
-addons:
-  firefox: "latest"
-
+  - 10
+before_install:
+  - npm install
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+script: karma start karma.conf.js --single-run
 
-before_install:
-  npm install karma-cli -g
+# 第一次将配好的测试项目上传到GitHub，然后想通过Travis CI进行集成测试，但是Travis并没有对项目进行构建，排查原因如下：
+# travis 默认不支持chrome，执行项目的时候发生失败
+# karma是持续监听的机制，而travis只需要做一次构建，所以在travis环境下，要使脚本只执行一次
+# 解决方案：
+# 在.travis.yml文件中加入
+# before_script:
+#   - "export DISPLAY=:99.0"
+#   - "sh -e /etc/init.d/xvfb start"
+
+# 根据官网文档，要在Travis CI上运行需要图形用户界面的测试，请使用xvfb（X Virtual Framebuffer）模拟显示。 如果您的项目需要运行要测试的Web应用程序，则需要在运行测试之前启动它。
+# -在.travis.yml文件中加入
+# script: karma start karma.conf.js --single-run
+
+# 或者在karma.conf.js文件中，配置环境变量，设置在Travis环境下，karma只执行一次
+# var configuration = {...};
+# if (process.env.TRAVIS) {
+#     configuration.singleRun = true;
+# }
+# config.set(configuration);
