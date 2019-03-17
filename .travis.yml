@@ -12,3 +12,5 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+  npm install karma-jsdom-launcher --save-dev
+  npm install karma-jsdom-launcher jsdom karma --save-dev
