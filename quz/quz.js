@@ -33,5 +33,13 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let i=j=0, arr=[], temp=L
+	while(++i < start) {
+		temp = temp.tail
+	}
+	while(j++ < len) {
+		temp = temp.tail
+		arr.push(temp.head)
+	}
+	return List.list(arr)
 }
