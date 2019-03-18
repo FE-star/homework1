@@ -50,19 +50,20 @@ function sub(L, start, len) {
 
     let obj, child = L;
     for (let i = 0; i < start; i++) {
-        if (child.tail) {
-            child = child.tail
+        if (!child) {
+            throw Error('items don\'t exist')
         }
+        child = child.tail
     }
     obj = deepCopy(child)
-    console.log(obj)
     let child2 = obj
     for (let i = 0; i < len; i++) {
-        if (child2.tail) {
-            child2 = child.tail
+        if (!child2) {
+            throw Error('items don\'t exist')
         }
+        child2 = child.tail
     }
-    if (child2.tail !== null) {
+    if (child2 && child2.tail) {
         child2.tail = null
     }
     return obj
