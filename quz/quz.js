@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let nextTail = A.tail
+
+	while (nextTail) {
+		if (!nextTail.tail) break
+		nextTail = nextTail.tail
+	}
+
+	nextTail.tail = B
+	return A
 }
 
 /**
@@ -24,4 +33,40 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	const newArr = L.toString().split(' ').slice(start + 1).slice(0,  len)
+	return new List.list(newArr)
 }
+
+function sub(L, start, len) {
+	const newArr = []
+	let left = L, leftLen = len, count = start
+	while (count) {
+		left = left.tail
+		count -= 1
+	}
+	while (leftLen) {
+		newArr.push(left.head)
+		left = left.tail
+		leftLen -= 1
+	}
+
+	return new List.list(newArr)
+}
+
+function sub(L, start, len) {
+	const result = new List()
+	let left = L, leftLen = len, count = start, p = result
+	while (count) {
+		left = left.tail
+		count -= 1
+	}
+	while (leftLen) {
+		p.tail = new List(left.head)
+		leftLen -= 1
+		left = left.tail
+		p = p.tail
+	}
+
+	return result.tail
+}
+
