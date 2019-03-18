@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let targetA = A.tail;
+	    while (targetA !== null) {
+	        if (targetA.tail === null) {
+	            break
+	        }
+	        targetA = targetA.tail
+	    }
+	    targetA.tail = B
+	    return A
 }
 
 /**
@@ -24,4 +33,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	const arr=[]
+	let cur=L;
+	let i=0;
+	while(p&&i<=start+len-1){
+		if(i>start){
+			arr.push(cur.head)
+		}
+		cur=cur.tail;
+		i++;
+	}
+	return new List.list(arr);
 }
