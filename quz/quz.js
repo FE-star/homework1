@@ -33,14 +33,29 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
     /** Fill in here **/
-    let obj = {}, child = L;
+    function deepCopy(obj) {
+        let result = Array.isArray(obj) ? [] : {};
+        result.__proto__ = obj.__proto__
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if (typeof obj[key] === 'object' && obj[key] !== null) {
+                    result[key] = deepCopy(obj[key]);
+                } else {
+                    result[key] = obj[key];
+                }
+            }
+        }
+        return result;
+    }
+
+    let obj, child = L;
     for (let i = 0; i < start; i++) {
         if (child.tail) {
             child = child.tail
         }
     }
-    obj = JSON.parse(JSON.stringify(child))
-    obj.__proto__ = child.__proto__
+    obj = deepCopy(child)
+    console.log(obj)
     let child2 = obj
     for (let i = 0; i < len; i++) {
         if (child2.tail) {
