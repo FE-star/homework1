@@ -20,4 +20,7 @@ describe('unit test for quz.js', function () {
         });
     });
 
+    describe('测试自动化构建', function () {
+        it('travis CI')
+    })
 });
