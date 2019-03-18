@@ -1,3 +1,4 @@
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -9,6 +10,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    var L,m;
+    m = A;
+    for (L = A; L !== !null; L = L.tail) {
+        if(L.tail==null){
+            L.tail = B;
+            return m;
+        }
+
+    }
 }
 
 /**
@@ -24,4 +34,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    var M,res = '',index = 0,count = 0;
+    res += '[';
+    for (M = L; M !=null; M = M.tail) {
+        if(index>=start){
+            count++;
+            res = res + ' ' + M.head;
+            if(count==len){
+                break;
+            }
+        };
+        index++;
+    }
+    res += ' ]';
+    return res;
 }
