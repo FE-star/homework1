@@ -1,6 +1,7 @@
 /**
  * List
  * @author donaldyang
+ * 涉及链表方面的知识点
  */
 
 function List(head, tail) {
@@ -32,3 +33,4 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
