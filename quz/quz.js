@@ -1,5 +1,3 @@
-const List = require('../js/list')
-
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -11,12 +9,11 @@ const List = require('../js/list')
  */
 function dcate (A, B) {
   let p = A
-  let first = A
   while (p.tail) {
     p = p.tail
   }
   p.tail = B
-  return first
+  return A
 }
 
 /**
@@ -49,7 +46,7 @@ function sub (L, start, len) {
   return sentinel.tail
 }
 
-module.exports = {
-  dcate,
-  sub
-}
+// module.exports = {
+//   dcate,
+//   sub
+// }
