@@ -4,7 +4,7 @@
  */
 
 function List(head, tail) {
-	this.head = head || 0;
+	this.head = head || '';
 	this.tail = tail || null;
 }
 
