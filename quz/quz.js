@@ -1,3 +1,4 @@
+
 /**
  * dcate
  * A list consisting of elements of A followed by the
@@ -30,19 +31,24 @@ function dcate(A, B) {
  * @param {Number} len
  * @returns {List}
  */
-function sub(L, start, len) {
+function sub(L, start = 0, len) {
 	/** Fill in here **/
+
 	let header = L;
 
 	for (let i = 0; i < start; i++) {
+		if (!header) return new List()
 		header = header.tail;
 	}
 
 	let p = result = new List()
-	for (let i = 0; i < len; i++) {
+	let i = 0;
+	while ((!!len && len > i) || !len) {
+		if (!header) break;
 		p.tail = new List(header.head)
 		header = header.tail;
 		p = p.tail;
+		i++;
 	}
 
 	return result.tail;
