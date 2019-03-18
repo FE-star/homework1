@@ -9,8 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let tailOfA = A;
+	while (tailOfA.tail) { //找到A的最后一项的tail
+		tailOfA = tailOfA.tail;
+	}
+	tailOfA.tail = B;
+	return A;
 }
-
 /**
  * sub
  * The sublist consisting of LEN items from list L,
@@ -23,5 +28,15 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let header = L;
+	for(let i = 0; i < start; i++) {
+		header = header.tail;
+	}
+	let temp = res = new List();
+	for (let i = 0; i < len; i++) {
+		temp.tail = new List(header.head);
+		header = header.tail;
+		temp = temp.tail;
+	}
+	return res.tail;
 }
