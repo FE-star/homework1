@@ -10,7 +10,6 @@
 function dcate(A, B) {
 	let q = A
 	while(q.tail){
-		console.log(q)
 		q = q.tail
 	}
 	q.tail = {...B}
