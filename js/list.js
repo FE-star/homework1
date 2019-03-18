@@ -20,6 +20,7 @@ List.list = function (array) {
 		p = p.tail;
 	}
 	return sentinel.tail;
+
 }
 
 // Returns a readable String for THIS.
