@@ -11,7 +11,7 @@
 function dcate(A, B) {
 	/** Fill in here **/
     var L,m;
-    m=A;
+    m = A;
     for (L = A; L !== !null; L = L.tail) {
         if(L.tail==null){
             L.tail = B;
