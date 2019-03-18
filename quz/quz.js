@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+
+  let tempObj = A;
+  while(tempObj.tail !== null) {
+    tempObj = tempObj.tail;
+  }
+  tempObj.tail = B;
+
+  return A.toString();
 }
 
 /**
@@ -24,4 +32,13 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  let arr = L.toString().replace('[ ', '').replace(' ]', '').split(' ');
+  let tempArr = [];
+  arr.forEach((item, index) => {
+    if(index >= start && index <= start + len - 1) {
+      tempArr.push(item);
+    }
+  })
+
+  return List.list(tempArr);
 }
