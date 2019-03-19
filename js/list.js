@@ -8,7 +8,7 @@ function List(head, tail) {
 	this.tail = tail || null;
 }
 
-// Returns a new List containing the array.
+// Returns a new List containing the array. [1, 2]
 List.list = function (array) {
 	var sentinel = new List(),
 		len = array.length,
