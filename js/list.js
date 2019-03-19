@@ -32,3 +32,9 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+//兼容CommonJs规范
+if (typeof module !== 'undefined' && module.exports) module.exports = List;
+
+//兼容AMD/CMD规范
+if (typeof define === 'function') define(function() { return List; });
