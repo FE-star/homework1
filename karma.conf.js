@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
+// Generated on Mon Mar 18 2019 16:01:38 GMT+0800 (GMT+08:00)
 
 module.exports = function(config) {
   config.set({
@@ -58,14 +58,15 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome_without_security'],
 
+    browsers: ['Chrome'],
     customLaunchers: {
       Chrome_without_security: {
         base: 'Chrome',
         flags: ['--disable-web-security']
       }
     },
+
 
 
     // Continuous Integration mode
