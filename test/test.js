@@ -19,5 +19,5 @@ describe('unit test for quz.js', function () {
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
     });
-
 });
+
