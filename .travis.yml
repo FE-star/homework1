@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6"
+  - "10"
 
 addons:
   chrome: stable
@@ -12,3 +12,14 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+# language: node_js
+# node_js:
+#   - 10
+# before_install:
+#   - npm install
+# before_script:
+#   - "export DISPLAY=:99.0"
+#   - "sh -e /etc/init.d/xvfb start"
+# script: karma start karma.conf.js --single-run
+# 参考：https://www.jianshu.com/p/3f920c1f5313
