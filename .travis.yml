@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6"
+  - "10"
 
 addons:
   firefox: "latest"
@@ -11,4 +11,4 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 before_install:
-  npm install karma-cli -g
+  npm install
