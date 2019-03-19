@@ -8,7 +8,7 @@ function List(head, tail) {
 	this.tail = tail || null;
 }
 
-// Returns a new List containing the array.
+// Returns a new List containing the array. [1, 2]
 List.list = function (array) {
 	var sentinel = new List(),
 		len = array.length,
@@ -32,3 +32,9 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+//兼容CommonJs规范
+if (typeof module !== 'undefined' && module.exports) module.exports = List;
+
+//兼容AMD/CMD规范
+if (typeof define === 'function') define(function() { return List; });
