@@ -9,6 +9,24 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let L = A;
+	// let temp = A;
+	// while (true) {
+	// 	if (!temp.tail) {
+	// 		temp.tail = B
+	// 		break
+	// 	}
+	// 	temp = temp.tail
+	// }
+	// return A
+	for (L; 1; L = L.tail) {
+		if (!L.tail) {
+			L.tail = B;
+			break;
+		}
+	}
+
+	return A
 }
 
 /**
@@ -24,4 +42,22 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var temp = L;
+	var tempS;
+	var contStart = 0;
+	let count = Number(start) + Number(len);
+	while (temp.tail && count) {
+		count--;
+		if (((contStart == start - 1)) && !tempS) {
+			tempS = temp.tail
+		} else if (!start && !tempS) {
+			tempS = temp;
+		}
+		temp = temp.tail
+		if (count === 1) {
+			temp.tail = null;
+		}
+		contStart++;
+	}
+	return tempS;
 }
