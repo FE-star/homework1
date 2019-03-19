@@ -9,6 +9,7 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    return A.concat(B);
 }
 
 /**
@@ -24,4 +25,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let cursor = L,
+        index = 0,
+	    result = new List(),
+        p = result;
+	for (; index<start+len; index++) {
+	    if (index < start) {
+	        cursor = cursor.tail;
+	        continue;
+        }
+        p.tail = new List(cursor.head);
+	    p = p.tail;
+	    cursor = cursor.tail
+    }
+    return result.tail;
 }

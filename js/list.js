@@ -32,3 +32,20 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+List.prototype.concat = function (arr) {
+	let p = arr,
+		beforeCursor = '',
+        cursor = this;
+	while (cursor!==null) {
+		// 需要记录前一个指针，不然会断开
+        beforeCursor = cursor;
+		cursor = cursor.tail;
+	}
+	while (p) {
+        beforeCursor.tail = new List(p.head);
+        beforeCursor = beforeCursor.tail;
+        p=p.tail
+	}
+    return this;
+}
