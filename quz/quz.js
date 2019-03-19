@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var temp = A;
+	while(temp.tail != null) {
+		temp = temp.tail;
+	}
+	temp.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,33 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+
+	var arr = [],
+		temp = L,
+		i,
+		msg = "The desired items don't exist";
+
+	// 判断L是否为List实例
+	if (!(L instanceof List)) {
+		throw new Error(msg);
+	}
+
+	// 判断start和len是否为负数
+	if(start < 0 || len < 0) {
+		throw new Error(msg);
+	}
+
+	for (i = 0; i < start; i++) {
+		temp = temp.tail;
+		if (temp == null) { throw new Error(msg) }
+	}
+
+	arr.push(temp.head);
+	for (i = 0; i < len - 1; i++) {
+		temp = temp.tail;
+		if (temp == null) { throw new Error(msg) }
+		arr.push(temp.head);
+	}
+	
+	return List.list(arr);
 }
