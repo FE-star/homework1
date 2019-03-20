@@ -38,6 +38,5 @@ function sub(L, start, len) {
 	/** Fill in here **/
 	L = L.toString().split(' ');
 	L = L.slice(1, L.length-1);
-	console.log(L);
 	return List.list(L.slice(start, start+len));
 }
