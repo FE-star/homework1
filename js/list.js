@@ -10,14 +10,14 @@ function List(head, tail) {
 
 // Returns a new List containing the array.
 List.list = function (array) {
-	var sentinel = new List(), //sentinel = {head: 0,tail: null}
+	var sentinel = new List(),
 		len = array.length,
 		p, i;
 
-	p = sentinel; //{head: 0,tail: null}
-	for (i = 0; i < len; i++) {  //[4, 6, 7, 3, 8]
-		p.tail = new List(array[i]);  // {head: 6,tail: null} => p= {head: 0,tail: {head: 4,tail: null}}
-		p = p.tail; // {head: 6,tail: null}
+	p = sentinel;
+	for (i = 0; i < len; i++) {
+		p.tail = new List(array[i]);
+		p = p.tail;
 	}
 	return sentinel.tail;
 }
