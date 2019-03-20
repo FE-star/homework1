@@ -32,13 +32,29 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
-  let arr = L.toString().replace('[ ', '').replace(' ]', '').split(' ');
-  let tempArr = [];
-  arr.forEach((item, index) => {
-    if(index >= start && index <= start + len - 1) {
-      tempArr.push(item);
-    }
-  })
+  // let arr = L.toString().replace('[ ', '').replace(' ]', '').split(' ');
+  // let tempArr = [];
+  // arr.forEach((item, index) => {
+  //   if(index >= start && index <= start + len - 1) {
+  //     tempArr.push(item);
+  //   }
+  // })
+  //
+  // return List.list(tempArr);
+  let temp = L,
+      index = 0,
+      length = 0,
+      res = [];
 
-  return List.list(tempArr);
+  while(index < start) {
+    index++;
+    temp = temp.tail;
+  }
+  while(length < len && temp) {
+    res.push(temp.head);
+    len++;
+    temp = temp.tail;
+  }
+
+  return List.list(res);
 }
