@@ -37,6 +37,22 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
   // 对 L(List) 进行裁剪  返回新 List 实例 循环太麻烦了 字符串操作
-  var newList = L.toString().replace(/(^\[)|(\]$)|(\s)/g, '').split('').splice(start+1, len)
-  return List.list(newList)
+  // var newList = L.toString().replace(/(^\[)|(\]$)|(\s)/g, '').split('').splice(start+1, len)
+
+  // 找到起点
+  var fStart = 0;
+  var findList = L
+  while (fStart < start && findList.tail) {
+    fStart++
+    findList = findList.tail
+  }
+
+  // 找到需要截取的 终点位置
+  fStart = 0
+  var cache = findList.tail
+  for (;fStart <len && cache.tail;fStart++) {
+    cache = findList.tail
+  }
+  cache.tail = null
+  return findList
 }
