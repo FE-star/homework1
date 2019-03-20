@@ -1,6 +1,9 @@
 language: node_js
 node_js:
-  - "6"
+  - "10.15.3"
+
+branches:
+  - dev
 
 addons:
   chrome: stable
