@@ -60,12 +60,12 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome', 'Chrome_without_security'],
 
-    customLaunchers: {
+    /* customLaunchers: {
       Chrome_without_security: {
         base: 'ChromeHeadless',
         flags: ['--disable-web-security']
       }
-    },
+    }, */
 
 
     // Continuous Integration mode
