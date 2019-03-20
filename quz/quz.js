@@ -9,6 +9,18 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	/* var A = A.toString().split(' ');
+	A = A.slice(1, A.length-1);
+	var B = B.toString().split(' ');
+	B = B.slice(1, B.length-1);
+	return List.list(A.concat(B)); */
+	for(var L = A; L != undefined; L = L.tail){
+		if(!L.tail){
+			L.tail = B;
+			break;
+		};
+	};
+	return A;
 }
 
 /**
@@ -24,4 +36,7 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	L = L.toString().split(' ');
+	L = L.slice(1, L.length-1);
+	return List.list(L.slice(start, start+len));
 }
