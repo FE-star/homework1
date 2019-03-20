@@ -7,8 +7,18 @@
  * @param {List} B
  * @returns {List}
  */
+
 function dcate(A, B) {
 	/** Fill in here **/
+	const oldA = A;
+	// 1. 找出A的最后一个元素
+	while (A.tail !== null) {
+		A = A.tail;
+	}
+	// 2. 把A的最后一个元素指向B
+	A.tail = B;
+	// 3. 返回A
+	return oldA;
 }
 
 /**
@@ -24,4 +34,28 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if (len <= 0 || start < 0) {
+		return null;
+	}
+	// 1. 遍历链表，用计数器匹配start
+	let num = 0;
+	while (L !== null) {
+		if (num === start) {
+			break;
+		}
+		L = L.tail;
+		num ++;
+	}
+	let num2 = 0;
+	const oldL = L;
+	while (L !== null) {
+		num2++;
+		if (num2 === len) {
+			L.tail = null;
+			break;
+		}
+		L = L.tail;
+	}
+	return oldL;
+	// 2. 截取len个节点，节点数不够，返回能给的个数
 }

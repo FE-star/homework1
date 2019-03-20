@@ -1,6 +1,9 @@
 language: node_js
 node_js:
-  - "6"
+  - "10.15.3"
+
+branches:
+  - dev
 
 addons:
   chrome: stable
@@ -12,3 +15,9 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+
+install:
+  npm install
+
+script:
+  karma start --single-run
