@@ -32,3 +32,13 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
+// Returns an Array for THIS.
+List.prototype.toArray = function () {
+	let L = this
+	const res = []
+	for (L = this; L !== null; L = L.tail) {
+		res.push(L.head)
+	}
+	return res
+}

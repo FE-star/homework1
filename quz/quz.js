@@ -9,6 +9,10 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	// console.log(A.toArray())
+	const res = List.list(A.toArray().concat(B.toArray()))
+	A.head = 0
+	return res
 }
 
 /**
@@ -24,4 +28,5 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	return List.list(L.toArray().slice(start,start + len))
 }
