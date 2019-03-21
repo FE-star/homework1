@@ -9,7 +9,17 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let temp = A;
+	while (temp.tail != null) {
+		temp = temp.tail;
+	}
+	for (k = B; k.tail != null; k = k.tail) {
+		temp.tail = k;
+		temp = temp.tail;
+	}
+	return A;
 }
+
 
 /**
  * sub
@@ -24,4 +34,16 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let T = L, R;
+	while (start--) {
+		T = T.tail;
+	}
+	R = new List(T.head);
+	p = R
+	while (T.tail && --len) {
+		T = T.tail;
+		p.tail = new List(T.head)
+		p = p.tail;
+	}
+	return R
 }
