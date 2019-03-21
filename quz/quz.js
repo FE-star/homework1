@@ -10,12 +10,16 @@
 function dcate(A, B) {
 	/** Fill in here **/
 	let temp = A;
-	for(k = B;B.tail != null;k = B.tail){
+	while (temp.tail != null) {
+		temp = temp.tail;
+	}
+	for (k = B; k.tail != null; k = k.tail) {
 		temp.tail = k;
 		temp = temp.tail;
 	}
-	return temp;
+	return A;
 }
+
 
 /**
  * sub
