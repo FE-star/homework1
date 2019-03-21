@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let temp = A.tail; // 获取A链表的尾部
+	while (temp) {
+		if (!temp.tail) { // A链表的最后一个节点是null
+			temp.tail = B; // 将指针指向B链表
+			break;
+		}
+		temp = temp.tail;
+	}
+ 	return A;
 }
 
 /**
@@ -24,4 +33,13 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let temp = L;
+	const length = start + len - 1;
+	for (var i = 0; i < length; i++) {
+		if (i === start) L = temp;
+		temp = temp.tail;
+	}
+	temp.tail = null;
+ 	return L;
 }
+
