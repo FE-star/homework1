@@ -38,9 +38,12 @@ function sub(L, start, len) {
 	while (start--) {
 		T = T.tail;
 	}
-	R = T;
-	while (!len--) {
-		R.tail = null;
+	R = new List(T.head);
+	p = R
+	while (T.tail && --len) {
+		T = T.tail;
+		p.tail = new List(T.head)
+		p = p.tail;
 	}
 	return R
 }
