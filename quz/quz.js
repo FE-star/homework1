@@ -7,8 +7,14 @@
  * @param {List} B
  * @returns {List}
  */
+var resA
 function dcate(A, B) {
-	/** Fill in here **/
+	let temp = A
+	while (temp.tail!==null) {
+		temp=temp.tail
+	}
+	temp.tail = B
+	return A
 }
 
 /**
@@ -24,4 +30,23 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let temp = JSON.parse(JSON.stringify(L))
+	while (temp.head!==start) {
+		temp=temp.tail
+	}
+	let arr = []
+	let dart = temp
+	for (let i = 0; i < len; i++) {
+		arr.push(dart.head)
+		dart = dart.tail
+	}
+	var sentinelObj = new List(),
+	p, i;
+
+	p = sentinelObj;
+	for (i = 0; i < len; i++) {
+		p.tail = new List(arr[i]);
+		p = p.tail;
+	}
+	return sentinelObj.tail;
 }
