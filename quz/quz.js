@@ -9,6 +9,10 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	A = A.toString().split(' ').slice(1, -1)  // '4,6,7,3,8'
+	var b = B.toString().split(' ').slice(1, -1)
+	Array.prototype.push.apply(A, b)
+	return '[ ' + A.join(' ') + ' ]'
 }
 
 /**
@@ -24,4 +28,17 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let q = L, i = 0;
+	while(i<start) {
+		q = q.tail
+		i++
+	}
+	let a = []
+	let count = 0;
+	while(count < len && q) {
+		a.push(q.head)
+		q = q.tail
+		count ++ 
+	}
+	return List.list(a)
 }
