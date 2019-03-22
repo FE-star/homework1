@@ -9,6 +9,9 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    var lastNodeA = findListLastNode(A);
+    lastNodeA.tail = B;
+    return A;
 }
 
 /**
@@ -24,4 +27,34 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    var length = 0,
+        subList = null,
+        temp = L;
+
+    for (temp; temp !== null; temp = temp.tail) {
+        if (temp.head === start) {
+            length++;
+            subList = temp;
+            if (length >= len) {
+                subList.tail = null;
+            }
+        }
+    }
+    return subList;
 }
+
+/**
+ * find List last node
+ * @param {List} L
+ * @return {List}
+ */
+function findListLastNode(L) {
+    var temp = L, lastNode = null;
+    for (temp; temp !== null; temp = temp.tail) {
+        lastNode = temp;
+    }
+    return lastNode;
+}
+
+// findListTail({head: 0, tail: {head: 1, tail: null}});
+// sub()
