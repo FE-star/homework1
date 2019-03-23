@@ -8,7 +8,11 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  B.forEach(element => {
+    A.push(element);
+  });
+  return A;
 }
 
 /**
@@ -23,5 +27,18 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  var newL = new List(),
+    p;
+  p = newL;
+  L.forEach((item, index) => {
+    if (index >= start) {
+      p.tail = new List(item);
+      p = p.tail;
+    }
+    if (index >= start + len - 1) {
+      return newL.tail;
+    }
+  });
+  return newL.tail;
 }
