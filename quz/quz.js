@@ -18,8 +18,8 @@ function dcate(A, B) {
 	for (B; B != null; B = B.tail) {
 		C.push(B.head);
 	}
-	L1.tail = A;
-	L2.tail = B;
+	//L1.tail = A;
+	//L2.tail = B;
 	return List.list(C);
 }
 
