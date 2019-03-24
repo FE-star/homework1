@@ -12,7 +12,6 @@ function dcate(A, B) {
 	var C = [];
 	var L1 = A;
 	var L2 = B;
-	debugger;
 	for (A; A != null; A = A.tail) {
 		C.push(A.head);
 	}
