@@ -40,11 +40,11 @@ function sub(L, start, len) {
       return list
     } else {
       from ++
-      return getListByIndex(list.tail, index, from)
+      return list.tail && getListByIndex(list.tail, index, from)
     }
   }
   let startList = getListByIndex(L, start)
   let endList = getListByIndex(startList, (start + len - 1), start)
-  endList.tail = null
+  endList && (endList.tail = null)
   return startList
 }
