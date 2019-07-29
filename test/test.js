@@ -16,6 +16,9 @@ describe('unit test for quz.js', function () {
         it('should get the sublist consisting of LEN items from list L', function () {
         	C.toString().should.equal('[ 19 8 7 3 2 ]');
             sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
+            should.throws(() => sub(C, 3), function (err) {
+              return err.message.includes('缺少参数')
+            });
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
     });
