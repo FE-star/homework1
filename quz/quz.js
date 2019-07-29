@@ -40,4 +40,26 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	/**
+	 * 	
+	 */
+	let result = L;
+	let index = 0;
+
+	let temp;
+
+	while (index <= start + len - 1) {
+		if(index < start) {
+			result = result.tail;
+		} else if (index === start + len - 1) {
+			temp.tail = null;
+		} else {
+			temp = result.tail;
+		}
+
+		index += 1;
+	};
+
+	return result;
+	
 }
