@@ -9,6 +9,22 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	/**
+	 * 思路：
+	 * 1. 循环找到A.tail的末尾（null）
+	 * 2. 在末尾.tail加上B
+	 */
+
+	let leaf = A;
+
+	while (leaf.tail) {
+		leaf = leaf.tail;
+	}
+
+	leaf.tail = B;
+
+	return A;
+	 
 }
 
 /**
