@@ -9,6 +9,23 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let arrA = toArray(A);
+	let arrAB = toArray(B);
+	A = arrAB;
+	return List.list(arrAB);
+}
+
+var res = [];
+function toArray(obj) {
+	for (k in obj) {
+		if (!obj['tail']) {
+			res.push(obj['head']);
+		} else {
+			res.push(obj['head']);
+			obj = toArray(obj['tail']);
+		}
+		return res;
+	}
 }
 
 /**
