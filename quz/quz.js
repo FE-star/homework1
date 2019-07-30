@@ -31,10 +31,10 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	var sentinel = new List();
 
-	for (var p = L, i = 0; p && i < start; i++, p = p.tail) {}
+	for (var p = L, i = 0; p.tail && i < start; i++, p = p.tail) {}
 
 	if (i < start) {
-		throw new Error('invalid length of List');
+		throw new Error('invalid start parameter');
 	}
 
 	var q = sentinel;
@@ -45,7 +45,7 @@ function sub(L, start, len) {
 	}
 
 	if (i < len) {
-		throw new Error('invalid length of List');
+		throw new Error('invalid length parameter');
 	}
 
 	return sentinel;
