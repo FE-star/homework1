@@ -18,6 +18,14 @@ describe('unit test for quz.js', function () {
             sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
+
+        it('should get an error: invalid start', function () {
+            (function () { sub(C, 5, 1); }).should.throw('invalid start parameter');
+        });
+
+        it('should get an error: invalid length', function () {
+            (function () { sub(C, 3, 3); }).should.throw('invalid length parameter');
+        });
     });
 
 });

@@ -8,7 +8,13 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	var p = A;
+	while (p.tail) {
+		p = p.tail;
+	}
+
+	p.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +29,24 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	var sentinel = new List();
+
+	for (var p = L, i = 0; p.tail && i < start; i++, p = p.tail) {}
+
+	if (i < start) {
+		throw new Error('invalid start parameter');
+	}
+
+	var q = sentinel;
+	for (i = 0; p && i < len; i++, p = p.tail) {
+		q.head = p.head;
+		q.tail = (i < len - 1) ? new List() : null;
+		q = q.tail;
+	}
+
+	if (i < len) {
+		throw new Error('invalid length parameter');
+	}
+
+	return sentinel;
 }
