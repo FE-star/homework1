@@ -9,7 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	if (!A['tail']) {
+		A['tail'] = B;
+	}else {
+		dcate(A['tail'], B);
+	}
+	return A;
 }
+
 
 /**
  * sub
@@ -24,4 +31,20 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var arr = toArrayWrap(L);
+	var res = arr.splice(start, len);
+	return List.list(res);
+}
+
+function toArrayWrap(obj) {
+	var temp = [];
+	var res = toArray(obj);
+	function toArray(obj) {
+		temp.push(obj['head']);
+		if(obj['tail']) {
+			obj = toArray(obj['tail']);
+		}
+		return temp;
+	}
+	return res;
 }
