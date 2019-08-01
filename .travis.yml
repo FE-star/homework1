@@ -15,7 +15,5 @@ dist: xenial
 services:
   - xvfb
 
-script: xvfb-run make test
-
 before_install:
   npm install karma-cli -g
