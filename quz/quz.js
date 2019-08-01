@@ -43,7 +43,7 @@ function sub(L, start, len) {
 	/**
 	 * 	
 	 */
-	let result = L;
+	let result = new List(L.head, L.tail);
 	let index = 0;
 
 	let temp;
@@ -51,10 +51,11 @@ function sub(L, start, len) {
 	while (index <= start + len - 1) {
 		if(index < start) {
 			result = result.tail;
+			temp = result;
 		} else if (index === start + len - 1) {
 			temp.tail = null;
 		} else {
-			temp = result.tail;
+			temp = temp.tail;
 		}
 
 		index += 1;
