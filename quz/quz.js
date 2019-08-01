@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A;
+	while(p.tail) {
+		p = p.tail;
+	}
+	p.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var D = new List();
+	var p = L;
+	var num = 0;
+	while(p.head) {
+		if (num === start) {
+			D.tail = p;
+			return D.tail;
+		}
+		num++;
+		p = p.tail;
+	}
 }
