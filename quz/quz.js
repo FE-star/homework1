@@ -35,14 +35,16 @@ function sub(L, start, len) {
 	var i = 0
 	var p = L
 	var resultArr = []
-	while (i < start + len) {
+	while (i < start + len && p !== null) {
 		if (i >= start) {
 			resultArr.push(p.head)
 		}
 		p = p.tail
 		i ++
 	}
-	
+	if (resultArr.length < len || !resultArr.length) {
+		return new Error('unexpected input of start or len')
+	}
 	return List.list(resultArr)
 	
 }
