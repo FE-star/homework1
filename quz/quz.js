@@ -9,6 +9,18 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+  var len = A.toString().match(/\d/g).length,
+      p   = A,
+      i;
+  for (i = 0; i < len; i++) {
+    if(p.tail !== null) {
+      p = p.tail;
+    }
+    else {
+      p.tail = B;
+    }
+  }
+  return A;
 }
 
 /**
@@ -24,4 +36,28 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+  var length = L.toString().match(/\d/g).length,
+      p = L,
+      R = {
+        head: null,
+        tail: null
+      },
+      s = R,
+      i = 0;
+  while ( i < length && i <= start + len - 1) {
+    if( i === start) {
+      R.head = p.head;
+    }
+    else if( i > start) {
+      s.tail = {
+        head: p.head,
+        tail: null
+      }
+      s = s.tail;
+    }
+    p.tail && (p = p.tail);
+    i++;
+  }
+  R.toString = L.toString;
+  return R;
 }
