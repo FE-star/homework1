@@ -9,6 +9,14 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	var p = A
+	
+	while(p.tail !== null) {
+		p = p.tail
+	}
+
+	p.tail = B
+	return A
 }
 
 /**
@@ -24,4 +32,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	var i = 0
+	var p = L
+	var resultArr = []
+	while (i < start + len && p !== null) {
+		if (i >= start) {
+			resultArr.push(p.head)
+		}
+		p = p.tail
+		i ++
+	}
+	if (resultArr.length < len || !resultArr.length) {
+		return new Error('unexpected input of start or len')
+	}
+	return List.list(resultArr)
+	
 }
