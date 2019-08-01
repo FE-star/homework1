@@ -9,6 +9,22 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	/**
+	 * 思路：
+	 * 1. 循环找到A.tail的末尾（null）
+	 * 2. 在末尾.tail加上B
+	 */
+
+	let leaf = A;
+
+	while (leaf.tail) {
+		leaf = leaf.tail;
+	}
+
+	leaf.tail = B;
+
+	return A;
+	 
 }
 
 /**
@@ -24,4 +40,27 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	/**
+	 * 	
+	 */
+	let result = new List(L.head, L.tail);
+	let index = 0;
+
+	let temp;
+
+	while (index <= start + len - 1) {
+		if(index < start) {
+			result = result.tail;
+			temp = result;
+		} else if (index === start + len - 1) {
+			temp.tail = null;
+		} else {
+			temp = temp.tail;
+		}
+
+		index += 1;
+	};
+
+	return result;
+	
 }
