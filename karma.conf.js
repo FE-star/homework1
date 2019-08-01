@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Aug 04 2017 20:53:38 GMT+0800 (CST)
+// Generated on Wed Jul 31 2019 18:06:08 GMT+0800 (GMT+08:00)
 
 module.exports = function(config) {
   config.set({
@@ -20,6 +20,7 @@ module.exports = function(config) {
       'quz/*.js',
       'test/*.js'
     ],
+
 
 
     // list of files to exclude
@@ -66,7 +67,6 @@ module.exports = function(config) {
         flags: ['--disable-web-security']
       }
     },
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
