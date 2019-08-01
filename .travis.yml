@@ -17,4 +17,4 @@ before_install:
   npm install karma-cli -g
 
 script:
-  npm test
+  xvfb-run make test
