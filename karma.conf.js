@@ -10,21 +10,26 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha','requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
       'node_modules/should/should.js',
-      'js/*.js',
-      'quz/*.js',
-      'test/*.js'
+      // {pattern: 'node_modules/should/should.js', include: false},
+      // 'node_modules/requirejs/require.js',
+      // 'node_modules/karma-requirejs/lib/adapter.js',
+      {pattern: 'js/*.js',include: false},
+      {pattern: 'quz/*.js',include: false},
+      {pattern: 'test/*.js',include: false},
+      'test/test-main.js'
     ],
 
 
     // list of files to exclude
     exclude: [
     ],
+    // plugins: ['karma-mocha'],
 
 
     // preprocess matching files before serving them to the browser
