@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function dcate(A, B) {
+      /** Fill in here **/
+      let arr = A.concat(B)
+      let result = []
+      let obj = {}
+
+      console.log("arr", arr)
+      for (let i of arr) {
+        if (!obj[i]) {
+          result.push(i)
+          obj[i] = 1
+        }
+      }
+      console.log("result", result)
+      return result
+    }
+
+    let a = [1, 2, 3, 4, 5, 6, 4, 2, 21, 43, 4]
+    let b = [1, 2, 44, 4, 5, 6, 6, 7, 2, 43, 4]
+    let c = dcate(a, b)
+  </script>
+
+</body>
+
+</html>
