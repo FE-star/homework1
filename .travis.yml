@@ -1,50 +1,69 @@
+# language: node_js
+# node_js:
+#   - "10"
+
+# cache:
+#   directories:
+#     - node_modules
+
+# addons:
+#   chrome: stable
+
+
+# before_script:
+#   - npm install
+#   - export CHROME_BIN=chromium-browser
+#   - export DISPLAY=:99.0
+#   - sh -e /etc/init.d/xvfb start
+#   - sleep 3 
+# # before_script:
+# #   # - "export DISPLAY=:99.0"
+# #   # - "sh -e /etc/init.d/xvfb start"
+# #   # - sleep 3 # give xvfb some time to start
+
+# before_install:
+#   npm install karma-cli -g
+
+#   deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+#   on:
+#     branch: master
+
+
+
+# install:
+#   - npm install
+#   - npm install hexo-deployer-git --save
+
+# script:
+
+# after_script:
+# #  - cd ./public
+# #  - git init
+#   - git config user.name "cai"
+#   - git config user.email "2287716986@qq.com"
+# #  - git add .
+# #  - git commit -m "Update docs"
+# #  - git push --force --quiet "${Travis}@${GH_REF}" master:master
+
 language: node_js
 node_js:
-  - "10"
-
-cache:
-  directories:
-    - node_modules
+  - "6"
 
 addons:
   chrome: stable
 
-
 before_script:
-  - npm install
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3 
-# before_script:
-#   # - "export DISPLAY=:99.0"
-#   # - "sh -e /etc/init.d/xvfb start"
-#   # - sleep 3 # give xvfb some time to start
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
 
 before_install:
   npm install karma-cli -g
 
-  deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: master
 
-services:
+  services:
   - xvfb
-
-install:
-  - npm install
-  - npm install hexo-deployer-git --save
-
-script:
-
-after_script:
-#  - cd ./public
-#  - git init
-  - git config user.name "cai"
-  - git config user.email "2287716986@qq.com"
-#  - git add .
-#  - git commit -m "Update docs"
-#  - git push --force --quiet "${Travis}@${GH_REF}" master:master
