@@ -28,7 +28,7 @@ before_install:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-on:
+  on:
     branch: master
 
 services:
@@ -38,13 +38,7 @@ install:
   - npm install
   - npm install hexo-deployer-git --save
 
-
-# before_script:
- # - npm install -g gulp
-    
 script:
-  - hexo clean
-  - hexo generate
 
 after_script:
 #  - cd ./public
