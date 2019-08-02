@@ -8,7 +8,14 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+  /** Fill in here **/
+  if (A.tail) {
+    let obj = A.tail
+    dcate(obj, B)
+  } else {
+    A.tail = B
+  }
+  return A
 }
 
 /**
@@ -23,5 +30,31 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+  /** Fill in here **/
+  let obj = { ...L };
+  let obj1 = {}
+  for (let i = 0; i < (start); i++) {
+    if (obj.tail) {
+      obj = obj.tail
+    } else {
+      return false
+    }
+  }
+  obj1 = obj
+  obj1 = re(obj1, 2, 1)
+  return obj1
 }
+
+function re(param, len, start) {
+  let obj = param
+  let num = len
+  let s = start
+  if (start < len) {
+    s = s + 1
+    obj.tail = re(obj.tail, len, s)
+  } else {
+    obj.tail = null
+  }
+  return obj
+}
+

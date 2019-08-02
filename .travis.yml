@@ -1,14 +1,21 @@
 language: node_js
 node_js:
-  - "6"
+  - "10"
 
 addons:
   chrome: stable
 
 before_script:
   - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  # - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 
 before_install:
   npm install karma-cli -g
+
+services:
+  - xvfb
+
+after_script:
+  - git config user.name "cai"
+  - git config user.email "2287716986@qq.com"
