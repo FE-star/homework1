@@ -31,14 +31,20 @@ function dcate(A, B) {
 function sub(L, start, len) {
 	/** Fill in here **/
 	var D = new List();
+	var Dp = D;
 	var p = L;
 	var num = 0;
-	while(p.head) {
-		if (num === start) {
-			D.tail = p;
-			return D.tail;
+	start = start >= 0 ? start : 0;
+	len = len >= 0 ? len : 0;
+	while(p && num < start + len) {
+		if (num >= start) {
+			var d = new List();
+			d.head = p.head;
+			Dp.tail = d;
+			Dp = Dp.tail;
 		}
 		num++;
 		p = p.tail;
 	}
+	return D.tail || D;
 }
