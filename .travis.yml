@@ -15,3 +15,7 @@ before_install:
 
 services:
   - xvfb
+
+after_script:
+  - git config user.name "cai"
+  - git config user.email "2287716986@qq.com"
