@@ -13,3 +13,5 @@ services:
   - xvfb
 before_install:
   npm install karma-cli -g
+script:
+  - npm run test
