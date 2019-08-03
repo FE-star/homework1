@@ -42,6 +42,6 @@ function sub(L, start, len) {
 		}
 		currList = currList.tail;
 		currIndex++;
-	} while (len !== subLen);	
+	} while (len !== subLen && currList !== null);	
 	return new List.list(newList);
 }
