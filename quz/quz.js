@@ -9,6 +9,12 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let currList = A
+	while (currList.tail !== null) {
+		currList = currList.tail;
+	}
+	currList.tail = B;
+	return A;
 }
 
 /**
@@ -24,4 +30,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	if (!L || !(/(^[0-9]\d*$)/.test(start)) || !(/(^[0-9]\d*$)/.test(len))) throw new Error('param error');
+	let newList = [],
+		subLen = 0,
+		currList = L,
+		currIndex = 0
+	do {
+		if (currIndex >= start){
+			newList.push(currList.head);
+			subLen++;
+		}
+		currList = currList.tail;
+		currIndex++;
+	} while (len !== subLen && currList !== null);	
+	return new List.list(newList);
 }
