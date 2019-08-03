@@ -8,7 +8,7 @@ function List(head, tail) {
 	this.tail = tail || null;
 }
 
-// Returns a new List containing the array.
+// Returns a new List containing the array. [4, 6, 7, 3, 8]
 List.list = function (array) {
 	var sentinel = new List(),
 		len = array.length,
@@ -20,7 +20,7 @@ List.list = function (array) {
 		p = p.tail;
 	}
 	return sentinel.tail;
-}
+};
 
 // Returns a readable String for THIS.
 List.prototype.toString = function () {
@@ -32,3 +32,4 @@ List.prototype.toString = function () {
 	res += ' ]';
 	return res;
 };
+
