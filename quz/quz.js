@@ -7,8 +7,18 @@
  * @param {List} B
  * @returns {List}
  */
+// var A = List.list([4, 6, 7, 3, 8]),
+// 	B = List.list([3, 2, 5, 9]),
+// 	C = List.list([19, 8, 7, 3, 2]);
 function dcate(A, B) {
-	/** Fill in here **/
+	let p = A;
+	// p：A中的最末尾元素
+	while (p.tail) {
+		p = p.tail
+	}
+	// 将B添加到A的尾巴
+	p.tail = B;
+	return A
 }
 
 /**
@@ -23,5 +33,16 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let p = L; // 当前遍历的元素
+	let i = 0; // 第N个元素
+	let array = [];
+	while (p && p.head) {
+		// 当元素处于开始到结束之间，array增加head属性
+		if (i >= start && i <= start + len) {
+			array.push(p.head)
+		}
+		p = p.tail;
+		i++
+	}
+	return List.list(array)
 }
