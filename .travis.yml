@@ -12,6 +12,8 @@ before_script:
 
 before_install:
   npm install karma-cli -g
+  
+script: karma start karma.conf.js --single-run
 
 services:
   - xvfb
