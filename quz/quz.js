@@ -9,6 +9,13 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+    for (var temp = A; temp !== null; temp = temp.tail) {
+        if (temp.tail === null) {
+            temp.tail = B;
+            break
+        }
+    }
+    return A
 }
 
 /**
@@ -24,4 +31,19 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+    var res = '', tmpA;
+    res += '[';
+    for (tmpA = L; tmpA !== null; tmpA = tmpA.tail) {
+    	if (tmpA.head == start) {
+            res = res + ' ' + tmpA.head;
+    		for (var i = 1; i < len; i++) {
+    			if (tmpA.tail !== null) {
+                    tmpA = tmpA.tail;
+                    res = res + ' ' + tmpA.head;
+				}
+			}
+		}
+    }
+    L = res + ' ]';
+    return L
 }
