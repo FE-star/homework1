@@ -9,7 +9,8 @@ function List(head, tail) {
 }
 
 // Returns a new List containing the array.
-List.list = function (array) {
+// 给array设置了默认值
+List.list = function (array = []) {
 	var sentinel = new List(),
 		len = array.length,
 		p, i;
