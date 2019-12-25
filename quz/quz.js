@@ -8,7 +8,12 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	let q = A
+	while(q.tail){
+		q = q.tail
+	}
+	q.tail = {...B}
+	return A
 }
 
 /**
@@ -24,4 +29,18 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let q = L,
+		i = 0;
+	while(i<start) {
+		q = q.tail
+		i ++
+	}
+	let a = []
+	let count = 0;
+	while(count < len && q) {
+		a.push(q.head)
+		q = q.tail
+		count ++ 
+	}
+	return List.list(a)
 }
