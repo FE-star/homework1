@@ -19,7 +19,7 @@ List.list = function (array) {
 		p.tail = new List(array[i]);
 		p = p.tail;
 	}
-	return sentinel.tail;
+    return sentinel.tail;
 }
 
 // Returns a readable String for THIS.

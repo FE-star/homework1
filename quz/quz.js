@@ -8,7 +8,16 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    let child = A.tail;
+    while (child !== null) {
+        if (child.tail === null) {
+            break
+        }
+        child = child.tail
+    }
+    child.tail = B
+    return A
 }
 
 /**
@@ -23,5 +32,39 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    function deepCopy(obj) {
+        let result = Array.isArray(obj) ? [] : {};
+        result.__proto__ = obj.__proto__
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if (typeof obj[key] === 'object' && obj[key] !== null) {
+                    result[key] = deepCopy(obj[key]);
+                } else {
+                    result[key] = obj[key];
+                }
+            }
+        }
+        return result;
+    }
+
+    let obj, child = L;
+    for (let i = 0; i < start; i++) {
+        if (!child) {
+            throw Error('items don\'t exist')
+        }
+        child = child.tail
+    }
+    obj = deepCopy(child)
+    let child2 = obj
+    for (let i = 0; i < len; i++) {
+        if (!child2) {
+            throw Error('items don\'t exist')
+        }
+        child2 = child.tail
+    }
+    if (child2 && child2.tail) {
+        child2.tail = null
+    }
+    return obj
 }
