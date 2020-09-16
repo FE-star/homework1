@@ -8,7 +8,11 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	let p = null; // 指针
+	// 参考了一下list.js,感觉这么写for还是比较骚的
+	for(let a = A; a.tail; p = a = a.tail) {}
+	p.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +27,20 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	L = Object.assign({}, L);
+	let sublist;
+	for (let i = 0, p = L; i <= start + len; i++) {
+		if (i === start) {
+			sublist = p;
+		}
+		if (i === start + len - 1) {
+			p.tail = null;
+			break;
+		} else if (!p.tail) {
+			throw ('the desired items don\'t exist');
+		}
+		p = p.tail;
+	}
+
+	return sublist;
 }
