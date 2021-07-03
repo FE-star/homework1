@@ -5,7 +5,7 @@
 
 function List(head, tail) {
 	this.head = head || 0;
-	this.tail = tail || null;
+	this.tail = tail || null;  //tail是一个List（）
 }
 
 // Returns a new List containing the array.
