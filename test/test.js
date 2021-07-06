@@ -3,7 +3,6 @@ describe('unit test for quz.js', function () {
     var A = List.list([4, 6, 7, 3, 8]),
         B = List.list([3, 2, 5, 9]),
         C = List.list([19, 8, 7, 3, 2]);
-
     describe('#dcate()', function () {
         it('should get a list consisting of elements of A followed by the elements of B', function () {
         	A.toString().should.equal('[ 4 6 7 3 8 ]');
@@ -18,6 +17,13 @@ describe('unit test for quz.js', function () {
             sub(C, 3, 2).toString().should.equal('[ 3 2 ]');
             C.toString().should.equal('[ 19 8 7 3 2 ]');
         });
+
+        it("should throw error if the desired items don't exist", function () {
+            const errMsg = "if the desired items don't exist";
+            should.throws(() => {
+                sub(C, 4 ,2);
+            }, errMsg)
+        })
     });
 
 });

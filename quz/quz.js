@@ -8,7 +8,12 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+	let next = A.tail;
+	while(next.tail) {
+		next = next.tail;
+	}
+	next.tail = B;
+	return A;
 }
 
 /**
@@ -23,5 +28,18 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+	let next = L;
+	while(start) {
+		next = next.tail;
+		start--;
+		if (!next && start) throw "the desired items don't exist";
+	}
+	const array = [];
+	while(len) {
+		array.push(next.head);
+		next = next.tail;
+		len--;
+		if (!next && len) throw "the desired items don't exist";
+	}
+	return List.list(array);
 }
