@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let L = A;
+	while (L) {
+		if (L.tail === null) {
+			L.tail = B
+			break;
+		}
+		L = L.tail;
+	}
+	return A;
 }
 
 /**
@@ -24,4 +33,14 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let temp = L;
+	for (let i = 0; i < start + len - 1; i++) {
+		if (i === start) {
+			L = temp;
+		}
+		temp = temp.tail;
+	}
+	temp.tail = null;
+	return L;
 }
+
