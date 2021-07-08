@@ -2,6 +2,11 @@ language: node_js
 node_js:
   - "6"
 
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
 addons:
   chrome: stable
 
@@ -11,5 +16,9 @@ services:
 before_script:
   - "export DISPLAY=:99.0"
 
+script: npm run test
+
 before_install:
   npm install karma-cli -g
+
+install: yarn 
